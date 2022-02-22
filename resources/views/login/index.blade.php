@@ -42,7 +42,7 @@
       </div>
 
       <div>
-        <button type="submit" class="btn btn-primary" style="width:22%; padding-left:115px; margin-left:190px; padding-right:123px;">Login</button>
+        <button type="submit" class="btn btn-primary" style="width:22%; padding-left:115px; margin-left:190px; padding-right:123px; background-color: #34365B;">Login</button>
       </div>
     </form>
 
