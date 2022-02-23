@@ -27,6 +27,27 @@ Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
 // Dashboard Kakomli//
 Route::get('/dashboardkakomli', 'App\Http\Controllers\KakomliController@kakomli');
 
+// Profiel Kakomli //
+Route::get('/profielkakomli', 'App\Http\Controllers\KakomliController@profiel');
+
+// Kompetensi Keahlian kakomli//
+Route::get('/kompetensikeahliankakomli', 'App\Http\Controllers\KakomliController@kompetensi');
+
+// Surat Permohonan Kakomli //
+Route::get('/suratpermohonankakomli', 'App\Http\Controllers\KakomliController@surat');
+
+// Penentuan PKL kakomli //
+Route::get('/penentuanpklkakomli', 'App\Http\Controllers\KakomliController@penentuan');
+
+// Rekap Nilai PKL Kakomli //
+Route::get('/rekapnilaikakomli', 'App\Http\Controllers\KakomliController@nilai');
+
+// Rekap Laporan PKL Kakomli //
+Route::get('/rekaplaporankakomli', 'App\Http\Controllers\KakomliController@laporan');
+
+// Cetak Sertifikat PKL //
+Route::get('/cetaksertfikatkakomli', 'App\Http\Controllers\KakomliController@sertifikat');
+
 // Dashboard Pembimbing//
 Route::get('/dashboardpembimbing', 'App\Http\Controllers\PembimbingController@pembimbing');
 
