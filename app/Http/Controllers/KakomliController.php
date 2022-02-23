@@ -11,4 +11,39 @@ class KakomliController extends Controller
     {
         return view ('kakomli.dashboard');
     }
+
+    public function profiel()
+    {
+        return view ('kakomli.profiel');
+    }
+
+    public function kompetensi()
+    {
+        return view ('kakomli.kompetensi');
+    }
+
+    public function surat()
+    {
+        return view ('kakomli.surat');
+    }
+
+    public function penentuan()
+    {
+        return view ('kakomli.penentuan');
+    }
+
+    public function nilai()
+    {
+        return view ('kakomli.rekapnilai');
+    }
+
+    public function laporan()
+    {
+        return view ('kakomli.rekaplaporan');
+    }
+
+    public function sertifikat()
+    {
+        return view ('kakomli.sertifikat');
+    }
 }

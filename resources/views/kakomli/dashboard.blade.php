@@ -3,7 +3,7 @@
 @section('content-header')
 
   <div class="container-fluid">
-      <h3 style="color:#34365B; padding-left:1%">Dashboard</h3>
+      <h3 style="color:#34365B; padding-left:6px; font-family: Poppins; font-weight: bold;">Dashboard</h3>
   </div>
 
   <div class="d-flex justify-content-center">
