@@ -14,7 +14,7 @@
                 <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block" style="color: white">Kakomli</a>
+                <a href="/profielkakomli" class="d-block" style="color: white">Kakomli</a>
                 
             </div>
             
@@ -24,7 +24,7 @@
     <nav style="margin-top:-10px;">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/dashboardkakomli" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/kom.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Dashboard
@@ -33,7 +33,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/kompetensikeahliankakomli" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/skills.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Kompetensi Keahlian
@@ -42,7 +42,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/suratpermohonankakomli" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/email.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Data Permohonan
@@ -51,7 +51,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/penentuanpklkakomli" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/checking.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Penentuan PKL
@@ -71,14 +71,14 @@
             </li>
 
             <li class="nav-item">
-                <a href="/adminlte/index2.html" class="nav-link">
+                <a href="/rekapnilaikakomli" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p style="color: white">Rakap Daftar Nilai</p>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="/adminlte/index2.html" class="nav-link">
+                <a href="/rekaplaporankakomli" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p style="color: white">Rakap Hasil Laporan</p>
                 </a>
@@ -86,7 +86,7 @@
         </ul>
 
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/cetaksertfikatkakomli" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/printing.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Cetak Sertifikat
@@ -96,7 +96,7 @@
 
             {{-- Menu Logout --}}
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/login" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/logout.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Log Out
