@@ -32,6 +32,12 @@ class KakomliController extends Controller
         return view ('kakomli.penentuan');
     }
 
+    public function tambahpenentuan()
+    {
+        return view ('kakomli.tambahpenentuan');
+    }
+
+
     public function nilai()
     {
         return view ('kakomli.rekapnilai');
