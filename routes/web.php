@@ -39,6 +39,9 @@ Route::get('/suratpermohonankakomli', 'App\Http\Controllers\KakomliController@su
 // Penentuan PKL kakomli //
 Route::get('/penentuanpklkakomli', 'App\Http\Controllers\KakomliController@penentuan');
 
+// Tambah Penentuan PKL Kakomli //
+Route::get('/tambahpenentuan', 'App\Http\Controllers\KakomliController@tambahpenentuan');
+
 // Rekap Nilai PKL Kakomli //
 Route::get('/rekapnilaikakomli', 'App\Http\Controllers\KakomliController@nilai');
 
