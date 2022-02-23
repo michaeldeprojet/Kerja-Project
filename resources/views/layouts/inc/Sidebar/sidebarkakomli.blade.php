@@ -14,7 +14,7 @@
                 <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block" style="color: white">Alexander Pierce</a>
+                <a href="#" class="d-block" style="color: white">Kakomli</a>
                 
             </div>
             
@@ -32,64 +32,73 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="../gallery.html" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/skills.png" style="width: 20px; height:20px"></i>
+                    <p style="color: white">
+                        Kompetensi Keahlian
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="../gallery.html" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/email.png" style="width: 20px; height:20px"></i>
+                    <p style="color: white">
+                        Data Permohonan
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="../gallery.html" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/checking.png" style="width: 20px; height:20px"></i>
+                    <p style="color: white">
+                        Penentuan PKL
+                    </p>
+                </a>
+            </li>
+
 
             {{-- Menu Persuratan--}}
             <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas"><img src="../img/folder.png" style="width: 20px; height:20px"></i>
-                            <p style="color: white">Persuratan<i class="right fas fa-angle-left"></i></p>
+                            <p style="color: white">Rekapan<i class="right fas fa-angle-left"></i></p>
                     </a>
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/adminlte/index.html" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                        <p style="color: white">Surat Pengantar</p>
+                        <p style="color: white">Rekap Data Siswa</p>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="/adminlte/index2.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p style="color: white">Surat Permohonan</p>
+                    <p style="color: white">Rakap Daftar Nilai</p>
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="/adminlte/index2.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p style="color: white">Rakap Hasil Laporan</p>
+                </a>
+            </li>
         </ul>
 
-        {{-- Menu Rekap Data --}}
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas"><img src="../img/rekapan.png" style="width: 20px; height:20px"></i>
-            <p style="color: white">
-                Rekapan
-                <i class="right fas fa-angle-left"></i>
-            </p>
-            </a>
+            <li class="nav-item">
+                <a href="../gallery.html" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/printing.png" style="width: 20px; height:20px"></i>
+                    <p style="color: white">
+                        Cetak Sertifikat
+                    </p>
+                </a>
+            </li>
 
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="../charts/chartjs.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p style="color: white">Rekap Data Siswa</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="../charts/flot.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p style="color: white">Rekap Daftar Nilai</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="../charts/inline.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p style="color: white">Rekap Hasil Laporan</p>
-                        </a>
-                    </li>
-                </ul>
-        </li>
             {{-- Menu Logout --}}
             <li class="nav-item">
                 <a href="../gallery.html" class="nav-link">
