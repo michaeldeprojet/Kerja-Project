@@ -51,6 +51,9 @@ Route::get('/rekaplaporankakomli', 'App\Http\Controllers\KakomliController@lapor
 // Cetak Sertifikat PKL //
 Route::get('/cetaksertfikatkakomli', 'App\Http\Controllers\KakomliController@sertifikat');
 
+// Tambah Sertifikat PKL Kakomli //
+Route::get('/tambahsertifikat', 'App\Http\Controllers\KakomliController@tambahsertifikat');
+
 // Dashboard Pembimbing//
 Route::get('/dashboardpembimbing', 'App\Http\Controllers\PembimbingController@pembimbing');
 

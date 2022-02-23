@@ -52,4 +52,10 @@ class KakomliController extends Controller
     {
         return view ('kakomli.sertifikat');
     }
+
+    public function tambahsertifikat()
+    {
+        return view ('kakomli.tambahsertifikat');
+    }
+
 }
