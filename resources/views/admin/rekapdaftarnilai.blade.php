@@ -3,7 +3,7 @@
 @section('content-header')
 
   <div class="container-fluid">
-      <h3 style="color:#34365B; padding-left:6px; font-family: Poppins; font-weight: bold;">Dashboard</h3>
+      <h3 style="color:#34365B; padding-left:6px; font-family: Poppins; font-weight: bold;">Rekap Daftar Nilai</h3>
   </div>
 
   <div class="card mt-3 p-4 shadow-sm">
@@ -12,15 +12,18 @@
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
                         <th>Nama Peserta</th>
-                        <th>NIS</th>
-                        <th>Periode</th>
+                        <th>Kelas</th>
                         <th>Kompetensi Keahlian</th>
-                        <th colspan="5">Aksi</th>
+                        <th>Pembimbing PKL</th>
+                        <th>Tempat PKL</th>
+                        <th>Nilai Akhir</th>
+                        <th colspan="7">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
             </table>
         </div>
     </div>
+
 
 @endsection
