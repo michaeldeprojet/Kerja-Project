@@ -22,4 +22,28 @@ class PembimbingController extends Controller
         return view ('pembimbing.kompetensi');
     }
 
+    public function siswa()
+    {
+        return view ('pembimbing.siswa');
+    }
+
+    public function presensi()
+    {
+        return view ('pembimbing.presensi');
+    }
+
+    public function nilai()
+    {
+        return view ('pembimbing.inputnilai');
+    }
+
+    public function inputnilai()
+    {
+        return view ('pembimbing.tambahpenilaian');
+    }
+    public function laporan()
+    {
+        return view ('pembimbing.rekaplaporan');
+    }
+
 }

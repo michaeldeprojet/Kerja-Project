@@ -1,21 +1,23 @@
-@extends('layouts.admin')
+@extends('layouts.pembimbing')
 
 @section('content-header')
 
-  <div class="container-fluid">
-      <h3 style="color:#34365B; padding-left:6px; font-family: Poppins; font-weight: bold;">Dashboard</h3>
-  </div>
+    <div class="container-fluid">
+        <h2 style="color:#34365B; padding-left: 7px; font-family:Poppins; font-weight: bold;">Kehadiran Peserta PKL</h2>
+    </div>
 
-  <div class="card mt-3 p-4 shadow-sm">
+    <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
                         <th>Nama Peserta</th>
-                        <th>NIS</th>
-                        <th>Periode</th>
+                        <th>Tanggal</th>
                         <th>Kompetensi Keahlian</th>
-                        <th colspan="5">Aksi</th>
+                        <th>Tempat PKL</th>
+                        <th>Keterangan</th>
+                        <th>Alasan</th>
+                        <th colspan="7">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

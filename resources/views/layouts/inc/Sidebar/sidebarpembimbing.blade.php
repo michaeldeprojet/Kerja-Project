@@ -33,7 +33,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="/kompetensikeahliankakomli" class="nav-link">
+                <a href="/kompetensikeahlianpem" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/skills.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Kompetensi Keahlian
@@ -43,7 +43,7 @@
 
             <li class="nav-item">
                 <a href="/daftarsiswapem" class="nav-link">
-                    <i class="nav-icon fas"><img src="../img/email.png" style="width: 20px; height:20px"></i>
+                    <i class="nav-icon fas"><img src="../img/clipboard.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Daftar Siswa
                     </p>
@@ -51,100 +51,36 @@
             </li>
 
             <li class="nav-item">
-                <a href="/penentuanpklkakomli" class="nav-link">
+                <a href="/hadirsiswapem" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/checking.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
-                        Penentuan PKL
+                        Presensi Siswa
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/inputpenilaian" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/report.png" style="width: 20px; height:20px"></i>
+                    <p style="color: white">
+                        Input Nilai
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/rekaplaporanpem" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/report.png" style="width: 20px; height:20px"></i>
+                    <p style="color: white">
+                        Hasil laporan PKl
                     </p>
                 </a>
             </li>
 
 
-            {{-- Menu Persuratan--}}
-            <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas"><img src="../img/folder.png" style="width: 20px; height:20px"></i>
-                            <p style="color: white">Rekapan<i class="right fas fa-angle-left"></i></p>
-                    </a>
-
-                        <ul class="nav nav-treeview">
-            </li>
-
-            <li class="nav-item">
-                <a href="/rekapnilaikakomli" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p style="color: white">Rakap Daftar Nilai</p>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/rekaplaporankakomli" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p style="color: white">Rakap Hasil Laporan</p>
-                </a>
-            </li>
-        </ul>
-
-            {{-- Menu Persuratan--}}
-            <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas"><img src="../img/folder.png" style="width: 20px; height:20px"></i>
-                            <p style="color: white">Persuratan<i class="right fas fa-angle-left"></i></p>
-                    </a>
-
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/adminlte/index.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                        <p style="color: white">Surat Pengantar</p>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/adminlte/index2.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p style="color: white">Surat Permohonan</p>
-                </a>
-            </li>
-
-        </ul>
-
-        {{-- Menu Rekap Data --}}
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas"><img src="../img/rekapan.png" style="width: 20px; height:20px"></i>
-            <p style="color: white">
-                Rekapan
-                <i class="right fas fa-angle-left"></i>
-            </p>
-            </a>
-
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="../charts/chartjs.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p style="color: white">Rekap Data Siswa</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="../charts/flot.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p style="color: white">Rekap Daftar Nilai</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="../charts/inline.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p style="color: white">Rekap Hasil Laporan</p>
-                        </a>
-                    </li>
-                </ul>
-        </li>
             {{-- Menu Logout --}}
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/login" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/logout.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Log Out

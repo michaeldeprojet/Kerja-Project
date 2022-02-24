@@ -14,7 +14,7 @@
                 <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block" style="color: white">Iswanti</a>
+                <a href="/profieladmin" class="d-block" style="color: white">Admin SIM PKL</a>
                 
             </div>
             
@@ -24,7 +24,7 @@
     <nav style="margin-top:-10px;">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/dashboardadmin" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/kom.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Dashboard
@@ -42,14 +42,14 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/adminlte/index.html" class="nav-link">
+                                <a href="/suratpengantaradmin" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                         <p style="color: white">Surat Pengantar</p>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="/adminlte/index2.html" class="nav-link">
+                <a href="/suratpermohonanadmin" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p style="color: white">Surat Permohonan</p>
                 </a>
@@ -69,21 +69,21 @@
 
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="../charts/chartjs.html" class="nav-link">
+                        <a href="/rekapdatasiswa" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p style="color: white">Rekap Data Siswa</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="../charts/flot.html" class="nav-link">
+                        <a href="rekapdaftarnilai" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p style="color: white">Rekap Daftar Nilai</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="../charts/inline.html" class="nav-link">
+                        <a href="/rekaphasillaporan" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p style="color: white">Rekap Hasil Laporan</p>
                         </a>
