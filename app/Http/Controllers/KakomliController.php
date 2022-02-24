@@ -12,9 +12,9 @@ class KakomliController extends Controller
         return view ('kakomli.dashboard');
     }
 
-    public function profiel()
+    public function profile()
     {
-        return view ('kakomli.profiel');
+        return view ('kakomli.profile');
     }
 
     public function kompetensi()

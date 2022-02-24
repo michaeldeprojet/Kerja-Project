@@ -53,12 +53,13 @@ Route::get('/login', 'App\Http\Controllers\LoginController@index');
     Route::get('/tambahsertifikat', 'App\Http\Controllers\KakomliController@tambahsertifikat');
 // Akhir Halaman Kakomli //
 
+
 // Halaman Admin //
     // Dashboard Admin //
     Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
 
-    // Profiel Admin //
-    Route::get('/profieladmin', 'App\Http\Controllers\AdminController@profiel');
+    // Profile Admin //
+    Route::get('/profileadmin', 'App\Http\Controllers\AdminController@profile');
 
     // Surat Pengantar Admin //
     Route::get('/suratpengantaradmin', 'App\Http\Controllers\AdminController@suratpengantar');
@@ -82,8 +83,33 @@ Route::get('/login', 'App\Http\Controllers\LoginController@index');
       Route::get('/rekaphasillaporan', 'App\Http\Controllers\AdminController@rekaphasillaporan');
 // Akhir Halaman Admin //
 
+
+
+
 // Dashboard Pembimbing//
 Route::get('/dashboardpembimbing', 'App\Http\Controllers\PembimbingController@pembimbing');
+
+// Profile Pembimbing//
+Route::get('/profilepembimbing', 'App\Http\Controllers\PembimbingController@profile');
+
+// Kompetensi keahlian Pembimbing//
+Route::get('/kompetensikeahlianpem', 'App\Http\Controllers\PembimbingController@kompetensi');
+
+// Daftar Siswa Pembimbing//
+Route::get('/daftarsiswapem', 'App\Http\Controllers\PembimbingController@siswa');
+
+// Presensi Siswa Pembimbing//
+Route::get('/hadirsiswapem', 'App\Http\Controllers\PembimbingController@presensi');
+
+// Iinput Nilai PKL Pembimbing //
+Route::get('/inputpenilaian', 'App\Http\Controllers\PembimbingController@nilai');
+
+// Rekap Laporan PKL Pembimbing //
+Route::get('/tambahpenilaian', 'App\Http\Controllers\PembimbingController@inputnilai');
+
+// Rekap Laporan PKL Pembimbing //
+Route::get('/rekaplaporanpem', 'App\Http\Controllers\PembimbingController@laporan');
+
 
 // Dashboard Siswa//
 Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');

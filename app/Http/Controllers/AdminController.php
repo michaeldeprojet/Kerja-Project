@@ -12,9 +12,9 @@ class AdminController extends Controller
         return view ('admin.dashboard');
     }
 
-    public function profiel()
+    public function profile()
     {
-        return view ('admin.profiel');
+        return view ('admin.profile');
     }
 
     public function suratpengantar()
