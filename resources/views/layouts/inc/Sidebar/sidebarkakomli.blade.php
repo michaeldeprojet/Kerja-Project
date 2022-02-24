@@ -14,7 +14,7 @@
                 <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block" style="color: white">Kakomli</a>
+                <a href="" class="d-block nav-link" style="color: white">Kakomli</a>
                 
             </div>
             
