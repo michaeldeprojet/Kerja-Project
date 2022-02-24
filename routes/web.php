@@ -21,14 +21,22 @@ Route::get('/', function () {
 // Login //
 Route::get('/login', 'App\Http\Controllers\LoginController@index');
 
+
+
+
 // Dashboard Siswa//
 Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
+
+
+
+
+
 
 // Dashboard Kakomli//
 Route::get('/dashboardkakomli', 'App\Http\Controllers\KakomliController@kakomli');
 
-// Profiel Kakomli //
-Route::get('/profielkakomli', 'App\Http\Controllers\KakomliController@profiel');
+// Profile Kakomli //
+Route::get('/profilekakomli', 'App\Http\Controllers\KakomliController@profile');
 
 // Kompetensi Keahlian kakomli//
 Route::get('/kompetensikeahliankakomli', 'App\Http\Controllers\KakomliController@kompetensi');
@@ -54,8 +62,20 @@ Route::get('/cetaksertfikatkakomli', 'App\Http\Controllers\KakomliController@ser
 // Tambah Sertifikat PKL Kakomli //
 Route::get('/tambahsertifikat', 'App\Http\Controllers\KakomliController@tambahsertifikat');
 
+
+
+
 // Dashboard Pembimbing//
 Route::get('/dashboardpembimbing', 'App\Http\Controllers\PembimbingController@pembimbing');
+
+// Profile Pembimbing//
+Route::get('/profilepembimbing', 'App\Http\Controllers\PembimbingController@profile');
+
+// Kompetensi Keahlian pembimbing//
+Route::get('/kompetensikeahlianpem', 'App\Http\Controllers\PembimbingController@kompetensi');
+
+
+
 
 // Dashboard Admin//
 Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
