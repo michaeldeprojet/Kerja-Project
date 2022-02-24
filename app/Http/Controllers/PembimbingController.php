@@ -37,7 +37,7 @@ class PembimbingController extends Controller
         return view ('pembimbing.inputnilai');
     }
 
-    public function inputnilai()
+    public function tambahpenilaian()
     {
         return view ('pembimbing.tambahpenilaian');
     }
