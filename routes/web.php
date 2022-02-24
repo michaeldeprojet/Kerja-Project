@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
@@ -104,8 +105,8 @@ Route::get('/hadirsiswapem', 'App\Http\Controllers\PembimbingController@presensi
 // Iinput Nilai PKL Pembimbing //
 Route::get('/inputpenilaian', 'App\Http\Controllers\PembimbingController@nilai');
 
-// Rekap Laporan PKL Pembimbing //
-Route::get('/tambahpenilaian', 'App\Http\Controllers\PembimbingController@inputnilai');
+// Input Nilai PKL Pembimbing //
+Route::get('/tambahpenilaian', 'App\Http\Controllers\PembimbingController@tambahpenilaian');
 
 // Rekap Laporan PKL Pembimbing //
 Route::get('/rekaplaporanpem', 'App\Http\Controllers\PembimbingController@laporan');
@@ -113,6 +114,14 @@ Route::get('/rekaplaporanpem', 'App\Http\Controllers\PembimbingController@lapora
 
 // Dashboard Siswa//
 Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
+
+
+
+// Surat permohonan 1//
+Route::get('/suratpermohonan', 'App\Http\Controllers\SuratController@suratpermohonan');
+
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 
 
 
