@@ -21,9 +21,6 @@ Route::get('/', function () {
 // Login //
 Route::get('/login', 'App\Http\Controllers\LoginController@index');
 
-// Dashboard Siswa//
-Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
-
 // Dashboard Kakomli//
 Route::get('/dashboardkakomli', 'App\Http\Controllers\KakomliController@kakomli');
 
@@ -32,6 +29,38 @@ Route::get('/dashboardpembimbing', 'App\Http\Controllers\PembimbingController@pe
 
 // Dashboard Admin//
 Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
+
+
+// Siswa
+
+// Dashboard Siswa//
+Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
+
+// Profil Siswa
+Route::get('/profil', 'App\Http\Controllers\ProfilSiswaController@index');
+
+// Izin Ortu
+Route::get('/izin', 'App\Http\Controllers\IzinOrtuController@index');
+
+// Daftar Hadir
+Route::get('/DaftarHadir', 'App\Http\Controllers\DaftarHadirController@index');
+
+// Presensi
+Route::get('/Presensi', 'App\Http\Controllers\PresensiController@index');
+
+
+// Jurnal PKL
+Route::get('/Jurnalpkl', 'App\Http\Controllers\JurnalPklController@index');
+
+// Dashboard Jurnal
+Route::get('/Jurnal', 'App\Http\Controllers\DashboardJurnalController@index');
+
+// Laporan PKL
+Route::get('/laporan', 'App\Http\Controllers\LaporanController@index');
+
+// Nilai
+Route::get('/nilai', 'App\Http\Controllers\NilaiController@siswa');
+
 
 
 

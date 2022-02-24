@@ -2,18 +2,27 @@
 
 @section('content-header')
 
-<div class="container-fluid">
-  <div class="row mb-2">
-    <div class="col-sm-6">
-      <h1>Blank Page</h1>
+    <div class="container-fluid">
+        <h2 style="color:#34365B; padding-left: 7px; font-family: Poppins; font-weight: bold;">Penentuan PKL</h2>
     </div>
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Blank Page</li>
-        </ol>
-      </div>
-  </div>
-</div>
+
+    <div class="card mt-3 p-4 shadow-sm">
+        <div class="table-responsive">
+            <a href="/tambahpenentuan" class="btn btn-success" src="../img/vector.png">Tambah peserta</a>
+            <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
+                <thead>
+                    <tr style="background-color:#595CB4; color:white;">
+                        <th>Nama Peserta</th>
+                        <th>Periode</th>
+                        <th>Kompetensi Keahlian</th>
+                        <th>Pembimbing PKL</th>
+                        <th>Tempat PKL</th>
+                        <th colspan="6">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+            </table>
+        </div>
+    </div>
 
 @endsection
