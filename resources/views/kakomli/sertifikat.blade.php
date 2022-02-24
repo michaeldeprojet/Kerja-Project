@@ -8,7 +8,7 @@
 
     <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
-            <a href="" class="btn btn-success" src="../img/vector.png">Tambah Sertifikat</a>
+            <a href="/tambahsertifikat" class="btn btn-success" src="../img/vector.png">Tambah Sertifikat</a>
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
