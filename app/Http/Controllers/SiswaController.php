@@ -11,17 +11,20 @@ class SiswaController extends Controller
     {
         return view ('siswa.dashboard');
     }
-    public function profil()
+
+    public function profile()
     {
-        return view ('siswa.profil');
+        return view ('siswa.profile');
     }
+
     public function izin()
     {
-        return view ('siswa.IzinOrtu');
+        return view ('siswa.izinortu');
     }
-    public function hadir()
+    
+    public function daftarkehadiran()
     {
-        return view ('siswa.kehadiran');
+        return view ('siswa.daftarkehadiran');
     }
     public function presensi()
     {
@@ -44,5 +47,4 @@ class SiswaController extends Controller
         return view ('siswa.nilai');
     }
 
-    
 }

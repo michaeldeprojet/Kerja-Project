@@ -41,20 +41,29 @@
               <input type="text" class="form-control" id="tempatpkl">
             </div>
 
-            <div class="col-md-12 mt-4">
-                <label for="uploadfile" class="form-label">Upload file Logo Perusahaan ( .png )</label>
-                <button type="submit" class="btn btn-secondary" style="width: 190px; margin-left:20px">upload</button>
+            <form class="row g-3">
+              <div class="col-3 mt-3">
+                <div class="mt-4" style="width: 300px; margin-left:10px">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="padding-left: 10%">Upload file Logo Perusahaan ( .png )</li>
+                    <li class="list-group-item"><button type="button" class="btn btn-secondary" style="margin-left:25%">Upload</button></li>
+                  </ul>
+                </div>
+              </div>
+  
+              <div class="col-md-4 mt-3">
+                <div class="mt-4" style="width: 270px; margin-left:90px">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="padding-left: 10%">Upload file Tanda Tangan ( .png )</li>
+                    <li class="list-group-item"><button type="button" class="btn btn-secondary" style="margin-left:25%">Upload</button></li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="col-md-12 mt-4">
-                <label for="uploadfile" class="form-label">Upload file Tanda Tangan ( .png )</label>
-                <button type="submit" class="btn btn-secondary" style="width: 190px; margin-left:20px">upload</button>
-              </div>
-
-            <div class="col-6 mt-4">
-                <button type="submit" class="btn btn-success">Submit</button>
-              </div>
           </form>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5" style="margin-right:0px; padding:20px">
+            <button class="btn btn-success" type="button" style="width:190px">Submit</button>
+          </div>
     </div>
 
 @endsection

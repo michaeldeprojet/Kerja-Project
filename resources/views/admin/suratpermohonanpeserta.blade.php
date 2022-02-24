@@ -46,8 +46,8 @@
                 <input type="" class="form-control" id="jurusan">
               </div>
 
-                <a href="/suratpermohonanadmin" class="btn btn-success mt-4 col-md-1 ml-2" src="../img/vector.png">View</a>
-                <a href="" class="btn btn-warning ml-3 mt-4 col-md-1" style="color:white;" src="../img/vector.png">Submit</a>
+                <a href="/suratpermohonanadmin" class="btn btn-secondary mt-4 col-md-1 ml-2" src="../img/vector.png">View</a>
+                <a href="" class="btn btn-success  ml-3 mt-4 col-md-1" style="color:white;" src="../img/vector.png">Submit</a>
           </form>
     </div>
         
