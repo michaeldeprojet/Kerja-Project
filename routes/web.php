@@ -112,17 +112,19 @@ Route::get('/tambahpenilaian', 'App\Http\Controllers\PembimbingController@tambah
 Route::get('/rekaplaporanpem', 'App\Http\Controllers\PembimbingController@laporan');
 
 
+
+
 // Dashboard Siswa//
 Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
 
-// Profil Siswa
-Route::get('/profilsiswa', 'App\Http\Controllers\SiswaController@profil');
+// Profile Siswa //
+Route::get('/profilesiswa', 'App\Http\Controllers\SiswaController@profile');
 
 // Izin Ortu
 Route::get('/izinsiswa', 'App\Http\Controllers\SiswaController@izin');
 
 // Daftar Hadir
-Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\SiswaController@hadir');
+Route::get('/daftarkehadiran', 'App\Http\Controllers\SiswaController@daftarkehadiran');
 
 // Presensi
 Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');
