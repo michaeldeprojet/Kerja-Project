@@ -3,9 +3,12 @@
 @section('content-header')
 
     <div class="container-fluid">
-        <h1 style="color:#34365B; margin-left:8%;"><b>Profil</b></h1>
+        <div class="row mb-2">
+            <div class="col-sm-6">
+            <h1 style="color:#34365B; margin-left:10%;"><b> Profil</b></h1>
+            </div>
+        </div>
     </div>
-
 
     <div class="card mb-3 justify-center" style="max-width: 1000px; margin-left: 20px; height:330px; margin-top:2%;">
         <div class="row g-0">

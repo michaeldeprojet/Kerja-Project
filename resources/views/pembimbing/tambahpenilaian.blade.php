@@ -3,7 +3,11 @@
 @section('content-header')
 
     <div class="container-fluid">
-        <h2 style="color:#34365B; font-weight: bold;" class="m-4">Input Nilai Siswa</h2>
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 style="color:#34365B; margin-left:10%;"><b> Input Nilai Siswa</b></h1>
+        </div>
+      </div>
     </div>
 
     <div class="m-4">

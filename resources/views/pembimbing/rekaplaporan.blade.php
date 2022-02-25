@@ -2,8 +2,12 @@
 
 @section('content-header')
 
-    <div class="container-fluid">
-        <h2 style="color:#34365B; padding-left: 7px; font-family: Poppins; font-weight: bold;">Rekap Laporan PKL</h2>
+    <div class="container-fluid">   
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 style="color:#34365B; margin-left:10%;"><b> Rekap Laporan PKL</b></h1>
+        </div>
+      </div>
     </div>
 
     <div class="card mt-3 p-4 shadow-sm">
