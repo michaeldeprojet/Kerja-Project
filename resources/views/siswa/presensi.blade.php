@@ -16,7 +16,7 @@
       <p style="margin-left:36.8%;" class="mt-4">Nis</p>
 
   </div>
-  <div>
+<div>
         <input style="margin-left:4%;" class="form-control col-5" type="text" placeholder="No" aria-label="default input example">
         <input style="margin-left:49.8%; margin-top:-3.6%;" class="form-control col-3" type="text" placeholder="No" aria-label="default input example">
 </div>
@@ -71,7 +71,7 @@
           </div>
 
           <!-- Submit -->
-          <button type="button" class="btn btn-success" style="margin-top:6%; margin-left:4%;">Submit</button>
+          <button type="button" class="btn btn-success col-1" style="margin-top:6%; margin-left:4%;">Submit</button>
 
 
 @endsection 
