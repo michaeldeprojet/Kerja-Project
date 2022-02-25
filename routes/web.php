@@ -112,9 +112,34 @@ Route::get('/tambahpenilaian', 'App\Http\Controllers\PembimbingController@tambah
 Route::get('/rekaplaporanpem', 'App\Http\Controllers\PembimbingController@laporan');
 
 
+
+
 // Dashboard Siswa//
 Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
 
+// Profile Siswa //
+Route::get('/profilesiswa', 'App\Http\Controllers\SiswaController@profile');
+
+// Izin Ortu
+Route::get('/izinsiswa', 'App\Http\Controllers\SiswaController@izin');
+
+// Daftar Hadir
+Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\SiswaController@daftarkehadiran');
+
+// Presensi
+Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');
+
+// Jurnal PKL
+Route::get('/Jurnalpklsiswa', 'App\Http\Controllers\SiswaController@jurnalpkl');
+
+// Dashboard Jurnal
+Route::get('/Jurnalsiswa', 'App\Http\Controllers\SiswaController@jurnal');
+
+// Laporan PKL
+Route::get('/laporansiswa', 'App\Http\Controllers\SiswaController@lapor');
+
+// Nilai
+Route::get('/nilaisiswa', 'App\Http\Controllers\SiswaController@nilai');
 
 
 // Surat permohonan 1//
