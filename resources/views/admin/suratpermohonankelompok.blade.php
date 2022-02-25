@@ -3,7 +3,11 @@
 @section('content-header')
 
     <div class="container-fluid">
-      <h3 style="color:#34365B; padding-left:6px; font-family: Poppins; font-weight: bold;">Surat Permohonan Kelompok PKL</h3>
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 style="color:#34365B; margin-left:10%;"><b> Surat Permohonan Kelompok PKL</b></h1>
+        </div>
+      </div>
     </div>
 
     <div class="card mt-3 p-4 shadow-sm">

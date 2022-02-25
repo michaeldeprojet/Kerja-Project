@@ -27,7 +27,7 @@ Route::get('/login', 'App\Http\Controllers\LoginController@index');
     Route::get('/dashboardkakomli', 'App\Http\Controllers\KakomliController@kakomli');
 
     // Profiel Kakomli //
-    Route::get('/profielkakomli', 'App\Http\Controllers\KakomliController@profiel');
+    Route::get('/profilekakomli', 'App\Http\Controllers\KakomliController@profiel');
 
     // Kompetensi Keahlian kakomli//
     Route::get('/kompetensikeahliankakomli', 'App\Http\Controllers\KakomliController@kompetensi');
