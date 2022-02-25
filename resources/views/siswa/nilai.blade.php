@@ -9,7 +9,7 @@
     </div>
   </div>
         <img src="img/logo.png" style="margin-left:40%; width:200px; height:200px;">
-        <button type="button" class="btn btn-warning" style="margin-top:32%; margin-left:-13%;">Download</button>
+        <button type="button" class="btn btn-warning" style="margin-top:32%; margin-left:-14%;">Download</button>
 </div>
 
 @endsection 

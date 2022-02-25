@@ -124,7 +124,7 @@ Route::get('/profilesiswa', 'App\Http\Controllers\SiswaController@profile');
 Route::get('/izinsiswa', 'App\Http\Controllers\SiswaController@izin');
 
 // Daftar Hadir
-Route::get('/daftarkehadiran', 'App\Http\Controllers\SiswaController@daftarkehadiran');
+Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\SiswaController@daftarkehadiran');
 
 // Presensi
 Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');
