@@ -41,4 +41,9 @@
             <div class="alert alert-primary col-9" role="alert" style="background-color:#595CB4; color:white; margin-left:4%; margin-top:3%;">
                 Note : Laporan berbentuk Docx / PDF
             </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5" style="margin-right:0px padding:20px">
+              <button class="btn btn-secondary me-md-2" type="button" style="margin-right: 20px; width:190px">View</button>
+              <button class="btn btn-success" type="button" style="width:190px">Submit</button>
+            </div>
 @endsection 
