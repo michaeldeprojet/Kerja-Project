@@ -37,6 +37,10 @@
             <p class="mt-4" style="margin-left:6%;">Download Template File Peserta PKL</p>
             <button type="button" style="margin-left:4%; background-color:#F89A0E; color:white;"class="btn col-5">Download</button>
         </div>
+
+        <div class="mt-5 d-grid gap-2">
+          <button class="btn btn-success" type="button" style="width:190px; margin-left:40px">Submit</button>
+        </div>
 </div>
 
 
