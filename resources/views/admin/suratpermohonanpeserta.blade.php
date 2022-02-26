@@ -2,9 +2,13 @@
 
 @section('content-header')
 
-    <div class="container-fluid">
-      <h3 style="color:#34365B; padding-left:6px; font-family: Poppins; font-weight: bold;">Surat Permohonan 1 Peserta PKL</h3>
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 style="color:#34365B; margin-left:10%;"><b> Surat Permohonan 1 Peserta PKL</b></h1>
+      </div>
     </div>
+  </div>
 
     <div class="card mt-3 p-4 shadow-sm">
         <form class="row g-3">

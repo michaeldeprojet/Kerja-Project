@@ -2,33 +2,37 @@
 
 @section('content-header')
 
-<div class="container-fluid">
-  <h3 style="color:#34365B; padding-left:6px; font-family: Poppins; font-weight: bold;">Dashboard</h3>
-</div>
-
-<div class="d-flex justify-content-center mt-4">
-
-  <div class="card text-dark bg-white mb-3" style="width:300px; margin-right:20px;">
-    <div class="card-header text-center">Jumlah Seluruh Siswa</div>
-      <div class="card-body">
-        <p class="card-text text-center">1.500</p>
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 style="color:#34365B; margin-left:10%;"><b> Dashboard</b></h1>
       </div>
+    </div>
   </div>
 
-  <div class="card text-dark bg-white mb-3" style="width: 300px; margin-right:20px;">
-    <div class="card-header text-center">Jumlah Siswa PKL</div>
-      <div class="card-body">
-        <p class="card-text text-center">500</p>
-      </div>
-  </div>
+  <div class="d-flex justify-content-center mt-4">
 
-  <div class="card text-dark bg-white mb-3" style="width:300px;">
-    <div class="card-header text-center">Jumlah Siswa Belum PKL</div>
-      <div class="card-body">
-        <p class="card-text text-center">1000</p>
-      </div>
+    <div class="card text-dark bg-white mb-3" style="width:300px; margin-right:20px;">
+      <div class="card-header text-center">Jumlah Seluruh Siswa</div>
+        <div class="card-body">
+          <p class="card-text text-center">1.500</p>
+        </div>
+    </div>
+
+    <div class="card text-dark bg-white mb-3" style="width: 300px; margin-right:20px;">
+      <div class="card-header text-center">Jumlah Siswa PKL</div>
+        <div class="card-body">
+          <p class="card-text text-center">500</p>
+        </div>
+    </div>
+
+    <div class="card text-dark bg-white mb-3" style="width:300px;">
+      <div class="card-header text-center">Jumlah Siswa Belum PKL</div>
+        <div class="card-body">
+          <p class="card-text text-center">1000</p>
+        </div>
+    </div>
   </div>
-</div>
 
 <link
 rel="stylesheet"

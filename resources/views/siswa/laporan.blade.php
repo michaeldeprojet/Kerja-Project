@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row mb-2">
     <div class="col-sm-6">
-      <h1 style="color:#34365B; margin-left:8%;"><b>Laporan PKL</b></h1>
+      <h1 style="color:#34365B; margin-left:10%;"><b>Laporan PKL</b></h1>
     </div>
       <div class="col-sm-6">
       </div>
@@ -40,5 +40,10 @@
 
             <div class="alert alert-primary col-9" role="alert" style="background-color:#595CB4; color:white; margin-left:4%; margin-top:3%;">
                 Note : Laporan berbentuk Docx / PDF
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5" style="margin-right:0px padding:20px">
+              <button class="btn btn-secondary me-md-2" type="button" style="margin-right: 20px; width:190px">View</button>
+              <button class="btn btn-success" type="button" style="width:190px">Submit</button>
             </div>
 @endsection 

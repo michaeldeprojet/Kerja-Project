@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row mb-2">
     <div class="col-sm-6">
-      <h1 style="color:#34365B; margin-left:8%;"><b> Izin Orang Tua</b></h1>
+      <h1 style="color:#34365B; margin-left:10%;"><b> Izin Orang Tua</b></h1>
     </div>
       <div class="col-sm-6">
       </div>
@@ -36,6 +36,10 @@
         <div style="margin-left:33%; margin-top:-9.4%;">
             <p class="mt-4" style="margin-left:6%;">Download Template File Peserta PKL</p>
             <button type="button" style="margin-left:4%; background-color:#F89A0E; color:white;"class="btn col-5">Download</button>
+        </div>
+
+        <div class="mt-5 d-grid gap-2">
+          <button class="btn btn-success" type="button" style="width:190px; margin-left:40px">Submit</button>
         </div>
 </div>
 
