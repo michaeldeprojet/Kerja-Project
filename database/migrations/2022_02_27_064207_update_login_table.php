@@ -14,7 +14,7 @@ class UpdateLoginTable extends Migration
     public function up()
     {
         Schema::table('login', function (Blueprint $table) {
-            $table->string('role');
+            $table->string('role')->nullable();
         });
     }
 
