@@ -19,33 +19,33 @@
     <form class=" w-50 d-flex flex-column justify-content-center align-items-center" action="{{ URL::to('/login') }}" method="POST">
         @csrf
 
-        <div class="mb-13">
+        <div style="margin-left:180px;">
         <h2>Welcome Back</h2>
         </div>
 
-        <div class="mb-13">
+        <div style="margin-left:180px;">
         <label for="InputUsername" class="form-label"></label>
         <input type="text" name="username" class="form-control w-100" id="InputUsername"  placeholder="Username..." required>
         </div>
 
 
-        <div class="mb-3">
+        <div style="margin-left:180px;">
         <label for="InputPassword" class="form-label"></label>
         <input type="text" name="password" class="form-control w-100" id="InputPassword1" placeholder="Your password..." required>
         </div>
 
-        <div>
+        <div style="margin-top:30px; margin-left:180px; width:200px;">
         <button type="submit" class="btn btn-primary w-100" style="background-color: #34365B;">Login</button>
         </div>
-    </form>
-    <div class="w-50">
-        <img style="width:960px; height:656px;" src="img/back.png">
-        <div class="d-flex justify-content-end align-items-end flex-column text-white" style="margin-top:-10%; margin-right: 3%">
-            <h3>SIM PKL</h3>
-            <h6>Dapatkan informasi serta</h6>
-            <h6>keperluan magangmu disini !</h6>
-        </div>
-    </div>
+</form>
+        <div>
+        <img style="width:960px; height:657px;" src="img/back.png">
+        <div style="margin-top:-115px; color:white; text-align:right; margin-right:90px;">
+            <h4>SIM PKL</h4>
+            <p>Dapatkan <b> informasi </b> serta</p>
+            <p style="margin-top:-14px;">keperluan <b> magangmu </b> disini !</p> 
+          </div> 
+          </div>
   </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
