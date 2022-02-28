@@ -12,39 +12,41 @@
     <title>SIM PKL</title>
   </head>
   <body>
-   
+
   <!-- Form login -->
-    
-      <div>
-        <img style="margin-left:406px; width:960px; height:656px;" src="img/back.png"> 
-      </div>
 
-    <form>
-      <div>
-        <h3 style="padding-left:83%; margin-top:-9%; color:white;"><b>SIM PKL</b></h3>
-        <h6 style="padding-left:78%; margin-top:0%; color:white;">Dapatkan informasi serta</h6>
-        <h6 style="padding-left:76%; margin-top:0%; color:white;">keperluan magangmu disini !</h6>
-      </div>
+  <div class="d-flex">
+    <form class=" w-50 d-flex flex-column justify-content-center align-items-center" action="{{ URL::to('/login') }}" method="POST">
+        @csrf
 
-      <div class="mb-13" style="width:36%; padding-left:190px; margin-top:-30%; text-align:center;">
+        <div class="mb-13">
         <h2>Welcome Back</h2>
-      </div>
-      
-      <div class="mb-13" style="width:36%; padding-left:190px; padding-top:-40px; ">
+        </div>
+
+        <div class="mb-13">
         <label for="InputUsername" class="form-label"></label>
-        <input type="text" class="form-control" id="InputUsername"  value="Username..." required>
-      </div>
+        <input type="text" name="username" class="form-control w-100" id="InputUsername"  placeholder="Username..." required>
+        </div>
 
-      
-      <div class="mb-3" style="width:36%; padding-left:190px;">
+
+        <div class="mb-3">
         <label for="InputPassword" class="form-label"></label>
-        <input type="text" class="form-control" id="InputPassword1" value="Your password..." required>
-      </div>
+        <input type="text" name="password" class="form-control w-100" id="InputPassword1" placeholder="Your password..." required>
+        </div>
 
-      <div>
-        <button type="submit" class="btn btn-primary" style="width:22%; padding-left:115px; margin-left:190px; padding-right:123px; background-color: #34365B;">Login</button>
-      </div>
+        <div>
+        <button type="submit" class="btn btn-primary w-100" style="background-color: #34365B;">Login</button>
+        </div>
     </form>
+    <div class="w-50">
+        <img style="width:960px; height:656px;" src="img/back.png">
+        <div class="d-flex justify-content-end align-items-end flex-column text-white" style="margin-top:-10%; margin-right: 3%">
+            <h3>SIM PKL</h3>
+            <h6>Dapatkan informasi serta</h6>
+            <h6>keperluan magangmu disini !</h6>
+        </div>
+    </div>
+  </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
