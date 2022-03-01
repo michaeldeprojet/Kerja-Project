@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJurnalPklTable extends Migration
+class CreateTbJurnalPkl extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class CreateJurnalPklTable extends Migration
      */
     public function up()
     {
-        Schema::create('jurnal_pkl', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_siswa', 100);
+        Schema::create('tb_jurnal_pkl', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('id_siswa')->unsigned();
             $table->date('tgl_pkl');
-            $table->string('pembimbing', 100);
-            $table->unsignedInteger('nis');
-            $table->string('perusahaan', 100);
-            $table->string('divisi', 100);
+            $table->bigInteger('id_pembimbing')->unsigned();
+            $table->string('nama_perusahaan');
+            $table->string('divisi');
             $table->unsignedSmallInteger('minggu');
             $table->longText('kegiatan');
             $table->longText('hasil');
+            $table->foreign('id_pembimbing')->references('id')->on('tb_pembimbing');
+            $table->foreign('id_siswa')->references('id')->on('tb_siswa');
             $table->timestamps();
         });
     }
@@ -35,6 +36,6 @@ class CreateJurnalPklTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jurnal_pkl');
+        Schema::dropIfExists('tb_jurnal_pkl');
     }
 }
