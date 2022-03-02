@@ -148,5 +148,9 @@ Route::get('/suratpermohonan', 'App\Http\Controllers\SuratController@suratpermoh
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 
+Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
+
+Route::get('generate-nilai-pkl', [PDFController::class, 'generatenilaipkl']);
+
 
 
