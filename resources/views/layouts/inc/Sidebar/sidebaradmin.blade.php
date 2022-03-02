@@ -92,7 +92,7 @@
         </li>
             {{-- Menu Logout --}}
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/login" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/logout.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Log Out

@@ -13,32 +13,34 @@
     </div>
 
     <div class="m-4">
-        <div class="accordion" id="myAccordion">
+        <div class="accordion mt-3" id="myAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne"><b>Otomatisasi dan Tata Kelola Perkantoran</b></button>									
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
-                    <div class="card-body" style="padding-left: 40px">
-                        <li>Mengetik 10 Jari</li>
-                        <li>Mengarsip Surat</li>
-                        <li>Korespondensi Bahasa Indonesia</li>
-                        <li>Menangani Telepon</li>
-                        <li>Menangani Tamu</li>
-                        <li>Mempersiapkan Rapat</li>
-                        <li>Mengatur Agenda Pimpinan</li>
-                        <li>Mengoprasikan Microsoft Office 2013</li>
-                        <li>Mengelola Email</li>
-                        <li>Mengopersikan Mesin Kantor</li>
-                        <li>Mengelola Adm. Keuangan</li>
-                        <li>Menggunakan teknologi perkantoran</li>
-                        <li>Mengelola Adm. Kepegawaian</li>
-                        <li>Mengelola perjalanan dinas pimpinan</li>
-                        <li>Kegiatan Humas dan Keprotokolan</li>
+                  <div class="card-body" style="padding-left: 40px">
+                      <li>Mengetik 10 Jari</li>
+                      <li>Mengarsip Surat</li>
+                      <li>Korespondensi Bahasa Indonesia</li>
+                      <li>Menangani Telepon</li>
+                      <li>Menangani Tamu</li>
+                      <li>Mempersiapkan Rapat</li>
+                      <li>Mengatur Agenda Pimpinan</li>
+                      <li>Mengoprasikan Microsoft Office 2013</li>
+                      <li>Mengelola Email</li>
+                      <li>Mengopersikan Mesin Kantor</li>
+                      <li>Mengelola Adm. Keuangan</li>
+                      <li>Menggunakan teknologi perkantoran</li>
+                      <li>Mengelola Adm. Kepegawaian</li>
+                      <li>Mengelola perjalanan dinas pimpinan</li>
+                      <li>Kegiatan Humas dan Keprotokolan</li>
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div class="accordion mt-3" id="myAccordion">
             <div class="accordion-item">
               <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
@@ -56,7 +58,9 @@
                 </div>
               </div>
             </div>
+        </div>
 
+        <div class="accordion mt-3" id="myAccordion">
             <div class="accordion-item">
               <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
@@ -72,7 +76,9 @@
                 </div>
               </div>
             </div>
+        </div>
 
+        <div class="accordion mt-3" id="myAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingFour">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
@@ -90,8 +96,10 @@
                 </div>
               </div>
             </div>
-            
-            <div class="accordion-item">
+        </div>
+
+        <div class="accordion mt-3" id="myAccordion">   
+            <div class="accordion-item m-4">
                 <h2 class="accordion-header" id="panelsStayOpen-headingFive">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
                       <b>Bisnis Daring dan Pemasaran</b>
@@ -99,18 +107,53 @@
                 </h2>
                 <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
                   <div class="accordion-body" style="padding-left: 40px">
-                      <li>Desain Iklanl</li>
+                      <li>Desain Iklan</li>
                       <li>Optimasi Sosial Media / Website</li>
                       <li>Penjualan / Pemasaran Online</li>
                       <li>Komunikasi Bisnis</li>
                   </div>
                 </div>
               </div>
+        </div>
+
+        <div class="accordion mt-3" id="myAccordion">
+            <div class="accordion-item m-4">
+              <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                    <b>Tataboga</b>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+                <div class="accordion-body" style="padding-left: 40px">
+                    <li>Desain Iklan</li>
+                    <li>Optimasi Sosial Media / Website</li>
+                    <li>Penjualan / Pemasaran Online</li>
+                    <li>Komunikasi Bisnis</li>
+                </div>
+              </div>
             </div>
         </div>
-    </div> 
-    
 
-    
+        <div class="accordion mt-3" id="myAccordion">
+          <div class="accordion-item m-4">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                  <b>Perhotelan</b>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSeven">
+              <div class="accordion-body" style="padding-left: 40px">
+                  <li>Desain Iklan</li>
+                  <li>Optimasi Sosial Media / Website</li>
+                  <li>Penjualan / Pemasaran Online</li>
+                  <li>Komunikasi Bisnis</li>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+
+    </div>
+   
 @endsection
 
