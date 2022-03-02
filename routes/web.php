@@ -51,6 +51,12 @@ Route::group(['middleware' => ['auth']], function(){
         // Tambah Penentuan PKL Kakomli //
         Route::get('/tambahpenentuan', 'App\Http\Controllers\KakomliController@tambahpenentuan');
 
+<<<<<<< HEAD
+Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
+
+Route::get('generate-nilai-pkl', [PDFController::class, 'generatenilaipkl']);
+
+=======
         // Rekap Nilai PKL Kakomli //
         Route::get('/rekapnilaikakomli', 'App\Http\Controllers\KakomliController@nilai');
 
@@ -150,6 +156,7 @@ Route::group(['middleware' => ['auth']], function(){
         // Nilai
         Route::get('/nilaisiswa', 'App\Http\Controllers\SiswaController@nilai');
     });
+>>>>>>> 937fe009e3552a2c7196a84225b7fb5a0d6f4f4b
 
 
 });
