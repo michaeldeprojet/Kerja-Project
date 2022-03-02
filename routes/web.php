@@ -28,8 +28,12 @@ Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 Route::group(['middleware' => ['auth']], function(){
 
     // Surat permohonan 1//
-    Route::get('/suratpermohonan', 'App\Http\Controllers\SuratController@suratpermohonan');
     Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+    Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
+
+    // Pdf Penilaian //
+    Route::get('generate-nilai-pkl', [PDFController::class, 'generatenilaipkl']);
+
 
     Route::group(['middleware' => ['role:KAKOMLI']], function(){
     // Halaman Kakomli //
@@ -51,12 +55,6 @@ Route::group(['middleware' => ['auth']], function(){
         // Tambah Penentuan PKL Kakomli //
         Route::get('/tambahpenentuan', 'App\Http\Controllers\KakomliController@tambahpenentuan');
 
-<<<<<<< HEAD
-Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
-
-Route::get('generate-nilai-pkl', [PDFController::class, 'generatenilaipkl']);
-
-=======
         // Rekap Nilai PKL Kakomli //
         Route::get('/rekapnilaikakomli', 'App\Http\Controllers\KakomliController@nilai');
 
@@ -156,7 +154,6 @@ Route::get('generate-nilai-pkl', [PDFController::class, 'generatenilaipkl']);
         // Nilai
         Route::get('/nilaisiswa', 'App\Http\Controllers\SiswaController@nilai');
     });
->>>>>>> 937fe009e3552a2c7196a84225b7fb5a0d6f4f4b
 
 
 });
