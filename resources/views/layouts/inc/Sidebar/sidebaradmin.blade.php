@@ -32,6 +32,15 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="/datasiswa" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/datasiswa.png" style="width: 20px; height:20px"></i>
+                    <p style="color: white">
+                        Input Data Siswa
+                    </p>
+                </a>
+            </li>
+
 
             {{-- Menu Persuratan--}}
             <li class="nav-item">

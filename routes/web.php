@@ -16,7 +16,7 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login.index');
 });
 
 // Login //
@@ -73,6 +73,12 @@ Route::group(['middleware' => ['auth']], function(){
     // Halaman Admin //
         // Dashboard Admin //
         Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
+
+        // Data Siswa //
+        Route::get('/datasiswa', 'App\Http\Controllers\AdminController@datasiswa');
+
+        // Input Siswa //
+        Route::get('/inputsiswa', 'App\Http\Controllers\AdminController@inputsiswa');
 
         // Profile Admin //
         Route::get('/profileadmin', 'App\Http\Controllers\AdminController@profile');
