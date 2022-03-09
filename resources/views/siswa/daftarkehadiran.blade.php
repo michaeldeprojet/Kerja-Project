@@ -26,14 +26,16 @@
       <td scope="col">Alasan</td>
     </tr>
   <tbody>
+    @foreach($datas as $data)
     <tr style="background-color:white;">
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>iya</td>
-      <td>apa</td>
+      <td scope="row">{{ $data->datasiswa->nama}}</td>
+      <td>{{ $data->tgl_pkl}}</td>
+      <td>{{ $data->datasiswa->kompetensi_keahlian}}</td>
+      <td>{{ $data->nama_perusahaan }}</td>
+      <td>{{ $data->keterangan }}</td>
+      <td>{{ $data->alasan}}</td>
     </tr>
+    @endforeach
   </tbody>
 </table>
 </div>

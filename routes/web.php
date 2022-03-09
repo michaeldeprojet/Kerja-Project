@@ -3,6 +3,7 @@
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,7 +144,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/izinsiswa', 'App\Http\Controllers\SiswaController@izin');
 
         // Daftar Hadir
-        Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\SiswaController@daftarkehadiran');
+        Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\presensiController@index');
 
         // Presensi
         Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');
