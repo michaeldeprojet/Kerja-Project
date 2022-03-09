@@ -140,10 +140,10 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');
 
         // Jurnal PKL
-        Route::get('/Jurnalpklsiswa', 'App\Http\Controllers\SiswaController@jurnalpkl');
+        Route::get('/Jurnalpklsiswa', 'App\Http\Controllers\JurnalController@index');
 
         // Dashboard Jurnal
-        Route::get('/Jurnalsiswa', 'App\Http\Controllers\SiswaController@jurnal');
+        Route::get('/Jurnalsiswa', 'App\Http\Controllers\JurnalController@create');
 
         // Laporan PKL
         Route::get('/laporansiswa', 'App\Http\Controllers\SiswaController@lapor');

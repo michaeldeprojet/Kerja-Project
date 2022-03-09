@@ -20,20 +20,20 @@
     <tr style="background-color:#595CB4; color:white;">
       <td scope="col">Nama Peserta</td>
       <td scope="col">Nis</td>
-      <td scope="col">Kompetisi Keahlian</td>
       <td scope="col">Pembimbing</td>
       <td scope="col">Tanggal</td>
       <td scope="col">Minggu Ke-</td>
     </tr>
   <tbody>
+  @foreach($datas as $data)
     <tr style="background-color:white;">
-      <th scope="row">Mark</th>
-      <td>11907097</td>
-      <td>Multimedia</td>
-      <td>Pak Joko</td>
-      <td>12 Februari 2022</td>
-      <td>3</td>
+      <td scope="row">{{$data->nama_siswa}}</td>
+      <td>{{$data->nis}}</td>
+      <td>{{$data->pembimbing}}</td>
+      <td>{{$data->tgl_pkl}}</td>
+      <td>{{$data->minggu}}</td>
     </tr>
+    @endforeach
   </tbody>
 </table>
 </div>
