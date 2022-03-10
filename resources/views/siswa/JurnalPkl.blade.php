@@ -19,21 +19,32 @@
   <table class="table mt-4 col-11 text-center" style="margin-left:4%;">
     <tr style="background-color:#595CB4; color:white;">
       <td scope="col">Nama Peserta</td>
-      <td scope="col">Nis</td>
-      <td scope="col">Kompetisi Keahlian</td>
-      <td scope="col">Pembimbing</td>
       <td scope="col">Tanggal</td>
+      <td scope="col">Pembimbing</td>
+      <td scope="col">Nama Perusahaan</td>
+      <td scope="col">Divisi</td>
       <td scope="col">Minggu Ke-</td>
+      <td scope="col">Kegiatan</td>
+      <td scope="col">Hasil</td>
+
     </tr>
+
   <tbody>
+    @foreach ($datas as $data)
+
     <tr style="background-color:white;">
-      <th scope="row">Mark</th>
-      <td>11907097</td>
-      <td>Multimedia</td>
-      <td>Pak Joko</td>
-      <td>12 Februari 2022</td>
-      <td>3</td>
+      <td>{{ $data->nama_peserta }}</td>
+      <td>{{ $data->tanggal }}</td>
+      <td>{{ $data->pembimbing }}</td>
+      <td>{{ $data->nama_perusahaan }}</td>
+      <td>{{ $data->divisi }}</td>
+      <td>{{ $data->minggu_ke }}</td>
+      <td>{{ $data->kegiatan }}</td>
+      <td>{{ $data->hasil }}</td>
     </tr>
+    @endforeach
+
+    
   </tbody>
 </table>
 </div>

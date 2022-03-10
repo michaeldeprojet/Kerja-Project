@@ -3,6 +3,7 @@
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\JurnalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,7 +140,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');
 
         // Jurnal PKL
-        Route::get('/Jurnalpklsiswa', 'App\Http\Controllers\SiswaController@jurnalpkl');
+        Route::get('/Jurnalpklsiswa', 'App\Http\Controllers\JurnalController@index');
 
         // Dashboard Jurnal
         Route::get('/Jurnalsiswa', 'App\Http\Controllers\SiswaController@jurnal');

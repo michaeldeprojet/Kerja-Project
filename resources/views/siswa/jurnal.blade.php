@@ -4,51 +4,73 @@
 
 <div class="container-fluid">
   <div class="row mb-2">
-    <div class="col-sm-6">
-      <h1 style="color:#34365B; margin-left:10%;"><b>Jurnal PKL</b></h1>
+    <div class="col-sm-6 ml-5">
+      <h1 style="color:#34365B;"><b> Jurnal PKL</b></h1>
     </div>
-      <div class="col-sm-6">
-      </div>
-
-      <!-- Nama Peserta -->
-      <p class="mt-4" style="margin-left:5%;">Nama Peserta</p>
-      <!-- NIS -->
-      <p style="margin-left:36.8%;" class="mt-4">Nis</p>
-
   </div>
-<div>
-    <div>
-        <input style="margin-left:4%;" class="form-control col-5" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:48%; margin-top:-3.6%;" class="form-control col-3" type="text" placeholder="No" aria-label="default input example">   
+</div>
+
+<form action="/" method="POST">
+  <div class="row mx-5 my-3">
+    <div class="form-group col-8">
+        <label for="judul" class="form-label">Nama Peserta</label>
+        <input type="text" name="judul" class="form-control" placeholder="">
     </div>
-        <p class="mt-4" style="margin-left:4%;">Tanggal / Waktu</p>
-        <p style="margin-left:40%; margin-top:-3.5%;">Nama Perusahaan</p>
 
-        <input style="margin-left:4%;" class="form-control col-4" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:40%; margin-top:-3.6%;" class="form-control col-4" type="text" placeholder="No" aria-label="default input example">
+    <div class="form-group col-4">
+        <label for="noisbn" class="form-label">NIS</label>
+        <input type="text" name="noisbn" class="form-control" placeholder="">
+    </div>
+  </div>
 
-        <p class="mt-4" style="margin-left:4%;">Pembimbing</p>
-        <p style="margin-left:32%; margin-top:-3.5%;">Divisi Kerja</p>
-        <p style="margin-left:60%; margin-top:-3.5%;">Minggu Ke-</p>
+  <div class="row mx-5 my-3">
+    <div class="form-group col-4">
+        <label for="judul" class="form-label">Tanggal / Waktu</label>
+        <input type="date" name="judul" class="form-control" placeholder="">
+    </div>
 
-        <input style="margin-left:4%;" class="form-control col-3" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:32%; margin-top:-3.6%;" class="form-control col-3" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:60%; margin-top:-3.6%; width:147px;" class="form-control" type="text" placeholder="No" aria-label="default input example">
+    <div class="form-group col-8">
+        <label for="noisbn" class="form-label">Nama Perusahaan</label>
+        <input type="text" name="noisbn" class="form-control" placeholder="">
+    </div>
+  </div>
 
-         <!-- Alasan -->
-         <p class="mt-4" style="margin-left:4%;">Kegiatan yang dilakukan</p>
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="margin-left:4%; width:753px;"></textarea>
-        </div>
+  <div class="row mx-5 my-3">
+    <div class="form-group col-5">
+        <label for="judul" class="form-label">Pembimbing</label>
+        <input type="text" name="judul" class="form-control" placeholder="">
+    </div>
 
-         <p class="mt-4" style="margin-left:4%;">Hasil yang Dicapai</p>
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="margin-left:4%; width:753px;"></textarea>
-          </div>
-          
-        <div style="margin-top:3%; margin-left:4%;">
-          <button type="button" class="btn btn-success col-2">Submit</button>
-          <button type="button" class="btn btn-warning ml-3 col-2">Reset</button>
-        </div>
+    <div class="form-group col-5">
+        <label for="noisbn" class="form-label">Divisi Kerja</label>
+        <input type="text" name="noisbn" class="form-control" placeholder="">
+    </div>
+    <div class="form-group col-2">
+      <label for="noisbn" class="form-label">Minggu ke</label>
+      <input type="number" name="noisbn" class="form-control" placeholder="">
+    </div>
+  </div>
+
+  <div class="row mx-5 my-3">
+    <div class="form-group col-12">
+        <label for="judul" class="form-label">Kegiatan Yang Dilakukan</label>
+        <textarea type="text" name="judul" class="form-control" placeholder=""></textarea>
+    </div>
+  </div>
+
+  <div class="row mx-5 my-3">
+    <div class="form-group col-12">
+        <label for="judul" class="form-label">Hasil Yang Dicapai</label>
+        <textarea type="text" name="judul" class="form-control" placeholder=""></textarea>
+    </div>
+  </div>
+
+  <div class="row ml-5 my-3">
+    <button type="button" class="btn btn-success col-1 ml-2">Submit</button>
+    <button type="button" class="btn btn-warning col-1 ml-3">Reset</button>
+    <a href="" class="btn btn-danger col-1 ml-3">Back</a>
+  </div>
+
+</form>
 
 @endsection 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use App\Models\JurnalPkl;
 
 class SiswaController extends Controller
 {
@@ -32,7 +33,8 @@ class SiswaController extends Controller
     }
     public function jurnalpkl()
     {
-        return view ('siswa.jurnalpkl');
+        $data = JurnalPkl::all();
+        return view ('siswa.jurnalpkl',compact('data'));
     }
     public function jurnal()
     {

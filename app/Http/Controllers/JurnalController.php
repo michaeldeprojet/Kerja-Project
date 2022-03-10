@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\JurnalPkl;
 
-class DepniController extends Controller
+class JurnalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class DepniController extends Controller
      */
     public function index()
     {
-        //
+
+        $datas = JurnalPKL::all();
+        return view ('siswa.JurnalPKL')
+            ->with('datas', $datas);
     }
 
     /**
