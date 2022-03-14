@@ -15,13 +15,13 @@ class CreateTbSiswa extends Migration
     {
         Schema::create('tb_siswa', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('jurusan_id');
             $table->string('nama')->nullable();
             $table->integer('nis')->nullable();
             $table->integer('nisn')->nullable();
             $table->string('email')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tanggal_lahir')->nullable();
-            $table->string('kompetensi_keahlian')->nullable();
             $table->string('status_pkl')->nullable();
             $table->string('jenis_kelamin')->nullable();
             $table->timestamps();

@@ -73,6 +73,9 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::group(['middleware' => ['role:ADMIN']], function(){
     // Halaman Admin //
+
+        //Download file
+        Route::get('/file-download', [DataSiswaController::class, 'downloadFile'])->name('file.download.index');
         // Dashboard Admin //
         Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
 

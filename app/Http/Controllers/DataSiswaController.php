@@ -7,6 +7,7 @@ use App\models\Pegawai;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\DataSiswaImport;
+use App\Models\Jurusan;
 
 class DataSiswaController extends Controller
 {
@@ -17,8 +18,10 @@ class DataSiswaController extends Controller
      */
     public function index()
     {
-        $siswa=DataSiswa::all();
-        return view ('admin.datasiswa')->with('siswa', $siswa);
+        $siswa= DataSiswa::all();
+        $jurusan = Jurusan::all();
+        return view ('admin.datasiswa',compact('siswa','jurusan'));
+
     }
 
     /**
@@ -39,7 +42,9 @@ class DataSiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DataSiswa::updateOrCreate(['id' => $request->id],
+        ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
+        return response()->json();
     }
 
     /**
@@ -48,9 +53,10 @@ class DataSiswaController extends Controller
      * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function show(DataSiswa $DataSiswa)
+    public function show(DataSiswa $DataSiswa,$id )
     {
-        //
+        $data = DataSiswa::find($id);
+        return response()->json($data);
     }
 
     /**
@@ -92,5 +98,20 @@ class DataSiswaController extends Controller
     {
         Excel::import(new DataSiswaImport, $request->file('file'));
         return redirect()->back();
+    }
+
+    public function downloadFile()
+    {
+    	$filePath = public_path("template/Template Data Siswa.xlsx");
+    	$headers = ['Content-Type: application/xlsx'];
+        $fileName = 'Template Data Siswa.xlsx';
+        
+        if (file_exists($filePath)) {
+            return response()->download($filePath, $fileName, $headers);
+        } else {
+            echo('File not found.');
+        }
+
+    	
     }
 }
