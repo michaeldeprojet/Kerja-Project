@@ -9,12 +9,12 @@
     </div>
   </div>
 
-  <a href="/Jurnalsiswa">
+  <a href="/Jurnalpkl/create">
   <img src="../img/folder.png" style="width: 20px; height:20px ">
   <button style="margin-left:2%;" type="button" class="btn btn-success mt-3 col-2">
     Jurnal</button>
   </a>
-
+  
   <!-- table -->
   <table class="table mt-4 col-11 text-center" style="margin-left:4%;">
     <tr style="background-color:#595CB4; color:white;">
@@ -25,7 +25,7 @@
       <td scope="col">Minggu Ke-</td>
     </tr>
   <tbody>
-  @foreach($datas as $data)
+     @foreach ( $dtjurnal as $data )
     <tr style="background-color:white;">
       <td scope="row">{{$data->nama_siswa}}</td>
       <td>{{$data->nis}}</td>

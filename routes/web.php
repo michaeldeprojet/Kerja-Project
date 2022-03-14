@@ -3,7 +3,7 @@
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\JurnalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -135,15 +135,12 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Daftar Hadir
         Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\presensiController@index');
-
-        // Presensi
-        Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');
+        Route::get('/Presensisiswa', 'App\Http\Controllers\presensiController@create');
 
         // Jurnal PKL
-        Route::get('/Jurnalpklsiswa', 'App\Http\Controllers\JurnalController@index');
-
-        // Dashboard Jurnal
-        Route::get('/Jurnalsiswa', 'App\Http\Controllers\JurnalController@create');
+        Route::get('/Jurnalpkl', 'App\Http\Controllers\JurnalController@index');
+        Route::get('/Jurnalpkl/create', 'App\Http\Controllers\JurnalController@create');
+        Route::post('/Jurnalpkl/store', 'App\Http\Controllers\JurnalController@store');
 
         // Laporan PKL
         Route::get('/laporansiswa', 'App\Http\Controllers\SiswaController@lapor');
