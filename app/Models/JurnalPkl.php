@@ -10,6 +10,7 @@ class JurnalPkl extends Model
     protected $table = 'tb_jurnal_pkl';
     protected $fillable = [
         'id_siswa',
+        'nis',
         'tgl_pkl',
         'id_pembimbing',
         'nama_perusahaan',

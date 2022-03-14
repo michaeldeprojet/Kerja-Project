@@ -3,6 +3,8 @@
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\presensiController;
 use App\Http\Controllers\JurnalController;
 
 /*
@@ -17,7 +19,7 @@ use App\Http\Controllers\JurnalController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login.index');
 });
 
 // Login //
@@ -29,8 +31,12 @@ Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 Route::group(['middleware' => ['auth']], function(){
 
     // Surat permohonan 1//
-    Route::get('/suratpermohonan', 'App\Http\Controllers\SuratController@suratpermohonan');
     Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+    Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
+
+    // Pdf Penilaian //
+    Route::get('generate-nilai-pkl', [PDFController::class, 'generatenilaipkl']);
+
 
     Route::group(['middleware' => ['role:KAKOMLI']], function(){
     // Halaman Kakomli //
@@ -70,6 +76,12 @@ Route::group(['middleware' => ['auth']], function(){
     // Halaman Admin //
         // Dashboard Admin //
         Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
+
+        // Data Siswa //
+        Route::get('/datasiswa', 'App\Http\Controllers\AdminController@datasiswa');
+
+        // Input Siswa //
+        Route::get('/inputsiswa', 'App\Http\Controllers\AdminController@inputsiswa');
 
         // Profile Admin //
         Route::get('/profileadmin', 'App\Http\Controllers\AdminController@profile');
@@ -134,7 +146,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/izinsiswa', 'App\Http\Controllers\SiswaController@izin');
 
         // Daftar Hadir
-        Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\SiswaController@daftarkehadiran');
+        Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\presensiController@index');
 
         // Presensi
         Route::get('/Presensisiswa', 'App\Http\Controllers\SiswaController@presensi');

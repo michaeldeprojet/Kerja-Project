@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\JurnalPkl;
+use App\Models\Presensi;
 
-class JurnalController extends Controller
+class presensiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class JurnalController extends Controller
      */
     public function index()
     {
-        $datas=JurnalPkl::all();
-        return view('siswa.JurnalPkl')->with('datas', $datas);
+        $datas=Presensi::all();
+        return view('siswa.daftarkehadiran')->with('datas', $datas);
     }
 
     /**
@@ -25,7 +25,7 @@ class JurnalController extends Controller
      */
     public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -36,19 +36,7 @@ class JurnalController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        JurnalPkl::create([
-            'nama_siswa' => $request->nama,
-            'nis' => $request->nis,
-            'tgl_pkl' => $request->tgl,
-            'perusahaan' => $request->perusahaan,
-            'pembimbing' => $request->pembimbing,
-            'divisi' => $request->divisi,
-            'minggu' => $request->minggu,
-            'kegiatan' => $request->kegiatan,
-            'hasil' => $request->hasil
-        ]);
-        return view('siswa.JurnalPkl');
+        //
     }
 
     /**

@@ -19,6 +19,7 @@
   <table class="table mt-4 col-11 text-center" style="margin-left:4%;">
     <tr style="background-color:#595CB4; color:white;">
       <td scope="col">Nama Peserta</td>
+      <td scope="col">NIS</td>
       <td scope="col">Tanggal</td>
       <td scope="col">Pembimbing</td>
       <td scope="col">Nama Perusahaan</td>
@@ -33,12 +34,13 @@
     @foreach ($datas as $data)
 
     <tr style="background-color:white;">
-      <td>{{ $data->nama_peserta }}</td>
-      <td>{{ $data->tanggal }}</td>
+      <td>{{ $data->nama }}</td>
+      <td>{{ $data->nis }}</td>
+      <td>{{ $data->tgl_pkl }}</td>
       <td>{{ $data->pembimbing }}</td>
       <td>{{ $data->nama_perusahaan }}</td>
       <td>{{ $data->divisi }}</td>
-      <td>{{ $data->minggu_ke }}</td>
+      <td>{{ $data->minggu }}</td>
       <td>{{ $data->kegiatan }}</td>
       <td>{{ $data->hasil }}</td>
     </tr>

@@ -12,6 +12,16 @@ class AdminController extends Controller
         return view ('admin.dashboard');
     }
 
+    public function datasiswa()
+    {
+        return view ('admin.datasiswa');
+    }
+
+    public function inputsiswa()
+    {
+        return view ('admin.inputsiswa');
+    }
+
     public function profile()
     {
         return view ('admin.profile');

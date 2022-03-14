@@ -16,6 +16,7 @@ class CreateTbJurnalPkl extends Migration
         Schema::create('tb_jurnal_pkl', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_siswa')->unsigned();
+            $table->integer('nis');
             $table->date('tgl_pkl');
             $table->bigInteger('id_pembimbing')->unsigned();
             $table->string('nama_perusahaan');

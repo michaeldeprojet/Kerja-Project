@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Surat Permohonan 1 Siswa</title>
+    <title>Surat Permohonan Kelompok</title>
     <style>
         body{
             margin-left: 60px;
@@ -30,27 +30,9 @@
     <p style="text-align: justify">dalam rangka pelaksanaan Pendidikan Vokasi terkait dengan program <i>link and match</i> 
     guna meningkatkan kompetensi, peserta didik diwajibkan untuk melaksanakan Praktik
     Kerja Lapangan (PKL). Oleh karena itu kami mengajukan permohonan kepada Bapak/ibu
-    Pimpinan Perusahaan agar dapat menerima peserta didik kami sebagai berikut :</p>
+    Pimpinan Perusahaan agar dapat menerima peserta didik kami sebagai berikut (terlampir);</p>
 
-    @foreach ($siswa as $item)
-        <table border="0" style="margin-left: 60px">
-            <tr>
-                <td>Nama</td>
-                <td>:</td>
-                <td>{{$item ['nama']}} </td>
-            </tr>
-            <tr>
-                <td>Nis</td>
-                <td>:</td>
-                <td>{{$item ['nis']}}</td>
-            </tr>
-            <tr>
-                <td>Kelas/Jurusan</td>
-                <td>:</td>
-                <td>{{$item ['jurusan']}}</td>
-            </tr>
-        </table>
-    @endforeach
+    
 
     <p style="text-align: justify">Demikian surat permohonan ini kami ajukan, atas perhatian Bapak/Ibu, kami
     mengucapkan terima kasih.</p>
@@ -67,5 +49,26 @@
         <br>
     <p style="float: right;"><b>Iin Mulyani, S.Si.</b></p>
     
+    <form style="margin-top: 60%;">
+        <table border="1" style="margin-left: 20px;">
+            <tr>
+                <td>No</td>
+                <td>Nama</td>
+                <td>Kompetensi Keahlian</td>
+                <td>Kelas</td>
+            </tr>
+            @foreach ($siswa as $item)
+            <tr>
+                <td>{{$item ['no']}}</td>
+                <td>{{$item ['nama']}}</td>
+                <td>{{$item ['kompetensikeahlian']}}</td>
+                <td>{{$item ['kelas']}}</td>
+            </tr>
+            @endforeach
+        </table>
+    </form>
+
+
 </body>
+
 </html>
