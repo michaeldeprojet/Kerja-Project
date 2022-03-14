@@ -9,46 +9,41 @@
     </div>
       <div class="col-sm-6">
       </div>
-
-      <!-- Nama Peserta -->
-      <p class="mt-4" style="margin-left:5%;">Nama Peserta</p>
-      <!-- NIS -->
-      <p style="margin-left:36.8%;" class="mt-4">Nis</p>
-
   </div>
 <div>
-    <div>
-        <input style="margin-left:4%;" class="form-control col-5" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:48%; margin-top:-3.6%;" class="form-control col-3" type="text" placeholder="No" aria-label="default input example">   
-    </div>
-        <p class="mt-4" style="margin-left:4%;">Tanggal / Waktu</p>
-        <p style="margin-left:40%; margin-top:-3.5%;">Nama Perusahaan</p>
+    <form action="/Jurnalpkl/store" method="POST">
+      @csrf
+      <div class="form-group">
+        <input name="nama" type="text" id="nama" class="form-control col-5 mt-4" placeholder="Nama Siswa" style="margin-left:5%;">
+      </div>
+      <div class="form-group">
+        <input name="nis" type="text" id="nama" class="form-control col-5" placeholder="NIS" style="margin-left:50%; margin-top:-5%;">
+      </div>
+      <div class="form-group">
+        <input name="tgl" type="date" id="tgl" class="form-control col-5"  style="margin-left:5%;">
+      </div>
+      <div class="form-group">
+        <input name="perusahaan" type="text" id="perusahaan" class="form-control col-5" placeholder="Nama Perusahaan" style="margin-left:50%; margin-top:-5%;">
+      </div>
+      <div class="form-group">
+        <input name="pembimbing" type="text" id="pembimbing" class="form-control col-3 mt-2" placeholder="Nama Pembimbing" style="margin-left:5%;">
+      </div>
+      <div class="form-group">
+        <input name="divisi" type="text" id="divisi" class="form-control col-4" placeholder="Divisi" style="margin-left:32%; margin-top:-5%;">
+      </div>
+      <div class="form-group">
+        <input name="minggu" type="text" id="minggu" class="form-control col-3" placeholder="Minggu ke-" style="margin-left:67%; margin-top:-5%;">
+      </div>
+      <div class="form-group">
+        <textarea name="kegiatan" id="kegiatabn" class="form-control col-10" placeholder="kegiatan yang dilakukan" style="margin-left:5%;"></textarea>
+      </div>
+      <div class="form-group">
+        <textarea name="hasil" id="hasil" class="form-control col-10" placeholder="hasil" style="margin-left:5%;"></textarea>
+      </div>
 
-        <input style="margin-left:4%;" class="form-control col-4" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:40%; margin-top:-3.6%;" class="form-control col-4" type="text" placeholder="No" aria-label="default input example">
-
-        <p class="mt-4" style="margin-left:4%;">Pembimbing</p>
-        <p style="margin-left:32%; margin-top:-3.5%;">Divisi Kerja</p>
-        <p style="margin-left:60%; margin-top:-3.5%;">Minggu Ke-</p>
-
-        <input style="margin-left:4%;" class="form-control col-3" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:32%; margin-top:-3.6%;" class="form-control col-3" type="text" placeholder="No" aria-label="default input example">
-        <input style="margin-left:60%; margin-top:-3.6%; width:147px;" class="form-control" type="text" placeholder="No" aria-label="default input example">
-
-         <!-- Alasan -->
-         <p class="mt-4" style="margin-left:4%;">Kegiatan yang dilakukan</p>
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="margin-left:4%; width:753px;"></textarea>
-        </div>
-
-         <p class="mt-4" style="margin-left:4%;">Hasil yang Dicapai</p>
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="margin-left:4%; width:753px;"></textarea>
-          </div>
-          
-        <div style="margin-top:3%; margin-left:4%;">
-          <button type="button" class="btn btn-success col-2">Submit</button>
-          <button type="button" class="btn btn-warning ml-3 col-2">Reset</button>
-        </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success col-2" style="margin-left:5%;">Submit</button>
+      </div>
+</form>
 
 @endsection 
