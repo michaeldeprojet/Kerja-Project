@@ -14,8 +14,8 @@ class JurnalController extends Controller
      */
     public function index()
     {
-        $datas=JurnalPkl::all();
-        return view('siswa.JurnalPkl')->with('datas', $datas);
+        $dtjurnal = JurnalPkl::all();
+        return view('siswa.JurnalPkl', compact('dtjurnal'));
     }
 
     /**
@@ -25,7 +25,7 @@ class JurnalController extends Controller
      */
     public function create()
     {
-        // 
+        return view ('siswa.jurnal');
     }
 
     /**
@@ -48,7 +48,7 @@ class JurnalController extends Controller
             'kegiatan' => $request->kegiatan,
             'hasil' => $request->hasil
         ]);
-        return view('siswa.JurnalPkl');
+        return redirect('/Jurnalpkl');
     }
 
     /**

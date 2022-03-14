@@ -7,19 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class JurnalPkl extends Model
 {
-    protected $table = 'tb_jurnal_pkl';
+    protected $table = 'jurnal_pkl';
     protected $fillable = [
-        'id_siswa',
-        'nis',
+        'nama_siswa',
         'tgl_pkl',
-        'id_pembimbing',
-        'nama_perusahaan',
+        'pembimbing',
+        'nis',
+        'perusahaan',
         'divisi',
         'minggu',
         'kegiatan',
-        'hasil',
+        'hasil'
     ];
 
     use HasFactory;
-
 }

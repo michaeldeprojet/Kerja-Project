@@ -9,17 +9,22 @@
     </div>
   </div>
 
-  <a href="/Jurnalsiswa">
+  <a href="/Jurnalpkl/create">
   <img src="../img/folder.png" style="width: 20px; height:20px ">
   <button style="margin-left:2%;" type="button" class="btn btn-success mt-3 col-2">
     Jurnal</button>
   </a>
-
+  
   <!-- table -->
   <table class="table mt-4 col-11 text-center" style="margin-left:4%;">
     <tr style="background-color:#595CB4; color:white;">
       <td scope="col">Nama Peserta</td>
+<<<<<<< HEAD
       <td scope="col">NIS</td>
+=======
+      <td scope="col">Nis</td>
+      <td scope="col">Pembimbing</td>
+>>>>>>> d3064abfd53e8332a9e7ec3351c1e86308a7ae03
       <td scope="col">Tanggal</td>
       <td scope="col">Pembimbing</td>
       <td scope="col">Nama Perusahaan</td>
@@ -31,6 +36,7 @@
     </tr>
 
   <tbody>
+<<<<<<< HEAD
     @foreach ($datas as $data)
 
     <tr style="background-color:white;">
@@ -47,6 +53,17 @@
     @endforeach
 
     
+=======
+     @foreach ( $dtjurnal as $data )
+    <tr style="background-color:white;">
+      <td scope="row">{{$data->nama_siswa}}</td>
+      <td>{{$data->nis}}</td>
+      <td>{{$data->pembimbing}}</td>
+      <td>{{$data->tgl_pkl}}</td>
+      <td>{{$data->minggu}}</td>
+    </tr>
+    @endforeach
+>>>>>>> d3064abfd53e8332a9e7ec3351c1e86308a7ae03
   </tbody>
 </table>
 </div>

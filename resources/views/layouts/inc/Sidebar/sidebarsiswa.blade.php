@@ -53,7 +53,7 @@
 
             <!-- Jurnal PKL -->
             <li class="nav-item">
-                <a href="/Jurnalpklsiswa" class="nav-link">
+                <a href="/Jurnalpkl" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/rekapan.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Jurnal PKL
