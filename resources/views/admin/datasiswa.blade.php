@@ -23,7 +23,6 @@
                         <th colspan="5">Aksi</th>
                     </tr>
 
-
                     @foreach ($siswa as $item)
                     <tr>
                         <td>{{ $item->nama }}</td>
@@ -32,13 +31,16 @@
                         <td>{{ $item->kompetensi_keahlian }}</td>
                         <td>
 
-                          <form action="/delete/{{ $siswa->id }}" method="POST">
+                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-warning">Edit</button>
+
+                          {{-- <form action="/delete/{{ $item->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="button" class="btn btn-danger">Delete</button>
                           </form>
                           
-                          <button type="button" class="btn btn-warning">Edit</button>
+                          <button type="button" class="btn btn-warning">Edit</button> --}}
                         </td>
                 
                     </tr>
