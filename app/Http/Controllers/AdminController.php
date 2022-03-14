@@ -15,19 +15,6 @@ class AdminController extends Controller
         return view ('admin.dashboard');
     }
 
-    public function datasiswa()
-    {
-        $siswa=Pegawai::all();
-        return view ('admin.datasiswa')->with('siswa', $siswa);
-    }
-
-    public function importsiswa(Request $request)
-    {
-        Excel::import(new PegawaiImport, $request->file('file'));
-        return redirect()->back();
-    }
-
-
     public function inputsiswa()
     {
         return view ('admin.inputsiswa');

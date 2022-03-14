@@ -43,6 +43,6 @@ class DatabaseSeeder extends Seeder
             Login::create($user);
         }
 
-        JurnalPkl::factory()->count(10)->create();
+        //JurnalPkl::factory()->count(10)->create();
     }
 }

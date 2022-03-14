@@ -30,19 +30,13 @@
                         <td>{{ $item->nisn }}</td>
                         <td>{{ $item->kompetensi_keahlian }}</td>
                         <td>
-
-                        <button type="button" class="btn btn-danger">Delete</button>
-                        <button type="button" class="btn btn-warning">Edit</button>
-
-                          {{-- <form action="/delete/{{ $item->id }}" method="POST">
+                        <form action="{{url('/datasiswa/'.$item->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
                           </form>
-                          
-                          <button type="button" class="btn btn-warning">Edit</button> --}}
+                          <button type="button" class="btn btn-warning">Edit</button>
                         </td>
-                
                     </tr>
                     @endforeach
 

@@ -15,15 +15,15 @@ class CreateTbSiswa extends Migration
     {
         Schema::create('tb_siswa', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
-            $table->integer('nis');
-            $table->integer('nisn');
-            $table->string('email');
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->string('kompetensi_keahlian');
-            $table->string('status_pkl');
-            $table->string('jenis_kelamin');
+            $table->string('nama')->nullable();
+            $table->integer('nis')->nullable();
+            $table->integer('nisn')->nullable();
+            $table->string('email')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('kompetensi_keahlian')->nullable();
+            $table->string('status_pkl')->nullable();
+            $table->string('jenis_kelamin')->nullable();
             $table->timestamps();
         });
     }
