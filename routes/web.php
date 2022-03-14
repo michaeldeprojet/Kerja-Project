@@ -81,6 +81,9 @@ Route::group(['middleware' => ['auth']], function(){
         // Input Siswa //
         Route::get('/inputsiswa', 'App\Http\Controllers\AdminController@inputsiswa');
 
+        // Input Siswa //
+        Route::post('/importsiswa', 'App\Http\Controllers\AdminController@importsiswa');
+
         // Profile Admin //
         Route::get('/profileadmin', 'App\Http\Controllers\AdminController@profile');
 

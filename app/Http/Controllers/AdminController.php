@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PegawaiImport;
+use App\Models\Pegawai;
 
 class AdminController extends Controller
 {
@@ -14,8 +17,16 @@ class AdminController extends Controller
 
     public function datasiswa()
     {
-        return view ('admin.datasiswa');
+        $siswa=Pegawai::all();
+        return view ('admin.datasiswa')->with('siswa', $siswa);
     }
+
+    public function importsiswa(Request $request)
+    {
+        Excel::import(new PegawaiImport, $request->file('file'));
+        return redirect()->back();
+    }
+
 
     public function inputsiswa()
     {

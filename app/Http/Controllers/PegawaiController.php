@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pegawai;
 
-class TbsiswaController extends Controller
+class PegawaiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +14,12 @@ class TbsiswaController extends Controller
      */
     public function index()
     {
-        $DataSiswa = DataSiswa::all();
-        return view('admin.datasiswa')
-    }
+        $pegawai = Pegawai::all();
 
+        return view('admin.datasiswa')->with('data', $pegawai );
+    }
+ 
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -33,9 +36,32 @@ class TbsiswaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+
+        //membuat validasi, jika tidak diisi maka akan menampilkan pesan error
+        $this->validate($request, [
+            'file'          => 'required',
+            'keterangan'    => 'required'
+        ]);
+
+        //mengambil data file yang diupload
+        $file           = $request->file('file');
+        //mengambil nama file
+        $nama_file      = $file->getClientOriginalName();
+
+        //memindahkan file ke folder tujuan
+        $file->move('file_upload',$file->getClientOriginalName());
+
+
+        $upload = new File;
+        $upload->file       = $nama_file;
+        $upload->keterangan = $request->input('keterangan');
+
+        //menyimpan data ke database
+        $upload->save();
+
+        //kembali ke halaman sebelumnya
+        return back();
     }
 
     /**
@@ -78,8 +104,8 @@ class TbsiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        
     }
 }
