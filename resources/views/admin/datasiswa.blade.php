@@ -13,7 +13,7 @@
   <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Siswa</a>
-            <a href="#" class="btn btn-warning">Download Template Excel</a>
+            <a href="https://docs.google.com/spreadsheets/d/1ulrfX110zRo0pmlBAVH5MoQBgW_1vfUD/edit?usp=sharing&ouid=103546124539139681987&rtpof=true&sd=true" class="btn btn-warning">Download Template Excel</a>
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
@@ -82,12 +82,11 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Send message</button>
+            <button type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
     </div>
-    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
   
     s
   <!-- Modal -->
