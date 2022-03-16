@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class JurnalPkl extends Model
 {
-    protected $table = 'jurnal_pkl';
+    protected $table = 'tb_jurnal_pkl';
     protected $fillable = [
-        'nama_siswa',
+        'id_siswa',
+        'nis',
         'tgl_pkl',
         'pembimbing',
         'nis',

@@ -151,8 +151,8 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/izinsiswa', 'App\Http\Controllers\SiswaController@izin');
 
         // Daftar Hadir
-        Route::get('/DaftarHadirsiswa', 'App\Http\Controllers\presensiController@index');
-        Route::get('/Presensisiswa', 'App\Http\Controllers\presensiController@create');
+        Route::resource('/presensi', PresensiController::class);
+        
 
         // Jurnal PKL
         Route::get('/Jurnalpkl', 'App\Http\Controllers\JurnalController@index');

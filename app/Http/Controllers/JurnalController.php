@@ -46,7 +46,7 @@ class JurnalController extends Controller
             'divisi' => $request->divisi,
             'minggu' => $request->minggu,
             'kegiatan' => $request->kegiatan,
-            'hasil' => $request->hasil
+            'hasil' => $request->hasil,
         ]);
         return redirect('/Jurnalpkl');
     }

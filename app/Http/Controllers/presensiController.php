@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Presensi;
+use App\Models\DataSiswa;
 
-class presensiController extends Controller
+class PresensiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class presensiController extends Controller
      */
     public function index()
     {
-        $datas=Presensi::all();
-        return view('siswa.daftarkehadiran')->with('datas', $datas);
+        $datas= Presensi::orderBy("tgl_pkl","DESC")->get();
+        return view('siswa.daftarkehadiran', compact('datas'));
     }
 
     /**
@@ -25,7 +26,8 @@ class presensiController extends Controller
      */
     public function create()
     {
-        //
+        $presensi = DataSiswa::all();
+        return view('siswa.presensi', compact('presensi'));
     }
 
     /**
@@ -36,7 +38,19 @@ class presensiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        Presensi::create([
+            'id_siswa' => $request->id_siswa,
+            'nis' => $request->nis,
+            'tgl_pkl' => $request->tgl_pkl,
+            'nama_perusahaan' => $request->nama_perusahaan,
+            'kompetensi' => $request->kompetensi,
+            'keterangan' => $request->keterangan,
+            'alasan' => $request->alasan,
+           
+        ]);
+
+        return redirect('presensi');
     }
 
     /**

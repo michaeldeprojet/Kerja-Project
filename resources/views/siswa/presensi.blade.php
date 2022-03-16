@@ -3,35 +3,79 @@
 @section('content-header')
 
 <div class="container-fluid">
-  <div class="row mb-2">
+  <div class="row mb-2 ml-5">
     <div class="col-sm-6">
-      <h1 style="color:#34365B; margin-left:10%;"><b>Daftar Hadir</b></h1>
+      <h1 style="color:#34365B;"><b>Daftar Kehadiran<b></h1>
     </div>
-      <div class="col-sm-6">
-      </div>
   </div>
 <div>
-          <div class="form-group">
-            <input name="nama" type="text" id="nama" class="form-control col-5 mt-4" placeholder="Nama Siswa" style="margin-left:5%;">
-          </div>
-          <div class="form-group">
-            <input name="nis" type="text" id="nama" class="form-control col-5" placeholder="NIS" style="margin-left:50%; margin-top:-5%;">
-          </div>
-          <div class="form-group">
-            <input name="tgl" type="date" id="tgl" class="form-control col-5"  style="margin-left:5%;">
-          </div>
-          <div class="form-group">
-            <input name="perusahaan" type="text" id="perusahaan" class="form-control col-5" placeholder="Nama Perusahaan" style="margin-left:50%; margin-top:-5%;">
-          </div>
-          <div class="form-group">
-            <input name="kompetensi" type="text" id="kompetensi" class="form-control col-10 mt-4" placeholder="Kompetensi Keahlian" style="margin-left:5%;">
-          </div>
-          <div class="form-group">
-            <textarea name="hasil" id="hasil" class="form-control col-10" placeholder="hasil" style="margin-left:5%;"></textarea>
+  
+  <form action="{{ route('presensi.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+        <div class="row mx-5 mt-3">
+            <div class="form-group col-8">
+              <label for="position-option">Nama Peserta Didik</label>
+              <select class="form-control" name="id_siswa">
+                <option selected>Nama Peserta </option>
+                  @foreach ($presensi as $item)
+                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                  @endforeach
+              </select>
+            </div>
+
+            <div class="form-group col-4">
+                <label for="kelas" class="form-label">NIS</label>
+                <input type="number" name="nis" class="form-control" placeholder="NIS">
+            </div>
+        </div>
+
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-4">
+              <label for="judul" class="form-label">Tanggal / Waktu</label>
+              <input type="date" name="tgl_pkl" class="form-control" placeholder="">
           </div>
 
-          <div class="form-group">
-            <button type="submit" class="btn btn-success col-2" style="margin-left:5%;">Submit</button>
+          <div class="form-group col-8">
+              <label for="kelas" class="form-label">Nama Perusahaan</label>
+              <input type="text" name="nama_perusahaan" class="form-control" placeholder="Nama Perusahaan...">
+          </div>
+        </div>
+
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-12">
+              <label for="kelas" class="form-label">Kompetensi Keahlian</label>
+              <input type="text" name="kompetensi" class="form-control" placeholder="Kompetensi Keahlian">
+          </div>
+        </div>
+
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-12">
+            <label for="keterangan" class="form-label">Keterangan</label>
+          </div>
+          <div class="form-check form-check-inline col-4 ml-2">
+            <input class="form-check-input" type="radio" name="keterangan" id="inlineRadio1" value="Hadir">
+            <label class="form-check-label" for="inlineRadio1">Hadir</label>
+          </div>
+          <div class="form-check form-check-inline col-4">
+            <input class="form-check-input" type="radio" name="keterangan" id="inlineRadio2" value="Izin">
+            <label class="form-check-label" for="inlineRadio2">Izin</label>
+          </div>
+          <div class="form-check form-check-inline col-3">
+            <input class="form-check-input" type="radio" name="keterangan" id="inlineRadio3" value="Sakit">
+            <label class="form-check-label" for="inlineRadio3">Sakit</label>
           </div>
 
+        </div>
+
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-12">
+              <label for="kelas" class="form-label">Alasan (Diisi Jika Sakit atau Izin)</label>
+              <input type="text" name="alasan" class="form-control" placeholder="Alasan">
+          </div>
+        </div>
+
+        <div class="form-group mx-5">
+          <button type="submit" class="btn btn-success col-2 ml-2">Submit</button>
+        </div>
+  </form>
 @endsection 

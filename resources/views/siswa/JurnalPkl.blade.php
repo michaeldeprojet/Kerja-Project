@@ -22,8 +22,15 @@
       <td scope="col">Nis</td>
       <td scope="col">Pembimbing</td>
       <td scope="col">Tanggal</td>
+      <td scope="col">Pembimbing</td>
+      <td scope="col">Nama Perusahaan</td>
+      <td scope="col">Divisi</td>
       <td scope="col">Minggu Ke-</td>
+      <td scope="col">Kegiatan</td>
+      <td scope="col">Hasil</td>
+
     </tr>
+
   <tbody>
      @foreach ( $dtjurnal as $data )
     <tr style="background-color:white;">
