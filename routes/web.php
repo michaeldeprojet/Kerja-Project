@@ -4,7 +4,7 @@ use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurnalController;
-use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\DataSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,14 +73,20 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::group(['middleware' => ['role:ADMIN']], function(){
     // Halaman Admin //
+
+        //Download file
+        Route::get('/file-download', [DataSiswaController::class, 'downloadFile'])->name('file.download.index');
         // Dashboard Admin //
         Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
 
         // Data Siswa //
-        Route::get('/datasiswa', 'App\Http\Controllers\AdminController@datasiswa');
+        Route::resource('/datasiswa', DataSiswaController::class);
 
         // Input Siswa //
         Route::get('/inputsiswa', 'App\Http\Controllers\AdminController@inputsiswa');
+
+        // Input Siswa //
+        Route::post('/importsiswa', 'App\Http\Controllers\DataSiswaController@importsiswa');
 
         // Profile Admin //
         Route::get('/profileadmin', 'App\Http\Controllers\AdminController@profile');

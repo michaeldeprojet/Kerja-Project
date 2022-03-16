@@ -42,7 +42,8 @@ class DatabaseSeeder extends Seeder
         foreach($users as $user) {
             Login::create($user);
         }
+        $this->call(JurusanSeeder::class);
 
-        JurnalPkl::factory()->count(10)->create();
+        //JurnalPkl::factory()->count(10)->create();
     }
 }

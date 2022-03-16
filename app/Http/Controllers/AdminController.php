@@ -4,17 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PegawaiImport;
+use App\Models\Pegawai;
 
 class AdminController extends Controller
 {
     public function admin()
     {
         return view ('admin.dashboard');
-    }
-
-    public function datasiswa()
-    {
-        return view ('admin.datasiswa');
     }
 
     public function inputsiswa()
