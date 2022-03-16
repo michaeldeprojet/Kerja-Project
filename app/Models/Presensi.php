@@ -10,8 +10,10 @@ class Presensi extends Model
     protected $table = 'tb_daftar_hadir';
     protected $fillable = [
         'id_siswa',
+        'nis',
         'tgl_pkl',
         'nama_perusahaan',
+        'kompetensi',
         'keterangan',
         'alasan'
     ];
