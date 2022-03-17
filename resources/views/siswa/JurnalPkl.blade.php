@@ -9,18 +9,16 @@
     </div>
   </div>
 
-  <a href="/Jurnalpkl/create">
-  <img src="../img/folder.png" style="width: 20px; height:20px ">
-  <button style="margin-left:2%;" type="button" class="btn btn-success mt-3 col-2">
-    Jurnal</button>
-  </a>
+  <a href="{{ route('Jurnalpkl.create') }}">
+    <button type="button" class="btn btn-success ml-5 mt-3 col-2">
+      Tambah Jurnal</button>
+    </a>
   
   <!-- table -->
   <table class="table mt-4 col-11 text-center" style="margin-left:4%;">
     <tr style="background-color:#595CB4; color:white;">
       <td scope="col">Nama Peserta</td>
-      <td scope="col">Nis</td>
-      <td scope="col">Pembimbing</td>
+      <td scope="col">NIS</td>
       <td scope="col">Tanggal</td>
       <td scope="col">Pembimbing</td>
       <td scope="col">Nama Perusahaan</td>
@@ -34,11 +32,15 @@
   <tbody>
      @foreach ( $dtjurnal as $data )
     <tr style="background-color:white;">
-      <td scope="row">{{$data->nama_siswa}}</td>
-      <td>{{$data->nis}}</td>
-      <td>{{$data->pembimbing}}</td>
-      <td>{{$data->tgl_pkl}}</td>
-      <td>{{$data->minggu}}</td>
+      <td scope="row">{{ $data->datasiswa->nama}}</td>
+      <td>{{ $data->nis}}</td>
+      <td>{{ date('d-F-Y', strtotime ($data->tgl_pkl)) }}</td>
+      <td>{{ $data->datapembimbing->nama}}</td>
+      <td>{{ $data->nama_perusahaan }}</td>
+      <td>{{ $data->divisi}}</td>
+      <td>{{ $data->minggu }}</td>
+      <td>{{ $data->kegiatan}}</td>
+      <td>{{ $data->hasil}}</td>
     </tr>
     @endforeach
   </tbody>

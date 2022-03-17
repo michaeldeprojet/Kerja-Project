@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\JurnalPkl;
+use App\Models\DataSiswa;
+use App\Models\DataPembimbing;
 
 class JurnalController extends Controller
 {
@@ -14,7 +16,7 @@ class JurnalController extends Controller
      */
     public function index()
     {
-        $dtjurnal = JurnalPkl::all();
+        $dtjurnal = JurnalPkl::orderBy("tgl_pkl","DESC")->get();
         return view('siswa.JurnalPkl', compact('dtjurnal'));
     }
 
@@ -25,7 +27,10 @@ class JurnalController extends Controller
      */
     public function create()
     {
-        return view ('siswa.jurnal');
+        $jurnal1 = DataSiswa::all();
+        $jurnal2 = DataPembimbing::all();
+        return view('siswa.jurnal', compact('jurnal1', 'jurnal2'));
+
     }
 
     /**
@@ -38,17 +43,20 @@ class JurnalController extends Controller
     {
         // dd($request->all());
         JurnalPkl::create([
-            'nama_siswa' => $request->nama,
+            'id_siswa' => $request->id_siswa,
             'nis' => $request->nis,
-            'tgl_pkl' => $request->tgl,
-            'perusahaan' => $request->perusahaan,
-            'pembimbing' => $request->pembimbing,
+            'tgl_pkl' => $request->tgl_pkl,
+            'id_pembimbing' => $request->id_pembimbing,
+            'nama_perusahaan' => $request->nama_perusahaan,
             'divisi' => $request->divisi,
             'minggu' => $request->minggu,
             'kegiatan' => $request->kegiatan,
             'hasil' => $request->hasil,
+           
         ]);
-        return redirect('/Jurnalpkl');
+
+        return redirect('Jurnalpkl');
+
     }
 
     /**

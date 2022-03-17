@@ -12,14 +12,25 @@ class JurnalPkl extends Model
         'id_siswa',
         'nis',
         'tgl_pkl',
-        'pembimbing',
+        'id_pembimbing',
         'nis',
-        'perusahaan',
+        'nama_perusahaan',
         'divisi',
         'minggu',
         'kegiatan',
         'hasil'
     ];
+
+    public function datasiswa()
+    {
+        return $this->hasOne(DataSiswa::class, 'id', 'id_siswa');
+    }
+
+    public function datapembimbing()
+    {
+        return $this->hasOne(DataPembimbing::class, 'id', 'id_pembimbing');
+    }
+
 
     use HasFactory;
 }

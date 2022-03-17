@@ -3,47 +3,82 @@
 @section('content-header')
 
 <div class="container-fluid">
-  <div class="row mb-2">
-    <div class="col-sm-6 ml-5">
-      <h1 style="color:#34365B;"><b> Jurnal PKL</b></h1>
+  <div class="row mb-2 ml-5">
+    <div class="col-sm-6">
+      <h1 style="color:#34365B;"><b>Jurnal Mingguan<b></h1>
     </div>
-      <div class="col-sm-6">
-      </div>
   </div>
 <div>
-    <form action="/Jurnalpkl/store" method="POST">
-      @csrf
-      <div class="form-group">
-        <input name="nama" type="text" id="nama" class="form-control col-5 mt-4" placeholder="Nama Siswa" style="margin-left:5%;">
-      </div>
-      <div class="form-group">
-        <input name="nis" type="text" id="nama" class="form-control col-5" placeholder="NIS" style="margin-left:50%; margin-top:-5%;">
-      </div>
-      <div class="form-group">
-        <input name="tgl" type="date" id="tgl" class="form-control col-5"  style="margin-left:5%;">
-      </div>
-      <div class="form-group">
-        <input name="perusahaan" type="text" id="perusahaan" class="form-control col-5" placeholder="Nama Perusahaan" style="margin-left:50%; margin-top:-5%;">
-      </div>
-      <div class="form-group">
-        <input name="pembimbing" type="text" id="pembimbing" class="form-control col-3 mt-2" placeholder="Nama Pembimbing" style="margin-left:5%;">
-      </div>
-      <div class="form-group">
-        <input name="divisi" type="text" id="divisi" class="form-control col-4" placeholder="Divisi" style="margin-left:32%; margin-top:-5%;">
-      </div>
-      <div class="form-group">
-        <input name="minggu" type="text" id="minggu" class="form-control col-3" placeholder="Minggu ke-" style="margin-left:67%; margin-top:-5%;">
-      </div>
-      <div class="form-group">
-        <textarea name="kegiatan" id="kegiatabn" class="form-control col-10" placeholder="kegiatan yang dilakukan" style="margin-left:5%;"></textarea>
-      </div>
-      <div class="form-group">
-        <textarea name="hasil" id="hasil" class="form-control col-10" placeholder="hasil" style="margin-left:5%;"></textarea>
+  
+  <form action="{{ route('Jurnalpkl.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+        <div class="row mx-5 mt-3">
+            <div class="form-group col-8">
+              <label for="position-option">Nama Peserta Didik</label>
+              <select class="form-control" name="id_siswa">
+                <option selected>Nama Peserta </option>
+                  @foreach ($jurnal1 as $item)
+                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                  @endforeach
+              </select>
+            </div>
+
+            <div class="form-group col-4">
+                <label for="kelas" class="form-label">NIS</label>
+                <input type="number" name="nis" class="form-control" placeholder="NIS">
+            </div>
+        </div>
+
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-4">
+              <label for="judul" class="form-label">Tanggal / Waktu</label>
+              <input type="date" name="tgl_pkl" class="form-control" placeholder="">
+          </div>
+
+          <div class="form-group col-8">
+              <label for="kelas" class="form-label">Nama Perusahaan</label>
+              <input type="text" name="nama_perusahaan" class="form-control" placeholder="Nama Perusahaan...">
+          </div>
+        </div>
+
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-5">
+            <label for="position-option">Pembimbing</label>
+            <select class="form-control" name="id_pembimbing">
+              <option selected>Pembimbing</option>
+                @foreach ($jurnal2 as $item)
+                  <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                @endforeach
+            </select>
+          </div>
+
+          <div class="form-group col-5">
+              <label for="kelas" class="form-label">Divisi Kerja</label>
+              <input type="text" name="divisi" class="form-control" placeholder="NIS">
+          </div>
+
+          <div class="form-group col-2">
+            <label for="kelas" class="form-label">Minggu ke</label>
+            <input type="number" name="minggu" class="form-control" placeholder="NIS">
+        </div>
       </div>
 
-      <div class="form-group">
-        <button type="submit" class="btn btn-success col-2" style="margin-left:5%;">Submit</button>
-      </div>
-</form>
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-12">
+              <label for="kelas" class="form-label">Kegiatan Yang dilakukan</label>
+              <textarea type="text" name="kegiatan" class="form-control" placeholder="kegiatan..."></textarea>
+          </div>
+        </div>
 
+        <div class="row mx-5 mt-3">
+          <div class="form-group col-12">
+              <label for="kelas" class="form-label">Hasil Yang Dicapai</label>
+              <textarea type="text" name="hasil" class="form-control" placeholder="hasil...."></textarea>
+          </div>
+        </div>
+
+        <div class="form-group mx-5">
+          <button type="submit" class="btn btn-success col-2 ml-2">Submit</button>
+        </div>
+  </form>
 @endsection 
