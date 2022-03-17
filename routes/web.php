@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurnalController;
 use App\Http\Controllers\DataSiswaController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
