@@ -37,15 +37,15 @@
         <div style="margin-top:30px; margin-left:180px; width:200px;">
         <button type="submit" class="btn btn-primary w-100" style="background-color: #34365B;">Login</button>
         </div>
-</form>
+    </form>
         <div>
-        <img style="width:960px; height:657px;" src="img/back.png">
-        <div style="margin-top:-115px; color:white; text-align:right; margin-right:90px;">
-            <h4>SIM PKL</h4>
-            <p>Dapatkan <b> informasi </b> serta</p>
-            <p style="margin-top:-14px;">keperluan <b> magangmu </b> disini !</p> 
+          <img style="width:960px; height:657px;" src="img/back.png">
+          <div style="margin-top:-115px; color:white; text-align:right; margin-right:90px;">
+              <h4>SIM PKL</h4>
+              <p>Dapatkan <b> informasi </b> serta</p>
+              <p style="margin-top:-14px;">keperluan <b> magangmu </b> disini !</p> 
           </div> 
-          </div>
+        </div>
   </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

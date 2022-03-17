@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurnalController;
 use App\Http\Controllers\DataSiswaController;
+use App\Http\Controllers\PresensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -153,11 +154,8 @@ Route::group(['middleware' => ['auth']], function(){
         // Daftar Hadir
         Route::resource('/presensi', PresensiController::class);
         
-
         // Jurnal PKL
-        Route::get('/Jurnalpkl', 'App\Http\Controllers\JurnalController@index');
-        Route::get('/Jurnalpkl/create', 'App\Http\Controllers\JurnalController@create');
-        Route::post('/Jurnalpkl/store', 'App\Http\Controllers\JurnalController@store');
+        Route::resource('/Jurnalpkl', JurnalController::class);
 
         // Laporan PKL
         Route::get('/laporansiswa', 'App\Http\Controllers\SiswaController@lapor');
