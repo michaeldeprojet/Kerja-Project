@@ -16,7 +16,9 @@ class CreateTbInputNilai extends Migration
         Schema::create('tb_input_nilai', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_siswa')->unsigned();
-            $table->string('nama_pt');
+            $table->string('kelas');
+            $table->string('semester');
+            $table->bigInteger('jurusan_id')->unsigned();
             $table->string('nama_industri');
             $table->string('instruktur');
             $table->integer('nilai_laporan');

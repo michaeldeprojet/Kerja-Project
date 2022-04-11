@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PegawaiImport;
+use App\Models\DataSiswa;
 use App\Models\Pegawai;
 
 class AdminController extends Controller
@@ -37,7 +38,8 @@ class AdminController extends Controller
 
     public function suratpermohonanpeserta()
     {
-        return view ('admin.suratpermohonanpeserta');
+        $data = DataSiswa::all();
+        return view ('admin.suratpermohonanpeserta', compact('data'));
     }
 
     public function suratpermohonankelompok()

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use App\Models\Nilai;
+use App\Models\DataSiswa;
+use App\Models\DataPembimbing;
+use App\Models\Jurusan;
+
 
 class PembimbingController extends Controller
 {
@@ -39,7 +44,9 @@ class PembimbingController extends Controller
 
     public function tambahpenilaian()
     {
-        return view ('pembimbing.tambahpenilaian');
+        $nama = DataSiswa::all();
+        $jurusan = Jurusan::all();
+        return view ('pembimbing.tambahpenilaian', compact('nama','jurusan'));
     }
     public function laporan()
     {

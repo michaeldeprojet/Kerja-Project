@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurnalController;
 use App\Http\Controllers\DataSiswaController;
+use App\Http\Controllers\PermohonanSiswaController;
 use App\Http\Controllers\PresensiController;
 
 /*
@@ -95,11 +96,13 @@ Route::group(['middleware' => ['auth']], function(){
         // Surat Pengantar Admin //
         Route::get('/suratpengantaradmin', 'App\Http\Controllers\AdminController@suratpengantar');
 
-        // Surat Permohonan Admin //
-        Route::get('/suratpermohonanadmin', 'App\Http\Controllers\AdminController@suratpermohonan');
+        Route::resource('/suratpermohonan', PermohonanSiswaController::class);
 
-        // Surat Permohonan Peserta //
-        Route::get('/suratpermohonanpeserta', 'App\Http\Controllers\AdminController@suratpermohonanpeserta');
+        // // Surat Permohonan Admin //
+        // Route::get('/suratpermohonanadmin', 'App\Http\Controllers\AdminController@suratpermohonan');
+
+        // // Surat Permohonan Peserta //
+        // Route::get('/suratpermohonanpeserta', 'App\Http\Controllers\AdminController@suratpermohonanpeserta');
 
         // Surat Permohonan kelompok //
         Route::get('/suratpermohonankelompok', 'App\Http\Controllers\AdminController@suratpermohonankelompok');
@@ -135,10 +138,13 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/inputpenilaian', 'App\Http\Controllers\PembimbingController@nilai');
 
         // Input Nilai PKL Pembimbing //
-        Route::get('/tambahpenilaian', 'App\Http\Controllers\PembimbingController@tambahpenilaian');
+        Route::get('/tambahpenilaian', 'App\Http\Controllers\NilaiController@create');
 
         // Rekap Laporan PKL Pembimbing //
         Route::get('/rekaplaporanpem', 'App\Http\Controllers\PembimbingController@laporan');
+
+         // Dashboard Pembimbing//
+         Route::resource('/nilai', NilaiController::class);
     });
 
     Route::group(['middleware' => ['role:SISWA']], function(){
@@ -153,7 +159,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Daftar Hadir
         Route::resource('/presensi', PresensiController::class);
-        
+
         // Jurnal PKL
         Route::resource('/Jurnalpkl', JurnalController::class);
 

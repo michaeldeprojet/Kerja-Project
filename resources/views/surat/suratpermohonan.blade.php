@@ -16,7 +16,7 @@
     Laman : www.smkwikrama.sch.id</p>
     <hr>
 
-    <p>No   : {{ $date }}</p>
+    <p>No   : xxx/xxx/xxx/xxxx </p>
     <p>Hal   : Permohonaan Praktik Kerja Lapangan</p>
     <p>Lampiran   : 1 Berkas</p>
     <br>
@@ -27,7 +27,7 @@
     {{-- <p>{{ $alamat_perusahaan }}</p> --}}
     <br>
     <p>Dengan hormat,</p>
-    <p style="text-align: justify">dalam rangka pelaksanaan Pendidikan Vokasi terkait dengan program <i>link and match</i> 
+    <p style="text-align: justify">dalam rangka pelaksanaan Pendidikan Vokasi terkait dengan program <i>link and match</i>
     guna meningkatkan kompetensi, peserta didik diwajibkan untuk melaksanakan Praktik
     Kerja Lapangan (PKL). Oleh karena itu kami mengajukan permohonan kepada Bapak/ibu
     Pimpinan Perusahaan agar dapat menerima peserta didik kami sebagai berikut :</p>
@@ -66,6 +66,6 @@
         <br>
         <br>
     <p style="float: right;"><b>Iin Mulyani, S.Si.</b></p>
-    
+
 </body>
 </html>
