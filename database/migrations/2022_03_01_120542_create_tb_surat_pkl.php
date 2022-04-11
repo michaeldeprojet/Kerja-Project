@@ -21,9 +21,12 @@ class CreateTbSuratPkl extends Migration
             $table->date('tgl_surat');
             $table->string('perusahaan');
             $table->string('alamat_perusahaan');
+            $table->bigInteger('id_pembimbing')->unsigned();
+            $table->bigInteger('jurusan_id')->unsigned();
             $table->string('upload_file');
             $table->string('Type');
             $table->foreign('id_siswa')->references('id')->on('tb_siswa');
+            $table->foreign('id_pembimbing')->references('id')->on('tb_pembimbing');
             $table->timestamps();
         });
     }

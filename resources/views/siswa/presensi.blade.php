@@ -16,7 +16,7 @@
             <div class="form-group col-8">
               <label for="position-option">Nama Peserta Didik</label>
               <select class="form-control" name="id_siswa">
-                <option selected>Nama Peserta </option>
+                <option selected>-- Nama Peserta -- </option>
                   @foreach ($presensi as $item)
                     <option value="{{ $item->id }}">{{ $item->nama }}</option>
                   @endforeach
@@ -43,9 +43,14 @@
 
         <div class="row mx-5 mt-3">
           <div class="form-group col-12">
-              <label for="kelas" class="form-label">Kompetensi Keahlian</label>
-              <input type="text" name="kompetensi" class="form-control" placeholder="Kompetensi Keahlian">
-          </div>
+              <label for="position-option">Kompetensi Keahlian</label>
+              <select class="form-control" name="jurusan_id">
+                <option selected>-- Kompetensi Keahlian -- </option>
+                  @foreach ($jurusan as $item)
+                    <option value="{{ $item->id }}">{{ $item->jurusan }}</option>
+                  @endforeach
+              </select>
+            </div>
         </div>
 
         <div class="row mx-5 mt-3">
