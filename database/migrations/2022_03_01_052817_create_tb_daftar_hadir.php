@@ -19,7 +19,7 @@ class CreateTbDaftarHadir extends Migration
             $table->integer('nis');
             $table->date('tgl_pkl');
             $table->string('nama_perusahaan');
-            $table->string('kompetensi');
+            $table->bigInteger('jurusan_id')->unsigned();
             $table->string('keterangan');
             $table->string('alasan');
             $table->foreign('id_siswa')->references('id')->on('tb_siswa');

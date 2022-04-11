@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PegawaiImport;
+use App\Models\DataPembimbing;
+use App\Models\DataSiswa;
+use App\Models\Jurusan;
 use App\Models\Pegawai;
+use App\Models\Surat;
 
 class AdminController extends Controller
 {
@@ -28,21 +32,6 @@ class AdminController extends Controller
     public function suratpengantar()
     {
         return view ('admin.suratpengantar');
-    }
-
-    public function suratpermohonan()
-    {
-        return view ('admin.suratpermohonan');
-    }
-
-    public function suratpermohonanpeserta()
-    {
-        return view ('admin.suratpermohonanpeserta');
-    }
-
-    public function suratpermohonankelompok()
-    {
-        return view ('admin.suratpermohonankelompok');
     }
 
     public function rekapdatasiswa()

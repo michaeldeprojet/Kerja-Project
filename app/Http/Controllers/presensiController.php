@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Presensi;
 use App\Models\DataSiswa;
+use App\Models\Jurusan;
 
 class PresensiController extends Controller
 {
@@ -27,7 +28,8 @@ class PresensiController extends Controller
     public function create()
     {
         $presensi = DataSiswa::all();
-        return view('siswa.presensi', compact('presensi'));
+        $jurusan = Jurusan::all();
+        return view('siswa.presensi', compact('presensi','jurusan'));
     }
 
     /**
@@ -44,7 +46,7 @@ class PresensiController extends Controller
             'nis' => $request->nis,
             'tgl_pkl' => $request->tgl_pkl,
             'nama_perusahaan' => $request->nama_perusahaan,
-            'kompetensi' => $request->kompetensi,
+            'jurusan_id' => $request->jurusan_id,
             'keterangan' => $request->keterangan,
             'alasan' => $request->alasan,
            

@@ -5,19 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Presensi extends Model
+class Surat extends Model
 {
-    protected $table = 'tb_daftar_hadir';
+    protected $table = "tb_surat_pkl";
     protected $fillable = [
         'id_siswa',
-        'nis',
-        'tgl_pkl',
-        'nama_perusahaan',
-        'jurusan_id',
-        'keterangan',
-        'alasan'
+        'no_surat',
+        'penjabat',
+        'tgl_surat',
+        'perusahaan',
+        'alamat_perusahaan',
+        'id_pembimbing',
+        'jurusan_id'
+
     ];
 
+    public function datapembimbing()
+    {
+        return $this->hasOne(DataPembimbing::class, 'id', 'id_pembimbing');
+    }
+    
     public function datasiswa()
     {
         return $this->hasOne(DataSiswa::class, 'id', 'id_siswa');
@@ -28,4 +35,5 @@ class Presensi extends Model
     }
 
     use HasFactory;
+
 }

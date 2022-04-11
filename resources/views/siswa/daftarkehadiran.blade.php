@@ -21,7 +21,7 @@
       <td scope="col">NIS</td>
       <td scope="col">Tanggal</td>
       <td scope="col">Tempat PKL</td>
-      <td scope="col">Kompetisi Keahlian</td>
+      <td scope="col">Kompetensi Keahlian</td>
       <td scope="col">Keterangan</td>
       <td scope="col">Alasan</td>
     </tr>
@@ -32,7 +32,7 @@
       <td>{{ $data->nis}}</td>
       <td>{{ date('d-F-Y', strtotime ($data->tgl_pkl)) }}</td>
       <td>{{ $data->nama_perusahaan }}</td>
-      <td>{{ $data->datasiswa->kompetensi_keahlian}}</td>
+      <td>{{ $data->jurusans->jurusan}}</td>
       <td>{{ $data->keterangan }}</td>
       <td>{{ $data->alasan}}</td>
     </tr>

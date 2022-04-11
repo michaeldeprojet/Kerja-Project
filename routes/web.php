@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurnalController;
 use App\Http\Controllers\DataSiswaController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,10 +97,12 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/suratpengantaradmin', 'App\Http\Controllers\AdminController@suratpengantar');
 
         // Surat Permohonan Admin //
-        Route::get('/suratpermohonanadmin', 'App\Http\Controllers\AdminController@suratpermohonan');
+        Route::get('/suratpermohonanadmin', [App\Http\Controllers\admin\SuratController::class, 'index']);
 
         // Surat Permohonan Peserta //
-        Route::get('/suratpermohonanpeserta', 'App\Http\Controllers\AdminController@suratpermohonanpeserta');
+        Route::get('/suratpermohonanpeserta/create', [App\Http\Controllers\admin\SuratController::class, 'create']);
+        Route::post('/suratpermohonanpeserta/store', [App\Http\Controllers\admin\SuratController::class, 'store']);
+        
 
         // Surat Permohonan kelompok //
         Route::get('/suratpermohonankelompok', 'App\Http\Controllers\AdminController@suratpermohonankelompok');
