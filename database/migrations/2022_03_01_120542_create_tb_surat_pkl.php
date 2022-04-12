@@ -16,7 +16,7 @@ class CreateTbSuratPkl extends Migration
         Schema::create('tb_surat_pkl', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_siswa')->unsigned();
-            $table->integer('no_surat');
+            $table->string('no_surat');
             $table->string('penjabat');
             $table->date('tgl_surat');
             $table->string('perusahaan');
