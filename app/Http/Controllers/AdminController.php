@@ -7,6 +7,8 @@ use App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PegawaiImport;
 use App\Models\Pegawai;
+use App\Models\DataSiswa;
+use App\Models\SuratPkl;
 
 class AdminController extends Controller
 {
@@ -32,12 +34,14 @@ class AdminController extends Controller
 
     public function suratpermohonan()
     {
-        return view ('admin.suratpermohonan');
+        $datas = SuratPkl::all();
+        return view ('admin.suratpermohonan',compact('datas'));
     }
 
     public function suratpermohonanpeserta()
     {
-        return view ('admin.suratpermohonanpeserta');
+        $siswas = DataSiswa::all();
+        return view ('admin.suratpermohonanpeserta', compact('siswas'));
     }
 
     public function suratpermohonankelompok()
@@ -58,5 +62,23 @@ class AdminController extends Controller
     public function rekaphasillaporan()
     {
         return view ('admin.rekaphasillaporan');
+    }
+    public function getData($id){
+        $datas = DataSiswa::where('id',$id)->first()->load('jurusans');
+        return response()->json($datas);
+    }
+    public function simpanPermohonanPeserta(Request $request)
+    {
+        SuratPkl::create([
+            'id_siswa' =>$request->id_peserta,
+            'no_surat' =>$request->nosurat,
+            'penjabat' =>$request->namapejabat,
+            'tgl_surat' =>$request->tanggal,
+            'perusahaan' =>$request->namainstusi,
+            'alamat_perusahaan' =>$request->alamatinstusi,
+            'upload_file' => 'null',
+            'Type' => 'null',
+        ]);
+        return redirect('/suratpermohonanadmin');
     }
 }

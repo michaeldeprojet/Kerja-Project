@@ -31,7 +31,7 @@ Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 Route::group(['middleware' => ['auth']], function(){
 
     // Surat permohonan 1//
-    Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+    Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF']);
     Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
 
     // Pdf Penilaian //
@@ -75,6 +75,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::group(['middleware' => ['role:ADMIN']], function(){
     // Halaman Admin //
 
+        //get datasisswa
+        Route::get('/siswa/{id}', 'App\Http\Controllers\AdminController@getData');
+
         //Download file
         Route::get('/file-download', [DataSiswaController::class, 'downloadFile'])->name('file.download.index');
         // Dashboard Admin //
@@ -100,6 +103,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Surat Permohonan Peserta //
         Route::get('/suratpermohonanpeserta', 'App\Http\Controllers\AdminController@suratpermohonanpeserta');
+        Route::post('/simpanPermohonanPeserta', 'App\Http\Controllers\AdminController@simpanPermohonanPeserta');
 
         // Surat Permohonan kelompok //
         Route::get('/suratpermohonankelompok', 'App\Http\Controllers\AdminController@suratpermohonankelompok');

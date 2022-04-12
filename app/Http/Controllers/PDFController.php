@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
+use App\Models\SuratPkl;
 use PDF;
 use Carbon\Carbon;
   
@@ -13,26 +14,28 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function generatePDF()
+    public function generatePDF($id)
     {
+        $datas = SuratPkl::where('id',$id)->first()->load('siswa');
         $date = Carbon::now();
         $data = [
-            'date' => $date->day.' '.$date->locale('in')->monthName.' '.$date->year, 
+            'date' => date('m/d/Y'),
+            'nosurat' => $datas->no_surat,
             'siswa' => [
                 [
-                    'nama' => 'michael',
-                    'nis'  => '129102',
-                    'jurusan' => 'RPL' 
+                    'nama' => $datas->siswa->nama,
+                    'nis'  => $datas->siswa->nis,
+                    'jurusan' => $datas->siswa->jurusans->jurusan 
                 ]
             ],
-            'penjabat' => 'nama' ,
-            'namaperusahaan' => 'namaperusahaan',
-            'alamatperusahaan' => 'alamatperusahaan'
+            'penjabat' => $datas->penjabat ,
+            'namaperusahaan' => $datas->perusahaan,
+            'alamatperusahaan' => $datas->alamat_perusahaan
         ];
           
         $pdf = PDF::loadView('surat.suratpermohonan', $data);
     
-        return $pdf->stream('itsolutionstuff.pdf');
+        return $pdf->stream($datas->siswa->nama . ' - permohonana.pdf');
     }
 
     public function generatesuratkel()

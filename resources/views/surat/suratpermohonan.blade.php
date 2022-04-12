@@ -16,15 +16,13 @@
     Laman : www.smkwikrama.sch.id</p>
     <hr>
 
-    <p>No   : {{ $date }}</p>
+    <p>No   : {{ $nosurat }}</p>
     <p>Hal   : Permohonaan Praktik Kerja Lapangan</p>
     <p>Lampiran   : 1 Berkas</p>
     <br>
     <p>Yth. {{ $penjabat }}</p>
     <p>{{ $namaperusahaan }}</p>
     <p>{{ $alamatperusahaan }}</p>
-    {{-- <p>{{ $perusahaan }}</p> --}}
-    {{-- <p>{{ $alamat_perusahaan }}</p> --}}
     <br>
     <p>Dengan hormat,</p>
     <p style="text-align: justify">dalam rangka pelaksanaan Pendidikan Vokasi terkait dengan program <i>link and match</i> 
