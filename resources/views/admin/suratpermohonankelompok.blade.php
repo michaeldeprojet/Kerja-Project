@@ -42,7 +42,11 @@
               <div class="mt-4" style="width: 270px; margin-left:10px">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" style="padding-left: 10%">Upload File Peserta PKL (.Excel )</li>
-                  <li class="list-group-item"><button type="button" class="btn btn-secondary" style="margin-left:25%">Secondary</button></li>
+                  <form action="{{ URL::to('/suratpermohonankelompok') }}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <div class="form-group" style="margin-left:33px; margin-top:20px">
+                        <input type="file" name="file" required>
+                    </div>
                 </ul>
               </div>
             </div>
@@ -51,14 +55,14 @@
               <div class="mt-4" style="width: 270px; margin-left:40px">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" style="padding-left: 10%">Download Template File Peserta</li>
-                  <li class="list-group-item"><button type="button" class="btn btn-warning" style="margin-left:25%">Download</button></li>
+                    <a href="/file-download" class="btn btn-warning" style="width:200px; margin-left:33px;  margin-top:20px">Download</a>
                 </ul>
               </div>
             </div>
-            
+
             <div class="col-md-5 mt-4">
               <div class="alert alert-dark mt-4" role="alert" style="margin-left: 20px">
-                Note : Table Excel berisi nama, kompetesni keahlian dan kelas 
+                Note : Table Excel berisi nama, kompetesni keahlian dan kelas
               </div>
             </div>
 
@@ -70,7 +74,7 @@
 
             <div>
                 <a href="" class="btn btn-danger mt-5 col-15 " style="margin-left:31px;" src="">Note : Table Excel berisi nama, kompetesni keahlian dan kelas </a>
-            </div>  
+            </div>
 
             <div style="margin-top:100px; margin-left: 420px;">
                 <a href="/suratpermohonanadmin" class="btn btn-secondary " src="../img/vector.png">View</a>
@@ -78,12 +82,12 @@
             </div> --}}
 
         </form>
-        
+
         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5" style="margin-right:0px padding:20px">
           <button class="btn btn-secondary me-md-2" type="button" style="margin-right: 20px; width:190px">View</button>
           <button class="btn btn-success" type="button" style="width:190px">Submit</button>
         </div>
     </div>
-        
+
 
 @endsection
