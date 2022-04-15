@@ -15,7 +15,7 @@
               <div class="mt-4" style="width: 270px; margin-left:10px">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" style="padding-left: 10%">Upload File Peserta PKL (.Excel )</li>
-                  <li class="list-group-item"><button type="button" class="btn btn-secondary" style="margin-left:25%">Secondary</button></li>
+                  <li class="list-group-item"><button type="button" class="btn btn-secondary" style="margin-left:25%">Upload</button></li>
                 </ul>
               </div>
             </div>

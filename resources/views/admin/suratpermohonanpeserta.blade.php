@@ -14,7 +14,7 @@
         <form action="{{url('/simpanPermohonanPeserta')}}" method="post" class="row g-3">
           @csrf
             <div class="col-md-6 mt-3">
-              <label for="inputEmail4" class="form-label">No xxx/xxx/xxx/xxxx (028/SMK/XII/2022</label>
+              <label for="inputEmail4" class="form-label">No xxx/xxx/xxx/xxxx (028/SMK/XII/2022 )</label>
               <input type="" class="form-control" name="nosurat">
             </div>
             <div class="col-md-6 mt-3">
@@ -60,6 +60,7 @@
                 <button class="btn btn-success  ml-3 mt-4 col-md-1" style="color:white;" src="../img/vector.png">Submit</button>
           </form>
     </div>
+    
     <script>
         function cek_db(){
         var id = $("#id").val();

@@ -25,6 +25,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($datas as $data)
+                        <tr>
+                            <td>{{ $data->siswa->nama }}</td>
+                            <td>{{ $data->periode }}</td>
+                            <td>{{ $data->siswa->jurusans->jurusan }}</td>
+                            <td>{{ $data->pembimbing->nama }}</td>
+                            <td>{{ $data->tempat_pkl}}</td>
+                            <td>
+                                <a class="btn btn-danger" onclick="return confirm ('Yakin Ingin Menghapus Data Ini?')" href = "{{ url('/penentuan/delete/'.$data->id) }} ">Delete</a>
+                            </td>                
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

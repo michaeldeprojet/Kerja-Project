@@ -54,12 +54,12 @@
 
           <div class="form-group col-5">
               <label for="kelas" class="form-label">Divisi Kerja</label>
-              <input type="text" name="divisi" class="form-control" placeholder="NIS">
+              <input type="text" name="divisi" class="form-control" placeholder="Divisi...">
           </div>
 
           <div class="form-group col-2">
             <label for="kelas" class="form-label">Minggu ke</label>
-            <input type="number" name="minggu" class="form-control" placeholder="NIS">
+            <input type="number" name="minggu" class="form-control" placeholder="Minggu Ke..">
         </div>
       </div>
 
