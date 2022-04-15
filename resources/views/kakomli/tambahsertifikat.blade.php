@@ -14,20 +14,20 @@
         <form class="row g-3">
             <div class="col-md-6 mt-3">
               <label for="inputEmail4" class="form-label">Nama Perusahaan</label>
-              <input type="email" class="form-control" id="Namapesertapkl">
+              <input type="text" class="form-control" id="Namapesertapkl">
             </div>
             <div class="col-md-6 mt-3">
               <label for="inputPassword4" class="form-label">Nama Peserta PKL</label>
-              <input type="password" class="form-control" id="kompetensikeahlian">
+              <input type="text" class="form-control" id="kompetensikeahlian">
             </div>
 
             <div class="col-md-6 mt-3">
-                <label for="inputEmail4" class="form-label">Posisi Sebagai ( Contoh : Fullstuck Developer )</label>
-                <input type="email" class="form-control" id="namapembimbingpkl">
+                <label for="inputEmail4" class="form-label">Posisi Sebagai ( Contoh : Fullstack Developer )</label>
+                <input type="text" class="form-control" id="namapembimbingpkl">
               </div>
               <div class="col-md-6 mt-3">
                 <label for="inputPassword4" class="form-label">Tempat Tanggal Lahir</label>
-                <input type="password" class="form-control" id="periodepkl">
+                <input type="text" class="form-control" id="periodepkl">
               </div>
 
             <div class="col-md-3 mt-3">

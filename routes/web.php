@@ -39,6 +39,10 @@ Route::group(['middleware' => ['auth']], function(){
 
 
     Route::group(['middleware' => ['role:KAKOMLI']], function(){
+
+        //get datasisswa
+        Route::get('/nama/{id}', 'App\Http\Controllers\KakomliController@getData');
+
     // Halaman Kakomli //
         // Dashboard Kakomli//
         Route::get('/dashboardkakomli', 'App\Http\Controllers\KakomliController@kakomli');
@@ -57,6 +61,8 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Tambah Penentuan PKL Kakomli //
         Route::get('/tambahpenentuan', 'App\Http\Controllers\KakomliController@tambahpenentuan');
+        Route::post('/tambahpenentuan/store', 'App\Http\Controllers\KakomliController@storepenentuan');
+        Route::get('/penentuan/delete/{id}', 'App\Http\Controllers\KakomliController@destroypenentuan');
 
         // Rekap Nilai PKL Kakomli //
         Route::get('/rekapnilaikakomli', 'App\Http\Controllers\KakomliController@nilai');

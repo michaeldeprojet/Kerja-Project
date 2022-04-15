@@ -16,7 +16,7 @@ class CreateTbPenentuanPkl extends Migration
         Schema::create('tb_penentuan_pkl', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_siswa')->unsigned();
-            $table->date('periode');
+            $table->year('periode');
             $table->bigInteger('id_pembimbing')->unsigned();
             $table->string('tempat_pkl');
             $table->string('upload_permohonan');
