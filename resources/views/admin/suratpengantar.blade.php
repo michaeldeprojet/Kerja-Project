@@ -14,7 +14,8 @@
         <img src="/img/pengantar.png" class="img-fluid rounded-start" style="padding-top: 15px; margin-left: 350px;">
     </div>
 
-    <a href="" src="" class="btn btn-warning pt-2 mt-5 " style="color:white; margin-left: 495px;">Download</a>
+    <a href="" src="" class="btn btn-primary pt-2 mt-5 " style="color:white; margin-left: 495px;">Download</a>
+    <br>
         
 
 @endsection

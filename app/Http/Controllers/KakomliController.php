@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use App\Models\SuratPkl;
 
 class KakomliController extends Controller
 {
@@ -24,7 +25,8 @@ class KakomliController extends Controller
 
     public function surat()
     {
-        return view ('kakomli.surat');
+        $datas = SuratPkl::all();
+        return view ('kakomli.surat',compact('datas'));
     }
 
     public function penentuan()

@@ -25,6 +25,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($datas as $data)
+                <tr style="background-color:white;">
+                  <td scope="row">{{ $data->datasiswa->nama}}</td>
+                  <td>{{ date('d-F-Y', strtotime ($data->tgl_pkl)) }}</td>
+                  <td>{{ $data->kompetensi}}</td>
+                  <td>{{ $data->nama_perusahaan }}</td>
+                  <td>{{ $data->keterangan }}</td>
+                  <td>{{ $data->alasan}}</td>
+                  <td>
+                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="" class="btn btn-warning">Edit</a>
+                  </td>
+                </tr>
+                @endforeach
+                </tbody>
             </table>
         </div>
     </div>

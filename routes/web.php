@@ -107,6 +107,8 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Surat Permohonan kelompok //
         Route::get('/suratpermohonankelompok', 'App\Http\Controllers\AdminController@suratpermohonankelompok');
+        Route::post('/simpanpermohonankelompok', 'App\Http\Controllers\AdminController@simpanpermohonankelompok')->name('simpan-kelompok');
+        Route::post('/importdatasiswa', 'App\Http\Controllers\AdminController@importdatasiswa');
 
         // Rekap Data Siswa //
         Route::get('/rekapdatasiswa', 'App\Http\Controllers\AdminController@rekapdatasiswa');

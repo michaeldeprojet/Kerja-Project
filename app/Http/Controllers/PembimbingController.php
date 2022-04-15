@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use App\Models\Presensi;
 
 class PembimbingController extends Controller
 {
@@ -29,7 +30,8 @@ class PembimbingController extends Controller
 
     public function presensi()
     {
-        return view ('pembimbing.presensi');
+        $datas= Presensi::orderBy("tgl_pkl","DESC")->get();
+        return view('pembimbing.presensi', compact('datas'));
     }
 
     public function nilai()
