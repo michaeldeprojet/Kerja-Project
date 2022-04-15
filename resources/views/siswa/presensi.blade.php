@@ -9,7 +9,7 @@
     </div>
   </div>
 <div>
-  
+
   <form action="{{ route('presensi.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
         <div class="row mx-5 mt-3">
@@ -78,4 +78,4 @@
           <button type="submit" class="btn btn-success col-2 ml-2">Submit</button>
         </div>
   </form>
-@endsection 
+@endsection

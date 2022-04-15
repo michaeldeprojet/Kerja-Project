@@ -13,7 +13,7 @@
     <div class="card mt-3 p-4 shadow-sm">
         <form class="row g-3">
             <div class="col-md-6 mt-3">
-              <label for="inputEmail4" class="form-label">No xxx/xxx/xxx/xxxx (028/SMK/XII/2022</label>
+              <label for="inputEmail4" class="form-label">No xxx/xxx/xxx/xxxx ( 028/SMK/XII/2022 )</label>
               <input type="" class="form-control" id="NoSurat">
             </div>
             <div class="col-md-6 mt-3">
