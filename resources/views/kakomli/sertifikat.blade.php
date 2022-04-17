@@ -17,14 +17,26 @@
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
                         <th>Nama Peserta</th>
-                        <th>Periode</th>
+                        <th>Perusahaan</th>
                         <th>Kompetensi Keahlian</th>
-                        <th>Pembimbing PKL</th>
-                        <th>Tempat PKL</th>
+                        <th>divisi</th>
                         <th colspan="6">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($datas as $d)
+                        <tr>
+                            <td>{{$d->datasiswa->nama}}</td>
+                            <td>{{$d->nama_perusahaan}}</td>
+                            <td>{{$d->datasiswa->jurusans->jurusan}}</td>
+                            <td>{{$d->divisi}}</td>
+                            <td>
+                                <a href="{{url('generate-pdf/'.$d->id)}}" class="btn btn-secondary" src="../img/vector.png">Cetak</a>
+                                <a class="btn btn-danger" onclick="return confirm ('Yakin Ingin Menghapus Data Ini?')" href = "{{ url('/tambahsertifikat/delete/'.$d->id) }}">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach  
+                </tbody>
             </table>
         </div>
     </div>
