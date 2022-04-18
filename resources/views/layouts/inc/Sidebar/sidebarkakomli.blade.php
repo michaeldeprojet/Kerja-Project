@@ -86,7 +86,7 @@
         </ul>
 
             <li class="nav-item">
-                <a href="/cetaksertfikatkakomli" class="nav-link">
+                <a href="/cetaksertifikatkakomli" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/printing.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Cetak Sertifikat

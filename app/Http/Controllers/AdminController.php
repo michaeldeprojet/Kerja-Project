@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\DataSiswaImport;
 use App\Imports\PegawaiImport;
 use App\Models\Pegawai;
 use App\Models\DataSiswa;
@@ -27,6 +28,7 @@ class AdminController extends Controller
         return view ('admin.profile');
     }
 
+    // SURAT
     public function suratpengantar()
     {
         return view ('admin.suratpengantar');
@@ -46,23 +48,10 @@ class AdminController extends Controller
 
     public function suratpermohonankelompok()
     {
-        return view ('admin.suratpermohonankelompok');
+        $datas = SuratPkl::all();
+        return view ('admin.suratpermohonankelompok', compact('datas'));
     }
 
-    public function rekapdatasiswa()
-    {
-        return view ('admin.rekapdatasiswa');
-    }
-
-    public function rekapdaftarnilai()
-    {
-        return view ('admin.rekapdaftarnilai');
-    }
-
-    public function rekaphasillaporan()
-    {
-        return view ('admin.rekaphasillaporan');
-    }
     public function getData($id){
         $datas = DataSiswa::where('id',$id)->first()->load('jurusans');
         return response()->json($datas);
@@ -80,5 +69,40 @@ class AdminController extends Controller
             'Type' => 'null',
         ]);
         return redirect('/suratpermohonanadmin');
+    }
+    public function simpanpermohonankelompok(Request $request)
+    {
+        SuratPkl::create([
+            'id_siswa' => 'null',
+            'no_surat' =>$request->nosurat,
+            'penjabat' =>$request->namapejabat,
+            'tgl_surat' =>$request->tanggal,
+            'perusahaan' =>$request->namainstusi,
+            'alamat_perusahaan' =>$request->alamatinstusi,
+            'upload_file' => 'null',
+            'Type' => 'null',
+        ]);
+        return redirect('/suratpermohonanadmin');
+    }
+
+    public function importdatasiswa(Request $request)
+    {
+        Excel::import(new DataSiswaImport, $request->file('file'));
+        return redirect()->back();
+    }
+
+    public function rekapdatasiswa()
+    {
+        return view ('admin.rekapdatasiswa');
+    }
+
+    public function rekapdaftarnilai()
+    {
+        return view ('admin.rekapdaftarnilai');
+    }
+
+    public function rekaphasillaporan()
+    {
+        return view ('admin.rekaphasillaporan');
     }
 }

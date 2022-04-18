@@ -23,6 +23,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($datas as $d)
+                        <tr>
+                            <td>{{$d->siswa->nama}}</td>
+                            <td>{{$d->siswa->jurusans->jurusan}}</td>
+                            <td>{{$d->penjabat}}</td>
+                            <td>{{$d->perusahaan}}</td>
+                            <td>
+                                <a href="{{url('generate-pdf/'.$d->id)}}" class="btn btn-secondary" src="../img/vector.png">Cetak PDF</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

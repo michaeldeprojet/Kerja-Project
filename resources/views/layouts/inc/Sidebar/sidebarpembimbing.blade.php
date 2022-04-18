@@ -1,25 +1,20 @@
 
 <aside class="main-sidebar elevation-4 position:in" style="background-color: #34365B; text-color:white">
 
-    <a href="/adminlte/index3.html" class="brand-link">
-        <img src="../img/s.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-block" style="color: white;">SIM PKL</span>
-    </a>
-    
-   
-
-    <div class="sidebar">
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <a href="/adminlte/index3.html" class="brand-link">
+                <img src="../img/s.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-block" style="color: white;">SIM PKL</span>
+        </a>
+        <div class="sidebar">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="/profileadmin" class="d-block" style="color: white">Pembimbing</a>
+                </div>
             </div>
-            <div class="info">
-                <a href="/profilepembimbing" class="d-block" style="color: white">Alexander Pierce</a>
-                
-            </div>
-            
         </div>
-    </div>
 
     <nav style="margin-top:-10px;">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
