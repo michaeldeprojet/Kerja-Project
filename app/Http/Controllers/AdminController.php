@@ -72,7 +72,6 @@ class AdminController extends Controller
     }
     public function simpanpermohonankelompok(Request $request)
     {
-        dd($request);
         SuratPkl::create([
             'id_siswa' => 'null',
             'no_surat' =>$request->nosurat,
