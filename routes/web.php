@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         //get datasisswa
         Route::get('/nama/{id}', 'App\Http\Controllers\KakomliController@getData');
+        Route::get('/sertifikat/{id}', 'App\Http\Controllers\KakomliController@getDataSertifikat');
 
     // Halaman Kakomli //
         // Dashboard Kakomli//
@@ -71,10 +72,12 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/rekaplaporankakomli', 'App\Http\Controllers\KakomliController@laporan');
 
         // Cetak Sertifikat PKL //
-        Route::get('/cetaksertfikatkakomli', 'App\Http\Controllers\KakomliController@sertifikat');
+        Route::get('/cetaksertifikatkakomli', 'App\Http\Controllers\KakomliController@sertifikat');
 
         // Tambah Sertifikat PKL Kakomli //
         Route::get('/tambahsertifikat', 'App\Http\Controllers\KakomliController@tambahsertifikat');
+        Route::post('/tambahsertifikat/store', 'App\Http\Controllers\KakomliController@storesertifikat');
+        Route::get('/tambahsertifikat/delete/{id}', 'App\Http\Controllers\KakomliController@destroysertifikat');
     // Akhir Halaman Kakomli //
     });
 

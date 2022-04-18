@@ -8,6 +8,7 @@ use App\Models\SuratPkl;
 use App\Models\DataPembimbing;
 use App\Models\DataSiswa;
 use App\Models\Penentuan;
+use App\Models\Sertifikat;
 
 class KakomliController extends Controller
 {
@@ -82,12 +83,44 @@ class KakomliController extends Controller
 
     public function sertifikat()
     {
-        return view ('kakomli.sertifikat');
+        $datas = Sertifikat::all();
+        return view ('kakomli.sertifikat',compact('datas'));
     }
 
     public function tambahsertifikat()
     {
-        return view ('kakomli.tambahsertifikat');
+        $sertifikat1 = DataSiswa::all();
+        $sertifikat2 = DataPembimbing::all();
+        return view('kakomli.tambahsertifikat', compact('sertifikat1', 'sertifikat2'));
     }
 
+    public function storesertifikat(Request $request)
+    {
+        Sertifikat::create([
+        'id_siswa' => $request->id_siswa,
+        'nama_perusahaan' => $request->perusahaan,
+        'tgl_awal_pkl' => $request->tgl_awal,
+        'tgl_akhir_pkl' => $request->tgl_akhir,
+        'tgl_sert_dibuat' => $request->tgl_sertif,
+        'tanggal_lahir' => $request->tanggal_lahir,
+        'tempat_lahir' => $request->tempat_lahir,
+        'divisi' => $request->divisi,
+        'upload_logo' => $request->logo,
+        'upload_ttd' => $request->ttd
+        ]);
+        return redirect ('/cetaksertifikatkakomli');
+    }
+
+    public function destroysertifikat($id)
+    {
+        $datas = Sertifikat::find($id);
+        $datas->delete();
+
+        return redirect ('/cetaksertifikatkakomli');
+    }
+    
+    public function getDataSertifikat($id){
+        $datas = Sertifikat::where('id',$id)->first()->load('datasiswa');
+        return response()->json($datas);
+    }
 }
