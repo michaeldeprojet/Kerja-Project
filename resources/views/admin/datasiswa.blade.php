@@ -32,7 +32,7 @@
                       <td>{{ $item->nama }}</td>
                       <td>{{ $item->nis }}</td>
                       <td>{{ $item->nisn }}</td>
-                      <td>{{ $item->kompetensi_keahlian }}</td>
+                      <td>{{ $item->jurusans->jurusan }}</td>
                       <td>
                         <form action="{{ url('datasiswa/'.$item->id)}}" method="POST" class="d-inline">
                           @csrf
