@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Penentuan extends Model
+class Laporan extends Model
 {
-    protected $table = "tb_penentuan_pkl";
-    protected $primaryKey = "id";
+    protected $table = "tb_laporan_pkl";
     protected $guarded = [ 'id' ]; 
     protected $fillable = [
         'id_siswa',
-        'periode',
+        'periode_pkl',
+        'perusahaan',
         'id_pembimbing',
-        'tempat_pkl',
-        'upload_permohonan'
+        'divisi',
+        'upload_file',
     ];
 
     public function siswa(){
@@ -25,11 +25,7 @@ class Penentuan extends Model
     public function pembimbing(){
         return $this->hasOne(DataPembimbing::class, 'id' , 'id_pembimbing');
     }
-    
-    public function datasiswa()
-    {
-        return $this->hasOne(SuratPkl::class, 'id' , 'id_siswa');
-    }
 
     use HasFactory;
+
 }

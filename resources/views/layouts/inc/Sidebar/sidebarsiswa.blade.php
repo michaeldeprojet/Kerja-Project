@@ -63,7 +63,7 @@
 
             <!-- Laporan -->
             <li class="nav-item">
-                <a href="/laporansiswa" class="nav-link">
+                <a href="{{ route('laporansiswa.index') }}" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/report.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Laporan

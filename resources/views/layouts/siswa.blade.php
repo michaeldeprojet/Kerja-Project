@@ -8,6 +8,7 @@
 
 @include('layouts.inc.ext-css')
 
+
 </head>
 
     <body class="hold-transition sidebar-mini">
@@ -25,6 +26,14 @@
 
     <section class="content-header">
     @yield('content-header')
+
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+     <script>
+         $(document).ready( function () {
+            $('#Table').DataTable();
+        } );
+     </script>
+     
     </section>
     
     @include('layouts.inc.ext-js')
