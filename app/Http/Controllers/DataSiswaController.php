@@ -18,8 +18,8 @@ class DataSiswaController extends Controller
      */
     public function index()
     {
-        // $siswa= DataSiswa::all();
-        $siswa= Pegawai::all();
+        $siswa= DataSiswa::all();
+        // $siswa= Pegawai::all();
         $jurusan = Jurusan::all();
         return view ('admin.datasiswa',compact('siswa','jurusan'));
 
@@ -43,23 +43,23 @@ class DataSiswaController extends Controller
      */
     public function store(Request $request)
     {
-        // DataSiswa::updateOrCreate(['id' => $request->id],
-        // ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
-        // return response()->json();
+        DataSiswa::updateOrCreate(['id' => $request->id],
+        ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
+        return response()->json();
 
-        $request->validate([
-            'nama' => 'required',
-            'email' => 'required',
-            'nis' => 'required',
-            'nisn' => 'required',
-            'kompetensi_keahlian' => 'required',
-            'tempat_lahir' => 'required',
-            'tanggal_lahir' => 'required',
-            'jenis_kelamin' => 'required',
-        ]);
-        Pegawai::create($request->all());
+        // // $request->validate([
+        // //     'nama' => 'required',
+        // //     'email' => 'required',
+        // //     'nis' => 'required',
+        // //     'nisn' => 'required',
+        // //     'kompetensi_keahlian' => 'required',
+        // //     'tempat_lahir' => 'required',
+        // //     'tanggal_lahir' => 'required',
+        // //     'jenis_kelamin' => 'required',
+        // // ]);
+        // // Pegawai::create($request->all());
 
-        return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Input');
+        // return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Input');
     }
 
     /**
@@ -120,14 +120,14 @@ class DataSiswaController extends Controller
     	$filePath = public_path("template/Template Data Siswa.xlsx");
     	$headers = ['Content-Type: application/xlsx'];
         $fileName = 'Template Data Siswa.xlsx';
-        
+
         if (file_exists($filePath)) {
             return response()->download($filePath, $fileName, $headers);
         } else {
             echo('File not found.');
         }
 
-    	
+
     }
 
     public function downloadFilePDF()
@@ -135,13 +135,13 @@ class DataSiswaController extends Controller
     	$filePath = public_path("pdf/Kata Pengantar PKL.pdf");
     	$headers = ['Content-Type: application/pdf'];
         $fileName = 'Kata Pengantar PKL.pdf';
-        
+
         if (file_exists($filePath)) {
             return response()->download($filePath, $fileName, $headers);
         } else {
             echo('File not found.');
         }
 
-    	
+
     }
 }

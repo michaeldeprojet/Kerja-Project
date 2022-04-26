@@ -24,7 +24,7 @@
                         <th>Nisn</th>
                         <th>Kompetensi Keahlian</th>
                         <th colspan="5">Aksi</th>
-                    </tr>  
+                    </tr>
                   </thead>
                   <tbody>
                   @foreach ($siswa as $item)
@@ -32,7 +32,7 @@
                       <td>{{ $item->nama }}</td>
                       <td>{{ $item->nis }}</td>
                       <td>{{ $item->nisn }}</td>
-                      <td>{{ $item->kompetensi_keahlian }}</td>
+                      <td>{{ $item->jurusans->jurusan }}</td>
                       <td>
                         <form action="{{ url('datasiswa/'.$item->id)}}" method="POST" class="d-inline">
                           @csrf
@@ -104,7 +104,7 @@
             <div class="form-group">
                 <input type="file" name="file" required>
             </div>
-        
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Selesai</button>
@@ -129,10 +129,10 @@ $(document).on('click','#edit',function(){
   });
 
   $("#saveBtn").click(function (e) {
-    $.ajaxSetup({ 
+    $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }   
+      }
     })
     e.preventDefault();
 
