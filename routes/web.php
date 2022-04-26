@@ -107,6 +107,9 @@ Route::group(['middleware' => ['auth']], function(){
         // Surat Pengantar Admin //
         Route::get('/suratpengantaradmin', 'App\Http\Controllers\AdminController@suratpengantar');
 
+        //Download file
+        Route::get('/file-downloadpdf', [DataSiswaController::class, 'downloadFilePDF'])->name('file.download.index');
+
         // Surat Permohonan Admin //
         Route::get('/suratpermohonanadmin', 'App\Http\Controllers\AdminController@suratpermohonan');
 

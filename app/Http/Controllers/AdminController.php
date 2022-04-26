@@ -34,6 +34,8 @@ class AdminController extends Controller
         return view ('admin.suratpengantar');
     }
 
+
+
     public function suratpermohonan()
     {
         $datas = SuratPkl::all();
@@ -89,6 +91,21 @@ class AdminController extends Controller
     {
         Excel::import(new DataSiswaImport, $request->file('file'));
         return redirect()->back();
+    }
+
+    public function downloadFilePDF()
+    {
+    	$filePath = public_path("pdf/Kata Pengantar PKL.pdf");
+    	$headers = ['Content-Type: application/pdf'];
+        $fileName = 'Kata Pengantar PKL.pdf';
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath, $fileName, $headers);
+        } else {
+            echo('File not found.');
+        }
+
+
     }
 
     public function rekapdatasiswa()

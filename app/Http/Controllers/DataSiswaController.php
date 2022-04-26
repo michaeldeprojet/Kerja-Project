@@ -114,4 +114,19 @@ class DataSiswaController extends Controller
 
     	
     }
+
+    public function downloadFilePDF()
+    {
+    	$filePath = public_path("pdf/Kata Pengantar PKL.pdf");
+    	$headers = ['Content-Type: application/pdf'];
+        $fileName = 'Kata Pengantar PKL.pdf';
+        
+        if (file_exists($filePath)) {
+            return response()->download($filePath, $fileName, $headers);
+        } else {
+            echo('File not found.');
+        }
+
+    	
+    }
 }

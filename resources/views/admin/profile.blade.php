@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    
+
     <div class="card mb-3 justify-center" style="max-width: 1000px; margin-left: 20px; height:330px;">
         <div class="row g-0">
             <div class="col-md-4">
