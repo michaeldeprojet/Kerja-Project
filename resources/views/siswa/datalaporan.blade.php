@@ -1,6 +1,7 @@
 @extends('layouts.siswa')
 
 @section('content-header')
+
 <div class="container-fluid">
   <div class="row mb-2">
     <div class="col-sm-6 ml-5">
@@ -8,9 +9,9 @@
     </div>
   </div>
 
-  <a href="{{ route('presensi.create') }}">
+  <a href="{{ route('laporansiswa.create') }}">
   <button type="button" class="btn btn-success ml-5 mt-3 col-2">
-    Kehadiran</button>
+    Input Laporan PKL</button>
   </a>
 
   <!-- table -->
@@ -37,7 +38,7 @@
       <td>{{ $data->keterangan }}</td>
       <td>{{ $data->alasan}}</td>
       <td>
-        <form action="{{ route('presensi.destroy', $data->id) }}" method="POST">
+        <form action="{{ route('laporansiswa.destroy', $data->id) }}" method="POST">
           @csrf
           @method('DELETE')
             <button type="submit"  title="delete" style="border: none; background-color:transparent;">

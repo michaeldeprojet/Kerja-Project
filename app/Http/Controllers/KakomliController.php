@@ -14,7 +14,14 @@ class KakomliController extends Controller
 {
     public function kakomli()
     {
-        return view ('kakomli.dashboard');
+        $keseluruhan = DataSiswa::all()->count();
+        $siswaPKL = Penentuan::all()->count();
+        $belumPKL = $keseluruhan-$siswaPKL;
+        return view ('kakomli.dashboard', [
+            'keseluruhan' => $keseluruhan,
+            'siswaPKL' => $siswaPKL,
+            'belumPKL' => $belumPKL
+        ]);
     }
 
     public function profile()

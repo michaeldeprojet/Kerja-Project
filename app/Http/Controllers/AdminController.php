@@ -10,17 +10,30 @@ use App\Imports\PegawaiImport;
 use App\Models\Pegawai;
 use App\Models\DataSiswa;
 use App\Models\SuratPkl;
+use App\Models\Penentuan;
 
 class AdminController extends Controller
 {
     public function admin()
     {
-        return view ('admin.dashboard');
+        $keseluruhan = DataSiswa::all()->count();
+        $siswaPKL = Penentuan::all()->count();
+        $belumPKL = $keseluruhan-$siswaPKL;
+        return view ('admin.dashboard', [
+            'keseluruhan' => $keseluruhan,
+            'siswaPKL' => $siswaPKL,
+            'belumPKL' => $belumPKL
+        ]);
     }
 
     public function inputsiswa()
     {
         return view ('admin.inputsiswa');
+    }
+
+    public function inputpembimbing()
+    {
+        return view ('admin.inputpembimbing');
     }
 
     public function profile()
@@ -70,6 +83,14 @@ class AdminController extends Controller
         ]);
         return redirect('/suratpermohonanadmin');
     }
+
+    public function delete($id)
+    {
+        $datas = SuratPkl::find($id);
+        $datas->delete();
+        return redirect('/suratpermohonanadmin'); 
+    }
+
     public function simpanpermohonankelompok(Request $request)
     {
         SuratPkl::create([

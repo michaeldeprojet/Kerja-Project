@@ -5,12 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
 use App\Models\Presensi;
+use App\Models\DataSiswa;
+use App\Models\Penentuan;
 
 class PembimbingController extends Controller
 {
     public function pembimbing()
     {
-        return view ('pembimbing.dashboard');
+        $keseluruhan = DataSiswa::all()->count();
+        $siswaPKL = Penentuan::all()->count();
+        $belumPKL = $keseluruhan-$siswaPKL;
+        return view ('pembimbing.dashboard', [
+            'keseluruhan' => $keseluruhan,
+            'siswaPKL' => $siswaPKL,
+            'belumPKL' => $belumPKL
+        ]);
     }
 
     public function profile()

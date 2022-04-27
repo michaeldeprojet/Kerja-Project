@@ -32,15 +32,33 @@
                 </a>
             </li>
 
+           
+
+            {{-- Menu Input Data--}}
             <li class="nav-item">
-                <a href="/datasiswa" class="nav-link">
+                <a href="#" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/datasiswa.png" style="width: 20px; height:20px"></i>
-                    <p style="color: white">
-                        Input Data Siswa
-                    </p>
+                        <p style="color: white">Input Data<i class="right fas fa-angle-left"></i></p>
                 </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/datasiswa" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p style="color: white">Input Data Siswa</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/datapembimbing" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p style="color: white">Input Data Pembimbing</p>
+                            </a>
+                        </li>   
+                    </ul>
             </li>
 
+            
 
             {{-- Menu Persuratan--}}
             <li class="nav-item">
@@ -52,19 +70,20 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/suratpengantaradmin" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                        <p style="color: white">Surat Pengantar</p>
-                </a>
-            </li>
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p style="color: white">Surat Pengantar</p>
+                                </a>
+                            </li>
 
-            <li class="nav-item">
-                <a href="/suratpermohonanadmin" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p style="color: white">Surat Permohonan</p>
-                </a>
-            </li>
+                            <li class="nav-item">
+                                <a href="/suratpermohonanadmin" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p style="color: white">Surat Permohonan</p>
+                                </a>
+                            </li>
 
-        </ul>
+                        </ul>
+            </li>
 
         {{-- Menu Rekap Data --}}
         <li class="nav-item">

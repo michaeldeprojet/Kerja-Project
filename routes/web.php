@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JurnalController;
 use App\Http\Controllers\DataSiswaController;
+use App\Http\Controllers\DataPembimbingController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,17 +91,23 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Download file
         Route::get('/file-download', [DataSiswaController::class, 'downloadFile'])->name('file.download.index');
+        Route::get('/download-file', [DataPembimbingController::class, 'downloadFile'])->name('file.download.index');
+      
+        
         // Dashboard Admin //
         Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
 
         // Data Siswa //
         Route::resource('/datasiswa', DataSiswaController::class);
+        Route::resource('/datapembimbing', DataPembimbingController::class);
 
         // Input Siswa //
         Route::get('/inputsiswa', 'App\Http\Controllers\AdminController@inputsiswa');
+        Route::get('/inputpembimbing', 'App\Http\Controllers\AdminController@inputpembimbing');
 
         // Input Siswa //
         Route::post('/importsiswa', 'App\Http\Controllers\DataSiswaController@importsiswa');
+        Route::post('/importpembimbing', 'App\Http\Controllers\DataPembimbingController@importpembimbing');
 
         // Profile Admin //
         Route::get('/profileadmin', 'App\Http\Controllers\AdminController@profile');
@@ -109,7 +117,8 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Surat Permohonan Admin //
         Route::get('/suratpermohonanadmin', 'App\Http\Controllers\AdminController@suratpermohonan');
-
+        Route::get('/suratpermohonanadmin/delete/{id}', 'App\Http\Controllers\AdminController@delete');
+        
         // Surat Permohonan Peserta //
         Route::get('/suratpermohonanpeserta', 'App\Http\Controllers\AdminController@suratpermohonanpeserta');
         Route::post('/simpanPermohonanPeserta', 'App\Http\Controllers\AdminController@simpanPermohonanPeserta');
@@ -118,6 +127,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/suratpermohonankelompok', 'App\Http\Controllers\AdminController@suratpermohonankelompok');
         Route::post('/simpanpermohonankelompok', 'App\Http\Controllers\AdminController@simpanpermohonankelompok')->name('simpan-kelompok');
         Route::post('/importdatasiswa', 'App\Http\Controllers\AdminController@importdatasiswa');
+
 
         // Rekap Data Siswa //
         Route::get('/rekapdatasiswa', 'App\Http\Controllers\AdminController@rekapdatasiswa');
@@ -157,6 +167,9 @@ Route::group(['middleware' => ['auth']], function(){
     });
 
     Route::group(['middleware' => ['role:SISWA']], function(){
+
+        //get data siswa
+        Route::get('/datasiswas/{id}', 'App\Http\Controllers\SiswaController@getData');
         // Dashboard Siswa//
         Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
 
@@ -173,7 +186,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::resource('/Jurnalpkl', JurnalController::class);
 
         // Laporan PKL
-        Route::get('/laporansiswa', 'App\Http\Controllers\SiswaController@lapor');
+        Route::resource('/laporansiswa', SiswaController::class);
 
         // Nilai
         Route::get('/nilaisiswa', 'App\Http\Controllers\SiswaController@nilai');
