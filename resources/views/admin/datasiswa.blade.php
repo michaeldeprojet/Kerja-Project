@@ -13,6 +13,8 @@
   <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Siswa</a>
+            <a href="{{ route('datasiswa.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
+
             <a href="/file-download" class="btn btn-warning">Download Template Excel</a>
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
                 <thead>

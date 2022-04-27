@@ -19,6 +19,7 @@ class DataSiswaController extends Controller
     public function index()
     {
         $siswa= DataSiswa::all();
+        // $siswa= Pegawai::all();
         $jurusan = Jurusan::all();
         return view ('admin.datasiswa',compact('siswa','jurusan'));
 
@@ -31,7 +32,7 @@ class DataSiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.createsiswa');
     }
 
     /**
@@ -42,9 +43,23 @@ class DataSiswaController extends Controller
      */
     public function store(Request $request)
     {
-        DataSiswa::updateOrCreate(['id' => $request->id],
-        ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
-        return response()->json();
+        // DataSiswa::updateOrCreate(['id' => $request->id],
+        // ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
+        // return response()->json();
+
+        $request->validate([
+            'nama' => 'required',
+            'email' => 'required',
+            'nis' => 'required',
+            'nisn' => 'required',
+            'jurusan_id' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+        ]);
+        DataSiswa::create($request->all());
+
+        return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Input');
     }
 
     /**
