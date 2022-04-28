@@ -2,13 +2,28 @@
 
 @section('content-header')
 
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-            <h1 style="color:#34365B; margin-left:10%;"><b> Surat Permohonan</b></h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                    <h1 style="color:#34365B; margin-left:10%;"><b> Surat Permohonan</b></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-5">
+            <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+                  <i class="fas fa-search"></i>
+                </span>
             </div>
         </div>
     </div>
+</div>
 
     <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
