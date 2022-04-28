@@ -46,34 +46,6 @@ class DataSiswaController extends Controller
         DataSiswa::updateOrCreate(['id' => $request->id],
         ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
         return response()->json();
-
-<<<<<<< HEAD
-        // // $request->validate([
-        // //     'nama' => 'required',
-        // //     'email' => 'required',
-        // //     'nis' => 'required',
-        // //     'nisn' => 'required',
-        // //     'kompetensi_keahlian' => 'required',
-        // //     'tempat_lahir' => 'required',
-        // //     'tanggal_lahir' => 'required',
-        // //     'jenis_kelamin' => 'required',
-        // // ]);
-        // // Pegawai::create($request->all());
-=======
-        // $request->validate([
-        //     'nama' => 'required',
-        //     'email' => 'required',
-        //     'nis' => 'required',
-        //     'nisn' => 'required',
-        //     'kompetensi_keahlian' => 'required',
-        //     'tempat_lahir' => 'required',
-        //     'tanggal_lahir' => 'required',
-        //     'jenis_kelamin' => 'required',
-        // ]);
-        // Pegawai::create($request->all());
->>>>>>> f84655f202e9635730c86c924e6fc93eb6417a49
-
-        // return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Input');
     }
 
     /**
