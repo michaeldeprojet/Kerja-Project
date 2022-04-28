@@ -13,8 +13,7 @@
     <div class="col-md-4">
         <img src="/img/pengantar.png" class="img-fluid rounded-start" style="padding-top: 15px; margin-left: 350px;">
     </div>
-
-    <a href="" src="" class="btn btn-primary pt-2 mt-5 " style="color:white; margin-left: 495px;">Download</a>
+    <a href="https://drive.google.com/file/d/189TTVNERbDHjM-Fk2KHoq70iwTek3lw8/view?usp=sharing" class="btn btn-warning pt-2 mt-5 " style="color:white; margin-left: 495px;">Download</a>
     <br>
         
 

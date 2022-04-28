@@ -31,7 +31,7 @@
 
         <div style="margin-left:180px;">
         <label for="InputPassword" class="form-label"></label>
-        <input type="text" name="password" class="form-control w-100" id="InputPassword1" placeholder="Your password..." required>
+        <input type="password" name="password" class="form-control w-100" id="InputPassword1" placeholder="Your password..." required>
         </div>
 
         <div style="margin-top:30px; margin-left:180px; width:200px;">
@@ -43,8 +43,8 @@
           <div style="margin-top:-115px; color:white; text-align:right; margin-right:90px;">
               <h4>SIM PKL</h4>
               <p>Dapatkan <b> informasi </b> serta</p>
-              <p style="margin-top:-14px;">keperluan <b> magangmu </b> disini !</p> 
-          </div> 
+              <p style="margin-top:-14px;">keperluan <b> magangmu </b> disini !</p>
+          </div>
         </div>
   </div>
 

@@ -115,6 +115,7 @@ Route::group(['middleware' => ['auth']], function(){
         // Surat Pengantar Admin //
         Route::get('/suratpengantaradmin', 'App\Http\Controllers\AdminController@suratpengantar');
 
+
         // Surat Permohonan Admin //
         Route::get('/suratpermohonanadmin', 'App\Http\Controllers\AdminController@suratpermohonan');
         Route::get('/suratpermohonanadmin/delete/{id}', 'App\Http\Controllers\AdminController@delete');
@@ -181,7 +182,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Daftar Hadir
         Route::resource('/presensi', PresensiController::class);
-        
+
         // Jurnal PKL
         Route::resource('/Jurnalpkl', JurnalController::class);
 
