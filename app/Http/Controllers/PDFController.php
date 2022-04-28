@@ -14,9 +14,24 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function generatePDF($id)
+    public function generatePDF(Request $request)
     {
-        $datas = SuratPkl::where('id',$id)->first()->load('siswa');
+        $data = SuratPkl::all(); 
+        if($data->where('no_surat',$request->no_surat)->count() > 1){
+            $datas = SuratPkl::where('no_surat',$request->no_surat)->get()->load('siswa');
+            $data = [
+                'date' => date('m/d/Y'),
+                'siswa' => $datas,
+                'penjabat' => $datas[0]->penjabat ,
+                'namaperusahaan' => $datas[0]->perusahaan,
+                'alamatperusahaan' => $datas[0]->alamat_perusahaan
+            ];
+              
+            $pdf = PDF::loadView('surat.suratpermohonan2', $data);
+        
+            return $pdf->stream($datas[0]->no_surat . ' - permohonana.pdf'); 
+        }
+        $datas = SuratPkl::where('no_surat',$request->no_surat)->first()->load('siswa');
         $date = Carbon::now();
         $data = [
             'date' => date('m/d/Y'),
@@ -36,34 +51,6 @@ class PDFController extends Controller
         $pdf = PDF::loadView('surat.suratpermohonan', $data);
     
         return $pdf->stream($datas->siswa->nama . ' - permohonana.pdf');
-    }
-
-    public function generatesuratkel()
-    {
-        $data = [
-            'date' => date('m/d/Y'),
-            'siswa' => [
-                [
-                    'no' => '1',
-                    'nama' => 'Michael Danu Ekklasiya',
-                    'kompetensikeahlian'  => 'Rekayasa Perangkat Lunak',
-                    'kelas' => 'XII' 
-                ],
-                [
-                    'no' => '',
-                    'nama' => '',
-                    'kompetensikeahlian'  => '',
-                    'kelas' => '' 
-                ]
-            ],
-            'penjabat' => 'nama' ,
-            'namaperusahaan' => 'namaperusahaan',
-            'alamatperusahaan' => 'alamatperusahaan'
-        ];
-          
-        $pdf = PDF::loadView('surat.suratpermohonan2', $data);
-    
-        return $pdf->stream('itsolutionstuff.pdf');
     }
 
     public function generatenilaipkl()

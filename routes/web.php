@@ -33,7 +33,7 @@ Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 Route::group(['middleware' => ['auth']], function(){
 
     // Surat permohonan 1//
-    Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF']);
+    Route::post('generate-pdf', [PDFController::class, 'generatePDF']);
     Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
 
     // Pdf Penilaian //

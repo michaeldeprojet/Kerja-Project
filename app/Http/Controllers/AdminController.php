@@ -7,6 +7,7 @@ use App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\DataSiswaImport;
 use App\Imports\PegawaiImport;
+use App\Imports\PesertaPermohonanKelompokImport;
 use App\Models\Pegawai;
 use App\Models\DataSiswa;
 use App\Models\SuratPkl;
@@ -50,7 +51,8 @@ class AdminController extends Controller
     public function suratpermohonan()
     {
         $datas = SuratPkl::all();
-        return view ('admin.suratpermohonan',compact('datas'));
+        $no_surat = SuratPkl::select('no_surat')->distinct()->get();
+        return view ('admin.suratpermohonan',compact('datas','no_surat'));
     }
 
     public function suratpermohonanpeserta()
@@ -93,16 +95,25 @@ class AdminController extends Controller
 
     public function simpanpermohonankelompok(Request $request)
     {
-        SuratPkl::create([
-            'id_siswa' => 'null',
-            'no_surat' =>$request->nosurat,
-            'penjabat' =>$request->namapejabat,
-            'tgl_surat' =>$request->tanggal,
-            'perusahaan' =>$request->namainstusi,
-            'alamat_perusahaan' =>$request->alamatinstusi,
-            'upload_file' => 'null',
-            'Type' => 'null',
-        ]);
+        $import = new PesertaPermohonanKelompokImport;
+        $datasiswa = DataSiswa::all();
+        Excel::import( $import , $request->file('file'));
+        $data = $import->data;
+        for ($i=0; $i < count($data); $i++) { 
+            $peserta[$i] = $datasiswa->where('nama',$data[$i]['nama'])->where('nis',$data[$i]['nis'])->where('nisn',$data[$i]['nisn'])->where('jenis_kelamin',$data[$i]['jk'])->first();
+        }
+        for ($i=0; $i < count($peserta); $i++) { 
+            SuratPkl::create([
+                'id_siswa' =>$peserta[$i]->id,
+                'no_surat' =>$request->nosurat,
+                'penjabat' =>$request->namapejabat,
+                'tgl_surat' =>$request->tanggal,
+                'perusahaan' =>$request->namainstusi,
+                'alamat_perusahaan' =>$request->alamatinstusi,
+                'upload_file' => 'null',
+                'Type' => 'null',
+            ]);
+        }
         return redirect('/suratpermohonanadmin');
     }
 
