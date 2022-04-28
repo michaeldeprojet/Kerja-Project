@@ -11,39 +11,36 @@
     </div>
 
     <div class="card mt-3 p-4 shadow-sm">
-        <form class="row g-3">
-            <div class="col-md-6 mt-3">
-              <label for="inputEmail4" class="form-label">No xxx/xxx/xxx/xxxx ( 028/SMK/XII/2022 )</label>
-              <input type="" class="form-control" id="NoSurat">
-            </div>
-            <div class="col-md-6 mt-3">
-              <label for="inputPassword4" class="form-label">Tanggal</label>
-              <input type="" class="form-control" id="tanggal">
-            </div>
+      <form action="{{url('/simpanpermohonankelompok')}}" method="post" class="row g-3" enctype="multipart/form-data">
+        @csrf
+          <div class="col-md-6 mt-3">
+            <label for="inputEmail4" class="form-label">No xxx/xxx/xxx/xxxx (028/SMK/XII/2022 )</label>
+            <input type="" class="form-control" name="nosurat">
+          </div>
+          <div class="col-md-6 mt-3">
+            <label for="inputPassword4" class="form-label">Tanggal</label>
+            <input type="date" class="form-control" name="tanggal">
+          </div>
 
-            <div class="col-12 mt-3">
-              <label for="inputAddress" class="form-label">Nama Pejabat</label>
-              <input type="text" class="form-control" id="NamaPejabat">
-            </div>
+          <div class="col-12 mt-3">
+            <label for="inputAddress" class="form-label">Nama Pejabat</label>
+            <input type="text" class="form-control" name="namapejabat">
+          </div>
 
-            <div class="col-12 mt-3">
-              <label for="inputAddress" class="form-label">Nama Instusi</label>
-              <input type="" class="form-control" id="NamaInstusi">
-            </div>
+          <div class="col-12 mt-3">
+            <label for="inputAddress" class="form-label">Nama Instusi</label>
+            <input type="" class="form-control" name="namainstusi">
+          </div>
 
-            <div class="col-12 mt-3">
-              <label for="inputAddress" class="form-label">Alamat Instusi Dunia Kerja</label>
-              <input type="text" class="form-control" id="AlamatInstusi     ">
-            </div>
-          </form>
+          <div class="col-12 mt-3">
+            <label for="inputAddress" class="form-label">Alamat Instusi Dunia Kerja</label>
+            <input type="text" class="form-control" name="alamatinstusi">
+          </div>
 
-          <form class="row g-3">
             <div class="col-3 mt-3">
               <div class="mt-4" style="width: 270px; margin-left:10px">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" style="padding-left: 10%">Upload File Peserta PKL (.Excel )</li>
-                  <form action="{{ URL::to('/suratpermohonankelompok') }}" method="post" enctype="multipart/form-data">
-                    {{ csrf_field() }}
                     <div class="form-group" style="margin-left:33px; margin-top:20px">
                         <input type="file" name="file" required>
                     </div>
@@ -81,12 +78,11 @@
                 <a href="" class="btn btn-success ml-3 " style="color:white;" src="../img/vector.png">Submit</a>
             </div> --}}
 
-        </form>
-
         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5" style="margin-right:0px padding:20px">
           <button class="btn btn-secondary me-md-2" type="button" style="margin-right: 20px; width:190px">View</button>
-          <button class="btn btn-success" type="button" style="width:190px">Submit</button>
+          <button class="btn btn-success" type="submit" style="width:190px">Submit</button>
         </div>
+      </form>
     </div>
 
 

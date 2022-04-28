@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataSiswa;
+use App\Models\SuratPkl;
 use App\models\Pegawai;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -105,6 +106,7 @@ class DataSiswaController extends Controller
      */
     public function destroy(DataSiswa $DataSiswa,$id)
     {
+        SuratPkl::where('id_siswa',$id)->delete();
         DataSiswa::destroy($id);
         return redirect('/datasiswa')->with('succses', 'Berhasil Dihapus');
     }

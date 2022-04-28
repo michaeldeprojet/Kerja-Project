@@ -32,8 +32,11 @@
                             <td>{{$d->penjabat}}</td>
                             <td>{{$d->perusahaan}}</td>
                             <td>
-                                <a href="{{url('generate-pdf/'.$d->id)}}" class="btn btn-secondary" src="../img/vector.png">Cetak PDF</a>
-                                
+                                <form action="{{url('generate-pdf')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="no_surat" value="{{ $d->no_surat }}">
+                                    <button type="submit" class="btn btn-secondary" src="../img/vector.png">Cetak PDF</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

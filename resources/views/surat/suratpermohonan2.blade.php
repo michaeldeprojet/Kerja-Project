@@ -33,7 +33,7 @@
             padding:10px;
          }
 
-         .td{
+         td{
             border:1px solid black;
             text-align:left;
             font-family:calibri,arial,sans-serif;
@@ -129,25 +129,16 @@
            </tr>
         </thead>
         <tbody>
-           <tr>
-               <td class="th">1</td>
-               <td class="th">michael danu ekklasiya</td>
-               <td class="th">11907272</td>
-               <td class="th">033485695</td>
-               <td class="th">Rekayasa Perangkat Lunak</td>
-           </tr>
-        </tbody>
-        {{-- <tbody>
-            @foreach ($siswa as $item)
+            @foreach ($siswa as $datas)
             <tr>
-                <td>{{ $item->no }}</td>
-                <td>{{ $item->nama }}</td>
-                <td>{{ $item->nis }}</td>
-                <td>{{ $item->nisn }}</td>
-                <td>{{ $item->jurusans->jurusan }}</td>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $datas->siswa->nama }}</td>
+                <td>{{ $datas->siswa->nis }}</td>
+                <td>{{ $datas->siswa->nisn }}</td>
+                <td>{{ $datas->siswa->jurusans->jurusan }}</td>
             </tr>
             @endforeach
-          </tbody> --}}
+          </tbody>
     </table>
 
 </body>
