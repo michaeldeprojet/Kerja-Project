@@ -1,7 +1,10 @@
+@extends('layouts.admin')
 
+@section('content-header')
 
+    
 <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md">
             <div class="card shadow h-100">
                 <div class="card-header">
                     <h5 class="m-0 pt-1 font-weight-bold float-left">Tambah User</h5>
@@ -17,13 +20,15 @@
                                 @error('nama') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <div class="form-group row">
-                            <div class="col-sm-2"><label for="email" class="float-left col-form-label">email Peserta</label></div>
+                            <div class="col-sm-2"><label for="email" class="float-left col-form-label">Email Peserta</label></div>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
                                 @error('email') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <div class="col-sm-2"><label for="nis" class="float-left col-form-label">Nis</label></div>
                             <div class="col-sm-10">
@@ -31,6 +36,7 @@
                                 @error('nis') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <div class="col-sm-2"><label for="nisn" class="float-left col-form-label">Nisn</label></div>
                             <div class="col-sm-10">
@@ -38,6 +44,7 @@
                                 @error('nisn') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <div class="col-sm-2"><label for="tempat_lahir" class="float-left col-form-label">Tempat Lahir</label></div>
                             <div class="col-sm-10">
@@ -45,6 +52,7 @@
                                 @error('tempat_lahir') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <div class="col-sm-2"><label for="tanggal_lahir" class="float-left col-form-label">Tanggal Lahir</label></div>
                             <div class="col-sm-10">
@@ -52,6 +60,7 @@
                                 @error('tanggal_lahir') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <div class="col-sm-2"><label for="jurusan_id" class="float-left col-form-label">Jurusan</label></div>
                             <div class="col-sm-10">
@@ -68,6 +77,7 @@
                                 @error('jurusan_id') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <div class="col-sm-2"><label for="jenis_kelamin" class="float-left col-form-label">Gender</label></div>
                             <div class="col-sm-10">
@@ -79,12 +89,14 @@
                                 @error('jenis_kelamin') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>
                         </div>
+
                         <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Alamat:</strong>
                                 <textarea class="form-control" style="height:150px" name="Alamat" placeholder="Content"></textarea>
                             </div>
                         </div> -->
+                        
                         <div class="form-group row justify-content-end">
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-success btn-block">
@@ -98,4 +110,4 @@
         </div>
     </div>
   
-    
+@endsection
