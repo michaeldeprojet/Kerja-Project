@@ -11,7 +11,7 @@
                     <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="/profileadmin" class="d-block" style="color: white">Pembimbing</a>
+                    <a href="/profilepembimbing" class="d-block" style="color: white">Pembimbing</a>
                 </div>
             </div>
         </div>

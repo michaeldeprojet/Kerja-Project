@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Surat Permohonan 1 Siswa</title>
+    <title>Surat Permohonan Kelompok</title>
     <style>
         body{
             margin-left: 60px;
             margin-right: 60px;
+        }
+        
+        .biodata{
+            margin-bottom: 30px;
+            font-family:arial, sans-serif;
+        }
+
+        table{
+            display:table;
+            border-collapse:collapse;
+            margin:auto;
+         }
+
+         caption{
+            margin:20px auto;
+            font-size:22px;
+            font-family:arial, sans-serif;
+            font-weight:bold;
+         }
+
+         .tr,.th{
+            border:1px solid black;
+            text-align:center;
+            font-family:calibri,arial,sans-serif;
+            padding:10px;
+         }
+
+         .td{
+            border:1px solid black;
+            text-align:left;
+            font-family:calibri,arial,sans-serif;
+            padding:10px;
+         }
+
+         .box1{
+            font-size: 19px;
+            margin-top: 20px;
+            padding: 3%;
+            width:auto;
+            height:20px;
+            border:solid 2px black;
+            font-size: 19px;
+        }
+
+        .table1{
+           border: none;
+           margin-bottom: 30px;
+         font-family:arial, sans-serif;
+        }
+
+        .bordertr {
+           border: none;
         }
     </style>
 </head>
@@ -16,7 +68,7 @@
         Laman : www.smkwikrama.sch.id</p>
         <hr>
 
-        <p>No   : {{ $nosurat }}</p>
+        {{-- <p>No   : {{ $nosurat }}</p> --}}
         <p>Hal   : Permohonaan Praktik Kerja Lapangan</p>
         <p>Lampiran   : 1 Berkas</p>
         <br>
@@ -45,6 +97,59 @@
         <br>
         <br>
     <p style="float: right;"><b>Iin Mulyani, S.Si.</b></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <table style="margin-left: 0%; margin-bottom: 20px">
+        <thead>
+           <tr class="tr">
+              <th class="th">No.</th>
+              <th class="th">Nama Peserta PKL</th>
+              <th class="th">Nis</th>
+              <th class="th">Nisn</th>
+              <th class="th">Ujikompetensi</th>
+           </tr>
+        </thead>
+        <tbody>
+           <tr>
+               <td class="th">1</td>
+               <td class="th">michael danu ekklasiya</td>
+               <td class="th">11907272</td>
+               <td class="th">033485695</td>
+               <td class="th">Rekayasa Perangkat Lunak</td>
+           </tr>
+        </tbody>
+        {{-- <tbody>
+            @foreach ($siswa as $item)
+            <tr>
+                <td>{{ $item->no }}</td>
+                <td>{{ $item->nama }}</td>
+                <td>{{ $item->nis }}</td>
+                <td>{{ $item->nisn }}</td>
+                <td>{{ $item->jurusans->jurusan }}</td>
+            </tr>
+            @endforeach
+          </tbody> --}}
+    </table>
 
 </body>
 </html>
+
