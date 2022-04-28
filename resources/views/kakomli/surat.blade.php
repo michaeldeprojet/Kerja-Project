@@ -31,6 +31,7 @@
                             <td>{{$d->perusahaan}}</td>
                             <td>
                                 <a href="{{url('generate-pdf/'.$d->id)}}" class="btn btn-secondary" src="../img/vector.png">Cetak PDF</a>
+
                             </td>
                         </tr>
                     @endforeach

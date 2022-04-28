@@ -25,7 +25,7 @@
 
             <div class="form-group col-4">
                 <label for="kelas" class="form-label">NIS</label>
-                <input type="number" name="nis" class="form-control" placeholder="NIS">
+                <input type="number" class="form-control" id="nis" readonly>
             </div>
         </div>
 

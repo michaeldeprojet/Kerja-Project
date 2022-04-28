@@ -20,8 +20,6 @@ class CreateTbLaporanPkl extends Migration
             $table->string('perusahaan');
             $table->bigInteger('id_pembimbing')->unsigned();
             $table->string('divisi');
-            $table->string('tempat_surat');
-            $table->date('tgl_surat');
             $table->string('upload_file');
             $table->foreign('id_pembimbing')->references('id')->on('tb_pembimbing');
             $table->foreign('id_siswa')->references('id')->on('tb_siswa');

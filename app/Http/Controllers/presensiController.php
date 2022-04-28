@@ -8,34 +8,24 @@ use App\Models\DataSiswa;
 
 class PresensiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function getData($id){
+        $datas = DataSiswa::where('id',$id)->first()->load('jurusans');
+        return response()->json($datas);
+    }
+
     public function index()
     {
         $datas= Presensi::orderBy("tgl_pkl","DESC")->get();
         return view('siswa.daftarkehadiran', compact('datas'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         $presensi = DataSiswa::all();
         return view('siswa.presensi', compact('presensi'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         
@@ -53,48 +43,11 @@ class PresensiController extends Controller
         return redirect('presensi');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $datas = Presensi::find($id);
+        $datas->delete();
+
+        return redirect ('presensi');
     }
 }
