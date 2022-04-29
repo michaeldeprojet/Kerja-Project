@@ -5,8 +5,8 @@
         <img src="../img/s.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-block" style="color: white;">SIM PKL</span>
     </a>
-    
-   
+
+
 
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -15,9 +15,9 @@
             </div>
             <div class="info">
                 <a href="/profileadmin" class="d-block" style="color: white">Admin SIM PKL</a>
-                
+
             </div>
-            
+
         </div>
     </div>
 
@@ -32,7 +32,7 @@
                 </a>
             </li>
 
-           
+
 
             {{-- Menu Input Data--}}
             <li class="nav-item">
@@ -54,7 +54,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p style="color: white">Input Data Pembimbing</p>
                             </a>
-                        </li>   
+                        </li>
                     </ul>
             </li>
 
@@ -78,11 +78,11 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p style="color: white">Input Akun Pembimbing</p>
                             </a>
-                        </li>   
+                        </li>
                     </ul>
             </li>
 
-            
+
 
             {{-- Menu Persuratan--}}
             <li class="nav-item">
