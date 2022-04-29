@@ -13,7 +13,7 @@
   <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Siswa</a>
-            <a href="{{ route('dataakunsiswa.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
+            <a href="{{ route('dataakunsiswa.create') }}"  data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
 
             <a href="/file-download" class="btn btn-warning">Download Template Excel</a>
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
@@ -26,7 +26,7 @@
                         <th>role</th>
                         <th>Kompetensi Keahlian</th>
                         <th colspan="5">Aksi</th>
-                    </tr>  
+                    </tr>
                   </thead>
                   <tbody>
                   @foreach ($siswa as $item)
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="edit-data" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal fade" id="exampleModal" id="edit-data" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -82,7 +82,7 @@
                 <label for="recipient-name" class="col-form-label">Kompetensi Keahlian</label>
                 <select class="form-control" aria-label="Default select example" name="jurusan_id" id="jurusan_id">
                   <option disabled selected style="display: none">----Pilih Jurusan-----</option>
-                 
+
                 </select>
               </div>
             </form>
@@ -110,7 +110,7 @@
             <div class="form-group">
                 <input type="file" name="file" required>
             </div>
-        
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Selesai</button>
@@ -135,10 +135,10 @@ $(document).on('click','#edit',function(){
   });
 
   $("#saveBtn").click(function (e) {
-    $.ajaxSetup({ 
+    $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }   
+      }
     })
     e.preventDefault();
 
