@@ -58,6 +58,30 @@
                     </ul>
             </li>
 
+            {{-- Menu Input Akun--}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas"><img src="../img/datasiswa.png" style="width: 20px; height:20px"></i>
+                        <p style="color: white">Input Akun<i class="right fas fa-angle-left"></i></p>
+                </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/dataakunsiswa" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p style="color: white">Input Akun Siswa</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/datapembimbing" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p style="color: white">Input Akun Pembimbing</p>
+                            </a>
+                        </li>   
+                    </ul>
+            </li>
+
             
 
             {{-- Menu Persuratan--}}

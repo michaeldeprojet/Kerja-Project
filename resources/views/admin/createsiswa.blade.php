@@ -57,13 +57,13 @@
                             <div class="col-sm-10">
                                 <select class="form-control @error('jurusan_id') is-invalid @enderror" name="jurusan_id" id="jurusan_id">
                                     <option value="">Pilih</option>
-                                    <option value="1" {{ old('role') == 1 ? 'selected' : '' }}>Rekayasa Perangkat Lunak</option>
-                                    <option value="2" {{ old('role') == 2 ? 'selected' : '' }}>Teknik Komputer dan Jaringan</option>
-                                    <option value="3" {{ old('role') == 3 ? 'selected' : '' }}>Multimedia</option>
-                                    <option value="4" {{ old('role') == 4 ? 'selected' : '' }}>Otomatisasi dan Tata Kelola Perkantoran</option>
-                                    <option value="5" {{ old('role') == 5 ? 'selected' : '' }}>Bisnis Daring dan Pemasaran</option>
-                                    <option value="6" {{ old('role') == 6 ? 'selected' : '' }}>Tata Boga</option>
-                                    <option value="7" {{ old('role') == 7 ? 'selected' : '' }}>Perhotelan</option>
+                                    <option value="1" {{ old('jurusan_id') == 1 ? 'selected' : '' }}>Rekayasa Perangkat Lunak</option>
+                                    <option value="2" {{ old('jurusan_id') == 2 ? 'selected' : '' }}>Teknik Komputer dan Jaringan</option>
+                                    <option value="3" {{ old('jurusan_id') == 3 ? 'selected' : '' }}>Multimedia</option>
+                                    <option value="4" {{ old('jurusan_id') == 4 ? 'selected' : '' }}>Otomatisasi dan Tata Kelola Perkantoran</option>
+                                    <option value="5" {{ old('jurusan_id') == 5 ? 'selected' : '' }}>Bisnis Daring dan Pemasaran</option>
+                                    <option value="6" {{ old('jurusan_id') == 6 ? 'selected' : '' }}>Tata Boga</option>
+                                    <option value="7" {{ old('jurusan_id') == 7 ? 'selected' : '' }}>Perhotelan</option>
                                 </select>
                                 @error('jurusan_id') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                             </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\DataSiswaController;
 use App\Http\Controllers\DataPembimbingController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DataAkunSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +101,11 @@ Route::group(['middleware' => ['auth']], function(){
         // Data Siswa //
         Route::resource('/datasiswa', DataSiswaController::class);
         Route::resource('/datapembimbing', DataPembimbingController::class);
+
+        // Data Akun //
+        Route::resource('/dataakunsiswa', DataAkunSiswaController::class);
+        Route::get('/hash', 'App\Http\Controllers\DataAkunSiswaController@hash');
+        // Route::resource('/datapembimbing', DataPembimbingController::class);
 
         // Input Siswa //
         Route::get('/inputsiswa', 'App\Http\Controllers\AdminController@inputsiswa');
