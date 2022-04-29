@@ -91,9 +91,9 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Download file
         Route::get('/file-download', [DataSiswaController::class, 'downloadFile'])->name('file.download.index');
-        Route::get('/download-file', [DataPembimbingController::class, 'downloadFile'])->name('file.download.index');
-      
-        
+        Route::get('/download-file', [DataPembimbingController::class, 'downloadFile'])->name('file.index');
+
+
         // Dashboard Admin //
         Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@admin');
 
@@ -119,7 +119,7 @@ Route::group(['middleware' => ['auth']], function(){
         // Surat Permohonan Admin //
         Route::get('/suratpermohonanadmin', 'App\Http\Controllers\AdminController@suratpermohonan');
         Route::get('/suratpermohonanadmin/delete/{id}', 'App\Http\Controllers\AdminController@delete');
-        
+
         // Surat Permohonan Peserta //
         Route::get('/suratpermohonanpeserta', 'App\Http\Controllers\AdminController@suratpermohonanpeserta');
         Route::post('/simpanPermohonanPeserta', 'App\Http\Controllers\AdminController@simpanPermohonanPeserta');
