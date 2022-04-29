@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
 use App\Models\Login;
+use App\Models\User;
+use App\Models\DataAkunController;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -30,13 +32,13 @@ class LoginController extends Controller
             $user = Auth::user();
 
             switch($user->role) {
-                case Login::ADMIN:
+                case User::ADMIN:
                     return redirect('/dashboardadmin');
-                case Login::KAKOMLI:
+                case User::KAKOMLI:
                     return redirect('/dashboardkakomli');
-                case Login::PEMBIMBING:
+                case User::PEMBIMBING:
                     return redirect('/dashboardpembimbing');
-                case Login::SISWA:
+                case User::SISWA:
                     return redirect('/dashboardsiswa');
                 default:
                     return redirect('/login');

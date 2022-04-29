@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateTbAkunSiswaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('jurusan_id')->nullable();
-            $table->string('nama')->nullable();
-            $table->integer('no_hp')->nullable();
+        Schema::create('tb_akun_siswa', function (Blueprint $table) {
+            $table->id();
             $table->string('username', 100);
+            $table->string('password');
+            $table->bigInteger('jurusan_id');
+            $table->string('nama')->nullable();
             $table->integer('nis')->nullable();
             $table->integer('nisn')->nullable();
             $table->string('email')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->string('status_pkl')->nullable();
             $table->string('jenis_kelamin')->nullable();
             $table->string('role')->nullable();
-            $table->string('password', 100);
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -41,6 +38,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tb_akun_siswa');
     }
 }
