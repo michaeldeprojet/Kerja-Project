@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\JurnalPkl;
 use App\Models\Login;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -39,8 +40,32 @@ class DatabaseSeeder extends Seeder
             ],
         ];
 
+        $users = [
+            [
+                'username' => 'AdminPKL123',
+                'password' => Hash::make('Wikrama2022'),
+                'role' => User::ADMIN,
+            ],
+            [
+                'username' => 'Kakomli123',
+                'password' => Hash::make('Wikrama2022'),
+                'role' => User::KAKOMLI,
+            ],
+            [
+                'username' => 'Pembimbing123',
+                'password' => Hash::make('Wikrama2022'),
+                'role' => User::PEMBIMBING,
+            ],
+            [
+                'username' => 'Siswa123',
+                'password' => Hash::make('Wikrama2022'),
+                'role' => User::SISWA,
+            ],
+        ];
+
         foreach($users as $user) {
             Login::create($user);
+            User::create($user);
         }
         $this->call(JurusanSeeder::class);
 

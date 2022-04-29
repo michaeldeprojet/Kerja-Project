@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -17,10 +18,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = "users";
+    protected $primaryKey = "id";
     protected $fillable = [
-        'name',
-        'email',
+        'nama', 
+        'jenis_kelamin', 
+        'nis', 
+        'nisn',
+        'no_hp',
+        'email', 
+        'tempat_lahir', 
+        'tanggal_lahir', 
+        'jurusan_id', 
+        'role',
         'password',
+        'username',
     ];
 
     /**
@@ -41,4 +53,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function jurusans(){
+        return $this->hasOne(Jurusan::class, 'id' , 'jurusan_id');
+    }
+    
+    const ADMIN = 'ADMIN';
+    const KAKOMLI = 'KAKOMLI';
+    const PEMBIMBING = 'PEMBIMBING';
+    const SISWA = 'SISWA';
 }
