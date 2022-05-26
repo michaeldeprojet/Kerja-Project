@@ -18,7 +18,6 @@
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
                         <th>Nama Peserta</th>
-                        <th>Kompetensi Keahlian</th>
                         <th>Pembimbing PKL</th>
                         <th>Tempat PKL</th>
                         <th colspan="5">Aksi</th>
@@ -27,26 +26,24 @@
                 <tbody>
                 <tr>
                     <th> <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Learn More</a></th>
-                    <th>Kompetensi Keahlian</th>
                     <th>Pembimbing PKL</th>
                     <th>Tempat PKL</th>
                     <th>Aksi</th>
                 </tr>
-                    {{-- @foreach($datas as $d)
-                        <tr>
-                            <td>{{$d->siswa->nama}}</td>
-                            <td>{{$d->siswa->jurusans->jurusan}}</td>
-                            <td>{{$d->penjabat}}</td>
-                            <td>{{$d->perusahaan}}</td>
-                            <td>
-                                <form action="{{url('generate-pdf')}}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="no_surat" value="{{ $d->no_surat }}">
-                                    <button type="submit" class="btn btn-secondary" src="../img/vector.png">Cetak PDF</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach --}}
+                @foreach ($no_surat as $nos)
+                    <tr>
+                        <td><button class=" btn btn-outline-secondary learn" data-surat="{{$datas->where('no_surat',$nos->no_surat)->first()->no_surat}}">Learn More</button></td>
+                        <td>{{$datas->where('no_surat',$nos->no_surat)->first()->penjabat}}</td>
+                        <td>{{$datas->where('no_surat',$nos->no_surat)->first()->perusahaan}}</td>
+                        <td>
+                            <form action="{{url('generate-pdf')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="no_surat" value="{{$datas->where('no_surat',$nos->no_surat)->first()->no_surat}}">
+                                <button type="submit" class="btn btn-secondary" src="../img/vector.png">Cetak PDF</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
@@ -64,32 +61,13 @@
             <table class="mt-4 table table-bordered" style="text-align: center">
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
-                        <th>Nama Peserta</th>
+                        <th>Data Peserta</th>
                         <th>Nis</th>
                         <th>Nisn</th>
+                        <th>Kompetensi Keahlian</th>
                     </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th>Michael D E</a></th>
-                    <th>11907272</th>
-                    <th>00392384</th>
-                </tr>
-                {{-- @foreach($datas as $d)
-                        <tr>
-                            <td>{{$d->siswa->nama}}</td>
-                            <td>{{$d->siswa->jurusans->jurusan}}</td>
-                            <td>{{$d->penjabat}}</td>
-                            <td>{{$d->perusahaan}}</td>
-                            <td>
-                                <form action="{{url('generate-pdf')}}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="no_surat" value="{{ $d->no_surat }}">
-                                    <button type="submit" class="btn btn-secondary" src="../img/vector.png">Cetak PDF</button>
-                                </form>
-                            </td>
-                        </tr>
-                @endforeach --}}
+                <tbody class="isi">
             </table>
         </div>
         <div class="modal-footer">
@@ -100,5 +78,36 @@
     </div>
   </div>
 
+<script>
+    $(".learn").click(function(){
+        var surat = $(this).data("surat");
+        
+        $.ajaxSetup({
+            headers:
+            { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        });
 
+        $.ajax({   
+            type: "POST",
+            data : {'surat' : surat},
+            cache: false,  
+            url: "suratpermohonanadmin",   
+            success: function(data){
+                var temple = `
+                    ${data.map((data, i) => `
+                        <tr>
+                            <th>${data[0]}</th>
+                            <th>${data[1]}</th>
+                            <th>${data[2]}</th>
+                            <th>${data[3]}</th>
+                        </tr>
+                    `).join('')}
+                    `
+                $(".isi").html(temple); 
+                $("#exampleModal").modal('show');                  
+            }   
+        });      
+        
+    });
+</script>
 @endsection
