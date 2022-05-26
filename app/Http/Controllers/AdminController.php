@@ -48,7 +48,18 @@ class AdminController extends Controller
         return view ('admin.suratpengantar');
     }
 
-
+    public function GetDataSurat(Request $request){
+        $DataSurat = SuratPkl::where('no_surat',$request->surat)->get();
+        for ($i=0; $i < $DataSurat->count(); $i++) { 
+            $data[$i] = [
+                $nama = $DataSurat[$i]->siswa->nama,
+                $nis = $DataSurat[$i]->siswa->nis,
+                $nisn = $DataSurat[$i]->siswa->nisn,
+                $jurusan = $DataSurat[$i]->siswa->jurusans->jurusan,
+            ];
+        }
+        return response()->json($data);
+    }
 
     public function suratpermohonan()
     {
@@ -75,6 +86,7 @@ class AdminController extends Controller
     }
     public function simpanPermohonanPeserta(Request $request)
     {
+        dd($request);
         SuratPkl::create([
             'id_siswa' =>$request->id_peserta,
             'no_surat' =>$request->nosurat,
