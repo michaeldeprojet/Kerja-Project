@@ -5,7 +5,7 @@
     <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-        <h1 style="color:#34365B; margin-left:10%;"><b> Input Akun Siswa</b></h1>
+        <h1 style="color:#34365B; margin-left:10%;"><b> Input Akun Pembimbing</b></h1>
         </div>
     </div>
     </div>
@@ -13,32 +13,32 @@
   <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Siswa</a>
-            <a href="{{ route('dataakunsiswa.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
+            <a href="{{ route('dataakunpembimbing.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
 
             <a href="/file-download" class="btn btn-warning">Download Template Excel</a>
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
-                        <th>Nama Peserta</th>
+                        <th>Nama Pembimbing</th>
                         <th>username</th>
-                        <th>Nis</th>
-                        <th>Nisn</th>
+                        <th>Email</th>
+                        <th>No HP</th>
                         <th>role</th>
                         <th>Kompetensi Keahlian</th>
                         <th colspan="5">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach ($siswa as $item)
+                    @foreach ($user as $item)
                     <tr>
                         <td>{{ $item->nama }}</td>
-                        <td>{{ $item->username }}</td>
-                        <td>{{ $item->nis }}</td>
-                        <td>{{ $item->nisn }}</td>
-                        <td>{{ $item->role }}</td>
+                        <td>{{ $item->username}}</td>
+                        <td>{{ $item->email}}</td>
+                        <td>{{ $item->no_hp }}</td>
+                        <td>{{ $item->role}}</td>
                         <td>{{ $item->jurusans->jurusan }}</td>
                         <td>
-                          <form action="{{ url('dataakunsiswa/'.$item->id)}}" method="POST" class="d-inline">
+                          <form action="{{ url('dataakunpembimbing/'.$item->id)}}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -56,27 +56,24 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit Data Siswa</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Edit Akun Pembimbing</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form id="form-data-siswa" >
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Nama Peserta</label>
+            <form id="form-data-siswa">
+            @csrf  
+            <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Nama Pembimbing</label>
                 <input type="hidden" class="form-control" id="id" name="id">
                 <input type="text" class="form-control" id="nama" name="name">
               </div>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Nis</label>
-                <input type="text" class="form-control" id="nis"  name="nis">
+                <label for="recipient-name" class="col-form-label">no_hp</label>
+                <input type="text" class="form-control" id="no_hp"  name="no_hp">
               </div>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Nisn</label>
-                <input type="text" class="form-control" id="nisn"  name="nisn">
-              </div>
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Password</label>
-                <input type="text" class="form-control" id="password"  name="password">
+                <label for="recipient-name" class="col-form-label">email</label>
+                <input type="text" class="form-control" id="email"  name="email">
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Kompetensi Keahlian</label>
@@ -127,8 +124,8 @@ $(document).on('click','#edit',function(){
     $.get("{{ route('datasiswa.index') }}" +'/' + id, function (data) {
       $('#id').val(data.id);
       $('#nama').val(data.nama);
-      $('#nis').val(data.nis);
-      $('#nisn').val(data.nisn);
+      $('#no_hp').val(data.no_hp);
+      $('#email').val(data.email);
       $('#jurusan_id').val(data.jurusan_id);
       $('#edit-data').modal('show');
     })
