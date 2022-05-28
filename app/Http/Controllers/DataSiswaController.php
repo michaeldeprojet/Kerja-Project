@@ -95,7 +95,16 @@ class DataSiswaController extends Controller
      */
     public function update(Request $request, DataSiswa $DataSiswa)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'nis' => 'required',
+            'nisn' => 'required',
+            'jurusan_id' => 'required',
+        ]);
+
+        DataSiswa::update($request->all());
+
+        return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Update');
     }
 
     /**
