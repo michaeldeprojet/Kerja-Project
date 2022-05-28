@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataSiswa;
-use App\Models\SuratPkl;
-use App\models\Pegawai;
+use App\Models\User;
+use App\Models\DataPembimbing;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\DataSiswaImport;
+use Illuminate\Support\Facades\Hash;
+use App\Imports\DataPembimbingImport;
 use App\Models\Jurusan;
+use Illuminate\Support\Facades\Auth;
 
-class DataSiswaController extends Controller
+class DataAkunPembimbingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +20,12 @@ class DataSiswaController extends Controller
      */
     public function index()
     {
-        $siswa= DataSiswa::all();
+        $user = User::select('*')
+        ->where('role', 'PEMBIMBING')
+        ->get();
+        // $siswas = DataSiswa::all();
         $jurusan = Jurusan::all();
-        return view ('admin.datasiswa',compact('siswa','jurusan'));
+        return view ('admin.dataakunpembimbing',compact('user','jurusan'));
 
     }
 
@@ -33,7 +37,8 @@ class DataSiswaController extends Controller
     public function create()
     {
         $jurusan = Jurusan::all();
-        return view('admin.createsiswa');
+        $pembimbing = DataPembimbing::all();
+        return view('admin.createakunpembimbing', compact('pembimbing','jurusan'));
     }
 
     /**
@@ -47,20 +52,25 @@ class DataSiswaController extends Controller
         // DataSiswa::updateOrCreate(['id' => $request->id],
         // ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
         // return response()->json();
-       
-        $request->validate([
+        $user = $request->validate([
             'nama' => 'required',
             'email' => 'required',
-            'nis' => 'required',
-            'nisn' => 'required',
+            'no_hp' => 'required',
+            'alamat' => 'required',
             'jurusan_id' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
-            'jenis_kelamin' => 'required',
+            'password' => 'required',
+            'username' => 'required',
+            'role' => 'required',
         ]);
-        DataSiswa::create($request->all());
+        
+        $password = request('password'); // get the value of password field
+        // $user = Hash::make($password);
+        $user['password'] = Hash::make($password);
+        User::create($user);
 
-        return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Input');
+        return redirect()->route('dataakunpembimbing.index')->with('succes','Data Berhasil di Input');
     }
 
     /**
@@ -83,8 +93,7 @@ class DataSiswaController extends Controller
      */
     public function edit(DataSiswa $DataSiswa)
     {
-        $data = DataSiswa::findOrFail($request->get('id'));
-        echo json_encode($data);
+        //
     }
 
     /**
@@ -96,16 +105,7 @@ class DataSiswaController extends Controller
      */
     public function update(Request $request, DataSiswa $DataSiswa)
     {
-        $request->validate([
-            'nama' => 'required',
-            'nis' => 'required',
-            'nisn' => 'required',
-            'jurusan_id' => 'required',
-        ]);
-
-        DataSiswa::update($request->all());
-
-        return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Update');
+        //
     }
 
     /**
@@ -116,9 +116,8 @@ class DataSiswaController extends Controller
      */
     public function destroy(DataSiswa $DataSiswa,$id)
     {
-        SuratPkl::where('id_siswa',$id)->delete();
-        DataSiswa::destroy($id);
-        return redirect('/datasiswa')->with('succses', 'Berhasil Dihapus');
+        User::destroy($id);
+        return redirect('/dataakunpembimbing')->with('succses', 'Berhasil Dihapus');
     }
 
     public function importsiswa(Request $request)
@@ -132,28 +131,13 @@ class DataSiswaController extends Controller
     	$filePath = public_path("template/Template Data Siswa.xlsx");
     	$headers = ['Content-Type: application/xlsx'];
         $fileName = 'Template Data Siswa.xlsx';
-
+        
         if (file_exists($filePath)) {
             return response()->download($filePath, $fileName, $headers);
         } else {
             echo('File not found.');
         }
 
-
-    }
-
-    public function downloadFilePDF()
-    {
-    	$filePath = public_path("pdf/Kata Pengantar PKL.pdf");
-    	$headers = ['Content-Type: application/pdf'];
-        $fileName = 'Kata Pengantar PKL.pdf';
-
-        if (file_exists($filePath)) {
-            return response()->download($filePath, $fileName, $headers);
-        } else {
-            echo('File not found.');
-        }
-
-
+    	
     }
 }

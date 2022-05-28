@@ -74,7 +74,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/datapembimbing" class="nav-link">
+                            <a href="/dataakunpembimbing" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p style="color: white">Input Akun Pembimbing</p>
                             </a>

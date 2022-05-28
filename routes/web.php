@@ -9,6 +9,7 @@ use App\Http\Controllers\DataPembimbingController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\DataAkunSiswaController;
+use App\Http\Controllers\DataAkunPembimbingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,6 +90,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         //get datasisswa
         Route::get('/siswa/{id}', 'App\Http\Controllers\AdminController@getData');
+        Route::get('/pembimbing/{id}', 'App\Http\Controllers\AdminController@getDataPembimbing');
 
         //Download file
         Route::get('/file-download', [DataSiswaController::class, 'downloadFile'])->name('file.download.index');
@@ -104,6 +106,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Data Akun //
         Route::resource('/dataakunsiswa', DataAkunSiswaController::class);
+        Route::resource('/dataakunpembimbing', DataAkunPembimbingController::class);
         Route::get('/hash', 'App\Http\Controllers\DataAkunSiswaController@hash');
         // Route::resource('/datapembimbing', DataPembimbingController::class);
 
