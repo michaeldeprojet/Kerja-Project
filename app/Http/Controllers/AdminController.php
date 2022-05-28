@@ -7,9 +7,11 @@ use App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\DataSiswaImport;
 use App\Imports\PegawaiImport;
+use App\Imports\DataPembimbingImport;
 use App\Imports\PesertaPermohonanKelompokImport;
 use App\Models\Pegawai;
 use App\Models\DataSiswa;
+use App\Models\DataPembimbing;
 use App\Models\SuratPkl;
 use App\Models\Penentuan;
 
@@ -134,6 +136,12 @@ class AdminController extends Controller
     public function importdatasiswa(Request $request)
     {
         Excel::import(new DataSiswaImport, $request->file('file'));
+        return redirect()->back();
+    }
+
+    public function importdatapembimbing(Request $request)
+    {
+        Excel::import(new DataPembimbingImport, $request->file('file'));
         return redirect()->back();
     }
 
