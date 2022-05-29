@@ -12,8 +12,11 @@
             <div class="image">
                 <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
-            <div class="info">
-                <a href="/profilesiswa" class="d-block" style="color: white">Siti Iswanti</a>
+            <div class="info ml-2 pt-1">
+                <a href="/profilesiswa/{id}" class="d-block" style="color: white">{{ Auth::user()->nama }}
+                    <br>
+                    {{ Auth::user()->jurusans->jurusan }}
+                </a>
                 
             </div>
             

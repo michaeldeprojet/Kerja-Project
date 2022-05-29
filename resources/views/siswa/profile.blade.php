@@ -17,12 +17,28 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title bold" style="font-family: Poppins; font-weight: bold; padding-top:30px; margin-left:3.8%;">Siswa</h5>
-                    <p class="card-text" style="padding-top:10px; padding-left:25px;">Jenis Kelamin              :</p>
-                    <p class="card-text" style="padding-left:25px;">Tempat/Tanggal Lahir       :</p>
-                    <p class="card-text"style="padding-left:25px;">No Handphone               :</p>
-                    <p class="card-text"style="padding-left:25px;">Email                      :</p>
-                    <p class="card-text"style="padding-left:25px;">Alamat                     :</p>
+                    <button type="button" class="btn btn-warning float-right" id="edit">Edit</button>
+                    <div class="col-6">
+                        <h4>{{ Auth::user()->role }}</h4>
+                        <div class="row">
+                            <div class="col-6 mb-1">Nama Lengkap</div>
+                            <div class="col-6">: {{ Auth::user()->nama }}</div>
+                            <div class="col-6 mb-1">Jenis Kelamin</div>
+                            <div class="col-6">: {{ Auth::user()->jenis_kelamin}}</div>
+                            <div class="col-6 mb-1">NIS</div>
+                            <div class="col-6">: {{ Auth::user()->nis }}</div>
+                            <div class="col-6 mb-1">NISN</div>
+                            <div class="col-6">: {{ Auth::user()->nisn }}</div>
+                            <div class="col-6 mb-1">NO HP</div>
+                            <div class="col-6">: {{ Auth::user()->no_hp }}</div>
+                            <div class="col-6 mb-1">Email</div>
+                            <div class="col-6">: {{ Auth::user()->email}}</div>
+                            <div class="col-6 mb-1">Tempat Lahir </div>
+                            <div class="col-6">: {{ Auth::user()->tempat_lahir}}</div>
+                            <div class="col-6 mb-1">Tanggal Lahir </div>
+                            <div class="col-6">: {{ Auth::user()->tanggal_lahir}}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
     </div>
@@ -30,7 +46,7 @@
 
     <div class="card col-md-8" style="margin-left: 20px; max-width: 1000px;">
         <div class="card-body">
-            <h5 class="card-title" style="padding-left:80px;">Kompetensi Keahlian  :</h5>
+            <h5 class="card-title" style="padding-left:80px;">Kompetensi Keahlian  : {{ Auth::user()->jurusans->jurusan }}</h5>
         </div>
     </div>
 

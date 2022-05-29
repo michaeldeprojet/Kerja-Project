@@ -185,7 +185,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/dashboardsiswa', 'App\Http\Controllers\SiswaController@siswa');
 
         // Profile Siswa //
-        Route::get('/profilesiswa', 'App\Http\Controllers\SiswaController@profile');
+        Route::get('/profilesiswa/{id}', 'App\Http\Controllers\SiswaController@profile');
 
         // Izin Ortu
         Route::get('/izinsiswa', 'App\Http\Controllers\SiswaController@izin');

@@ -77,10 +77,13 @@ class DataSiswaController extends Controller
      * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function edit(DataSiswa $DataSiswa)
+    public function edit(DataSiswa $DataSiswa, $id)
     {
-        $data = DataSiswa::findOrFail($request->get('id'));
-        echo json_encode($data);
+        $data = DataSiswa::find($id);
+	    return response()->json([
+	      'data' => $data
+	    ]);
+        
     }
 
     /**

@@ -17,13 +17,13 @@ class DataPembimbingImport implements ToModel,WithHeadingRow
     {
         if($row ['nama']) {
             return new DataPembimbing([
-                'jurusan_id'=>$row['kompetensi_keahlian'],
                 'nama'=>$row['nama'],
                 'no_hp'=>$row['no_hp'], 
                 'alamat'=>$row['alamat'], 
                 'email'=>$row['email'],
                 'tempat_lahir'=>$row['tempat_lahir'],
-                'tanggal_lahir'=>$row['tanggal_lahir']
+                'tanggal_lahir'=>$row['tanggal_lahir'],
+                'jurusan_id'=>$row['kompetensi_keahlian']
             ]);
         }
     }
