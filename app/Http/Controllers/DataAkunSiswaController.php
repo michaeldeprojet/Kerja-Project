@@ -63,9 +63,8 @@ class DataAkunSiswaController extends Controller
             'jenis_kelamin' => 'required',
             'password' => 'required',
             'username' => 'required',
-            'role' => 'required',
         ]);
-        
+        $siswa['role'] = 'SISWA';
         $password = request('password'); // get the value of password field
         // $user = Hash::make($password);
         $siswa['password'] = Hash::make($password);
