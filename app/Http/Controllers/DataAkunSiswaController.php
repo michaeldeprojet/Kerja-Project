@@ -79,9 +79,9 @@ class DataAkunSiswaController extends Controller
      * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function show(DataSiswa $DataSiswa,$id )
+    public function show(User $User,$id )
     {
-        $data = DataSiswa::find($id);
+        $data = User::find($id);
         return response()->json($data);
     }
 
@@ -103,9 +103,11 @@ class DataAkunSiswaController extends Controller
      * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DataSiswa $DataSiswa)
+    public function update(Request $request, User $User)
     {
-        //
+        User::updateOrCreate(['id' => $request->id],
+        ['nama' => $request->nama, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
+        return response()->json();
     }
 
     /**

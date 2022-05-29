@@ -65,7 +65,7 @@
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nama Peserta</label>
                 <input type="hidden" class="form-control" id="id" name="id">
-                <input type="text" class="form-control" id="nama" name="name">
+                <input type="text" class="form-control" id="nama" name="nama">
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">No HP</label>
@@ -85,7 +85,7 @@
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Tanggal Lahir</label>
-                <input type="text" class="form-control" id="tanggal_lahir"  name="tanggal_lahir">
+                <input type="date" class="form-control" id="tanggal_lahir"  name="tanggal_lahir">
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Kompetensi Keahlian</label>
@@ -138,14 +138,18 @@ $(document).on('click','#edit',function(){
     $.get("{{ route('datapembimbing.index') }}" +'/' + id, function (data) {
       $('#id').val(data.id);
       $('#nama').val(data.nama);
-      $('#nis').val(data.nis);
-      $('#nisn').val(data.nisn);
+      $('#email').val(data.email);
+      $('#no_hp').val(data.no_hp);
+      $('#alamat').val(data.alamat);
+      $('#tempat_lahir').val(data.tempat_lahir);
+      $('#tanggal_lahir').val(data.tanggal_lahir);
       $('#jurusan_id').val(data.jurusan_id);
       $('#edit-data').modal('show');
     })
   });
 
   $("#saveBtn").click(function (e) {
+    var id = $('#id').val();
     $.ajaxSetup({ 
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -155,8 +159,8 @@ $(document).on('click','#edit',function(){
 
     $.ajax({
       data: $('#form-data-siswa').serialize(),
-      url: "{{ route('datapembimbing.store') }}",
-      type: "POST",
+      url: "{{ url('datapembimbing') }}" +'/' + id,
+      type: "PUT",
       dataType: 'json',
       success: function (data) {
         $('#form-data-siswa').trigger("reset");
