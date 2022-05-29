@@ -62,9 +62,8 @@ class DataAkunPembimbingController extends Controller
             'tanggal_lahir' => 'required',
             'password' => 'required',
             'username' => 'required',
-            'role' => 'required',
         ]);
-        
+        $siswa['role'] = 'PEMBIMBING';
         $password = request('password'); // get the value of password field
         // $user = Hash::make($password);
         $user['password'] = Hash::make($password);
