@@ -43,11 +43,7 @@ class DataSiswaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // DataSiswa::updateOrCreate(['id' => $request->id],
-        // ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
-        // return response()->json();
-       
+    {  
         $request->validate([
             'nama' => 'required',
             'email' => 'required',
@@ -91,21 +87,13 @@ class DataSiswaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DataSiswa $DataSiswa)
+    public function update(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'nis' => 'required',
-            'nisn' => 'required',
-            'jurusan_id' => 'required',
-        ]);
-
-        DataSiswa::update($request->all());
-
-        return redirect()->route('datasiswa.index')->with('succes','Data Berhasil di Update');
+        DataSiswa::updateOrCreate(['id' => $request->id],
+        ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
+        return response()->json();
     }
 
     /**
