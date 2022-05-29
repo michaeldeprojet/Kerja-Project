@@ -9,6 +9,7 @@ use App\Models\DataPembimbing;
 use App\Models\JurnalPkl;
 use App\Models\DataSiswa;
 use App\Models\Laporan;
+use App\Models\Penentuan;
 
 class SiswaController extends Controller
 {
@@ -19,7 +20,14 @@ class SiswaController extends Controller
 
     public function siswa()
     {
-        return view ('siswa.dashboard');
+        $keseluruhan = DataSiswa::all()->count();
+        $siswaPKL = Penentuan::all()->count();
+        $belumPKL = $keseluruhan-$siswaPKL;
+        return view ('siswa.dashboard', [
+            'keseluruhan' => $keseluruhan,
+            'siswaPKL' => $siswaPKL,
+            'belumPKL' => $belumPKL
+        ]);
     }
 
     public function profile()

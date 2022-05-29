@@ -15,23 +15,25 @@
   <div class="card text-dark bg-white mb-3" style="width:300px; margin-right:20px;">
     <div class="card-header text-center">Jumlah Seluruh Siswa</div>
       <div class="card-body">
-        <p class="card-text text-center">1.500</p>
+        <h3 class="card-text text-center">{{  $keseluruhan }}</h3>
       </div>
   </div>
 
   <div class="card text-dark bg-white mb-3" style="width: 300px; margin-right:20px;">
     <div class="card-header text-center">Jumlah Siswa PKL</div>
       <div class="card-body">
-        <p class="card-text text-center">500</p>
+      <h3 class="card-text text-center">{{ $siswaPKL }}</h3>
       </div>
   </div>
 
   <div class="card text-dark bg-white mb-3" style="width:300px;">
     <div class="card-header text-center">Jumlah Siswa Belum PKL</div>
       <div class="card-body">
-        <p class="card-text text-center">1000</p>
+        <h3 class="card-text text-center">{{ $belumPKL }}</h3>
       </div>
   </div>
+
+  
 </div>
 
 <link
