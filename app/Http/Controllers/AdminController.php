@@ -94,6 +94,7 @@ class AdminController extends Controller
 
     public function simpanPermohonanPeserta(Request $request)
     {
+        // dd($request);
         SuratPkl::create([
             'id_siswa' =>$request->id_peserta,
             'no_surat' =>$request->nosurat,

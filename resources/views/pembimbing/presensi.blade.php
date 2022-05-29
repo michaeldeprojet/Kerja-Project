@@ -51,7 +51,7 @@
                   <td>{{ $data->keterangan }}</td>
                   <td>{{ $data->alasan}}</td>
                   <td>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                     <a href="" class="btn btn-warning">Edit</a>
                   </td>
                 </tr>
