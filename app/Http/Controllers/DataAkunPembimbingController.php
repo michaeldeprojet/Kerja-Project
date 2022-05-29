@@ -78,9 +78,9 @@ class DataAkunPembimbingController extends Controller
      * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function show(DataPembimbing $DataPembimbing,$id )
+    public function show(User $User,$id )
     {
-        $data = DataPembimbing::find($id);
+        $data = User::find($id);
         return response()->json($data);
     }
 
@@ -102,9 +102,12 @@ class DataAkunPembimbingController extends Controller
      * @param  \App\Models\DataPembimbing  $DataPembimbing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DataPembimbing $DataPembimbing)
+    public function update(Request $request, User $User)
     {
-        //
+        User::updateOrCreate(['id' => $request->id],
+        ['nama' => $request->nama, 'no_hp' => $request->no_hp, 'username' => $request->username, 'email' => $request->email, 'tempat_lahir' => $request->tempat_lahir,
+        'tanggal_lahir' => $request->tanggal_lahir, 'jurusan_id' => $request->jurusan_id]);
+        return response()->json();
     }
 
     /**
