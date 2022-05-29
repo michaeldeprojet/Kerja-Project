@@ -41,7 +41,7 @@
                           <form action="{{ url('dataakunpembimbing/'.$item->id)}}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
                           </form>
                           <button type="button" class="btn btn-warning" id="edit" data-id="{{$item->id}}">Edit</button>
                         </td>
