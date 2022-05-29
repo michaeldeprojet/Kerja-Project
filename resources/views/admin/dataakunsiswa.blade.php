@@ -5,7 +5,7 @@
     <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-        <h1 style="color:#34365B; margin-left:10%;"><b> Input Data Siswa</b></h1>
+        <h1 style="color:#34365B; margin-left:10%;"><b> Input Akun Siswa</b></h1>
         </div>
     </div>
     </div>
@@ -13,7 +13,7 @@
   <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Siswa</a>
-            <a href="{{ route('dataakunsiswa.create') }}"  data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
+            <a href="{{ route('dataakunsiswa.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
 
             <a href="/file-download" class="btn btn-warning">Download Template Excel</a>
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
@@ -41,7 +41,7 @@
                           <form action="{{ url('dataakunsiswa/'.$item->id)}}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
                           </form>
                           <button type="button" class="btn btn-warning" id="edit" data-id="{{$item->id}}">Edit</button>
                         </td>
@@ -60,7 +60,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form id="form-data-siswa">
+            <form id="form-data-siswa" >
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nama Peserta</label>
                 <input type="hidden" class="form-control" id="id" name="id">

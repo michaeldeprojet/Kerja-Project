@@ -1,38 +1,92 @@
-@extends('layouts.kakomli')
+@extends('layouts.admin')
 
 @section('content-header')
 
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-            <h1 style="color:#34365B; margin-left:10%;"><b> Profil</b></h1>
-            </div>
-        </div>
-    </div>
+    <style>
+    .form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
 
-    
-    <div class="card mb-3 justify-center" style="max-width: 1000px; margin-left: 20px; height:330px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-fluid rounded-start" style="padding-top: 70px; margin-left: 100px;">
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+    </style>
+
+
+
+    <div class="container rounded bg-white mt-2mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title bold" style="font-family: Poppins; font-weight: bold; padding-top:30px;">Kakomli</h5>
-                    <p class="card-text" style="padding-top:10px; padding-left:25px;">Jenis Kelamin              :</p>
-                    <p class="card-text" style="padding-left:25px;">Tempat/Tanggal Lahir       :</p>
-                    <p class="card-text"style="padding-left:25px;">No Handphone               :</p>
-                    <p class="card-text"style="padding-left:25px;">Email                      :</p>
-                    <p class="card-text"style="padding-left:25px;">Alamat                     :</p>
+                <div class="col-md-5">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Profile </h4>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
+                            <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+
+                            <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter address" value=""></div>
+
+                            <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter postcode" value=""></div>
+
+                            <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter state" value=""></div>
+
+                            <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter area" value=""></div>
+
+                            <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+
+                            <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                            <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                        </div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                    </div>
                 </div>
-            </div>
-    </div>
-    </div>
-
-    <div class="card col-md-8" style="margin-left: 20px; max-width: 1000px;">
-        <div class="card-body">
-            <h5 class="card-title" style="padding-left:80px;">Kompetensi Keahlian  :</h5>
         </div>
     </div>
+
+
 
 @endsection

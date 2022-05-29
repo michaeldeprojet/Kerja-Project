@@ -63,9 +63,8 @@ class DataAkunSiswaController extends Controller
             'jenis_kelamin' => 'required',
             'password' => 'required',
             'username' => 'required',
-            'role' => 'required',
         ]);
-        
+        $siswa['role'] = 'SISWA';
         $password = request('password'); // get the value of password field
         // $user = Hash::make($password);
         $siswa['password'] = Hash::make($password);
@@ -117,8 +116,8 @@ class DataAkunSiswaController extends Controller
      */
     public function destroy(DataSiswa $DataSiswa,$id)
     {
-        DataSiswa::destroy($id);
-        return redirect('/datasiswa')->with('succses', 'Berhasil Dihapus');
+        User::destroy($id);
+        return redirect('/dataakunsiswa')->with('succses', 'Berhasil Dihapus');
     }
 
     public function importsiswa(Request $request)

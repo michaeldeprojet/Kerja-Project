@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $users = [
+        $login = [
             [
                 'username' => 'AdminPKL123',
                 'password' => Hash::make('Wikrama2022'),
@@ -44,28 +44,34 @@ class DatabaseSeeder extends Seeder
             [
                 'username' => 'AdminPKL123',
                 'password' => Hash::make('Wikrama2022'),
+                'jurusan_id' => 1,
                 'role' => User::ADMIN,
             ],
             [
                 'username' => 'Kakomli123',
                 'password' => Hash::make('Wikrama2022'),
+                'jurusan_id' => 1,
                 'role' => User::KAKOMLI,
             ],
             [
                 'username' => 'Pembimbing123',
                 'password' => Hash::make('Wikrama2022'),
+                'jurusan_id' => 1,
                 'role' => User::PEMBIMBING,
             ],
             [
                 'username' => 'Siswa123',
                 'password' => Hash::make('Wikrama2022'),
+                'jurusan_id' => 1,
                 'role' => User::SISWA,
             ],
         ];
 
         foreach($users as $user) {
-            Login::create($user);
             User::create($user);
+        }
+        foreach($login as $user) {
+            Login::create($user);
         }
         $this->call(JurusanSeeder::class);
 

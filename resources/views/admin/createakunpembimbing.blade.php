@@ -6,18 +6,18 @@
         <div class="col-md-6">
             <div class="card shadow h-100">
                 <div class="card-header">
-                    <h5 class="m-0 pt-1 font-weight-bold float-left">Tambah Akun Siswa</h5>
-                    <a href="{{ route('dataakunpembimbing.index') }}" class="btn btn-sm btn-secondary float-right ">Kembali</a>
+                    <h5 class="m-0 pt-1 font-weight-bold float-left">Tambah Akun Pembimbing</h5>
+                    <a href="{{ route('dataakunsiswa.index') }}" class="btn btn-sm btn-secondary float-right ">Kembali</a>
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('dataakunsiswa.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('dataakunpembimbing.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="col-12 mt-3">
-                            <label for="id" class="form-label">Pilih Siswa</label>
+                            <label for="id" class="form-label">Pilih Pembimbing</label>
                                 <select class="form-control" aria-label="Default select example" name="id" id="id" onchange="cek_db()">
-                                    <option disabled selected style="display: none">----Pilih Siswa-----</option>
-                                    @foreach($siswas as $s)
+                                    <option disabled selected style="display: none">----Pilih Pembimbing-----</option>
+                                    @foreach($pembimbing as $s)
                                     <option value="{{$s->id}}">{{$s->nama}}</option>
                                     @endforeach
                                 </select>
@@ -28,37 +28,32 @@
                                 @error('username') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                         </div>
                         <div class="col-12 mt-3">
-                            <label for="nama" class="form-label">nama</label>
-                            <input type="" class="form-control" id="nama" name="nama" >
-                        </div>
-                        <div class="col-12 mt-3">
-                            <label for="nis" class="form-label">NIS</label>
-                            <input type="" class="form-control" id="nis" name="nis" >
-                        </div>
-                        <div class="col-12 mt-3">
-                            <label for="nisn" class="form-label">NISN</label>
-                            <input type="" class="form-control" id="nisn" name="nisn" >
-                        </div>
-                        <div class="col-12 mt-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="" class="form-control" id="email" name="email" >
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="nama" class="form-label">nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" required>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="no_hp" class="form-label">No HP</label>
+                            <input type="text" class="form-control" id="no_hp" name="no_hp" required>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="alamat" class="form-label">alamat</label>
+                            <input type="text" class="form-control" id="alamat" name="alamat" required>
                         </div>
                         <div class="col-12 mt-3">
                             <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
-                            <input type="" class="form-control" id="tempat_lahir" name="tempat_lahir" >
+                            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required>
                         </div>
                         <div class="col-12 mt-3">
                             <label for="tanggal_lahir" class="form-label">tanggal Lahir</label>
                             <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
                         </div>
                         <div class="col-12 mt-3">
-                            <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                            <input type="" class="form-control" id="jenis_kelamin" name="jenis_kelamin" >
-                        </div>
-
-                        <div class="col-12 mt-3">
                         <label for="recipient-name" class="col-form-label">Kompetensi Keahlian</label>
-                            <select class="form-control" aria-label="Default select example" name="jurusan_id" id="jurusan" >
+                            <select class="form-control" aria-label="Default select example" name="jurusan_id" id="jurusan" required>
                             <option disabled selected style="display: none"></option>
                             @foreach($jurusan as $j)
                                 <option value="{{$j->id}}">{{$j->jurusan}}</option>
@@ -103,17 +98,15 @@
         });
         $.ajax({
           type : "GET",
-          url : '/siswa/'+id,
+          url : '/pembimbing/'+id,
         success: function (newdata){
           var data = newdata;
           $('#nama').val(data.nama);
-          $('#nis').val(data.nis);
-          $('#nis').val(data.nis);
-          $('#nisn').val(data.nisn);
+          $('#no_hp').val(data.no_hp);
+          $('#alamat').val(data.alamat);
           $('#email').val(data.email);
           $('#tempat_lahir').val(data.tempat_lahir);
           $('#tanggal_lahir').val(data.tanggal_lahir);
-          $('#jenis_kelamin').val(data.jenis_kelamin);
           $('#jurusan').val(data.jurusan_id);
         }
         });
