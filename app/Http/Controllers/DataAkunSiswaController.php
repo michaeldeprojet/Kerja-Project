@@ -117,8 +117,8 @@ class DataAkunSiswaController extends Controller
      */
     public function destroy(DataSiswa $DataSiswa,$id)
     {
-        DataSiswa::destroy($id);
-        return redirect('/datasiswa')->with('succses', 'Berhasil Dihapus');
+        User::destroy($id);
+        return redirect('/dataakunsiswa')->with('succses', 'Berhasil Dihapus');
     }
 
     public function importsiswa(Request $request)

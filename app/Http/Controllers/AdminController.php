@@ -86,6 +86,12 @@ class AdminController extends Controller
         $datas = DataSiswa::where('id',$id)->first()->load('jurusans');
         return response()->json($datas);
     }
+
+    public function getDataPembimbing($id){
+        $datas = DataPembimbing::where('id',$id)->first()->load('jurusans');
+        return response()->json($datas);
+    }
+
     public function simpanPermohonanPeserta(Request $request)
     {
         SuratPkl::create([
