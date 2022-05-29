@@ -129,6 +129,7 @@ $(document).on('click','#edit',function(){
   });
 
   $("#saveBtn").click(function (e) {
+    var id =  $('#id').val();
     $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -138,8 +139,8 @@ $(document).on('click','#edit',function(){
 
     $.ajax({
       data: $('#form-data-siswa').serialize(),
-      url: "{{ route('datasiswa.store') }}",
-      type: "POST",
+      url: "{{ url('datasiswa') }}" +'/' + id,
+      type: "PUT",
       dataType: 'json',
       success: function (data) {
         $('#form-data-siswa').trigger("reset");
