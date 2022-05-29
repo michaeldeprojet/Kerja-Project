@@ -14,6 +14,7 @@
         <div class="table-responsive">
             <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Pembimbing</a>
             <a href="/download-file" class="btn btn-warning">Download Template Excel</a>
+            <a href="{{ route('datapembimbing.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
@@ -134,7 +135,7 @@
 <script  type="text/javascript">
 $(document).on('click','#edit',function(){
     var id = $(this).data("id");
-    $.get("{{ route('datasiswa.index') }}" +'/' + id, function (data) {
+    $.get("{{ route('datapembimbing.index') }}" +'/' + id, function (data) {
       $('#id').val(data.id);
       $('#nama').val(data.nama);
       $('#nis').val(data.nis);
@@ -154,7 +155,7 @@ $(document).on('click','#edit',function(){
 
     $.ajax({
       data: $('#form-data-siswa').serialize(),
-      url: "{{ route('datasiswa.store') }}",
+      url: "{{ route('datapembimbing.store') }}",
       type: "POST",
       dataType: 'json',
       success: function (data) {

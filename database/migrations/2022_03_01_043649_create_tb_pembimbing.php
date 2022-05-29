@@ -20,7 +20,7 @@ class CreateTbPembimbing extends Migration
             $table->string('alamat');
             $table->string('email');
             $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
+            $table->date('tanggal_lahir')->nullable();
             $table->bigInteger('jurusan_id');
             $table->timestamps();
         });
