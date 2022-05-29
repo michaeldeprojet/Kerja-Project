@@ -115,7 +115,7 @@
         </div>
         <div class="modal-body">
           {{-- input --}}
-          <form action="{{ URL::to('/importsiswa') }}" method="post" enctype="multipart/form-data">
+          <form action="{{ URL::to('/importpembimbing') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <input type="file" name="file" required>

@@ -25,7 +25,7 @@ class DataPembimbingController extends Controller
     public function store(Request $request)
     {
         DataPembimbing::updateOrCreate(['id' => $request->id],
-        ['nama' => $request->name, 'no_hp' => $request->no_hp, 'alamat' => $request->alamat, 'email'=> $request->email, 'tempat_lahir' => $request->tempat_lahir, 'tanggal_lahir'=> $request->tanggal_lahir, 'jurusan_id' => $request->jurusan_id]);
+        ['nama' => $request->name, 'no_hp' => $request->no_hp, 'alamat' => $request->alamat, 'email'=> $request->email, 'tempat_lahir' => $request->tempat_lahir, 'tanggal_lahir'=> strtotime($request->tanggal_lahir), 'jurusan_id' => $request->jurusan_id]);
         return response()->json();
     }
 
@@ -51,7 +51,7 @@ class DataPembimbingController extends Controller
         return redirect('/datapembimbing')->with('succses', 'Berhasil Dihapus');
     }
 
-    public function importsiswa(Request $request)
+    public function importpembimbing(Request $request)
     {
         Excel::import(new DataPembimbingImport, $request->file('file'));
         return redirect()->back();

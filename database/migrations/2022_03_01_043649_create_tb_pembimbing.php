@@ -16,7 +16,7 @@ class CreateTbPembimbing extends Migration
         Schema::create('tb_pembimbing', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->integer('no_hp');
+            $table->string('no_hp');
             $table->string('alamat');
             $table->string('email');
             $table->string('tempat_lahir');
