@@ -83,10 +83,9 @@ class DataSiswaController extends Controller
      */
     public function edit(DataSiswa $DataSiswa, $id)
     {
-        $category = DataSiswa::find($id);
-
+        $data = DataSiswa::find($id);
 	    return response()->json([
-	      'data' => $category
+	      'data' => $data
 	    ]);
         
     }
@@ -98,8 +97,9 @@ class DataSiswaController extends Controller
      * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DataSiswa $DataSiswa)
+    public function update(Request $request, DataSiswa $DataSiswa, $id)
     {
+        $data = DataSiswa::findOrFail($id);
         $request->validate([
             'nama' => 'required',
             'nis' => 'required',
