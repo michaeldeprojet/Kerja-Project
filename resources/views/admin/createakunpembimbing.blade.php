@@ -61,11 +61,11 @@
                             </select>
                         </div>
 
-                        <div class="col-12 mt-3">
+                        <!-- <div class="col-12 mt-3">
                             <label for="role" class="form-label">Role</label>
                                 <input type="text" class="form-control @error('role') is-invalid @enderror" id="role" name="role" value="{{ old('role') }}">
                                 @error('role') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
-                        </div>
+                        </div> -->
                         <div class="col-12 mt-3">
                             <label for="password" class="form-label">Password</label>
                                 <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}">
