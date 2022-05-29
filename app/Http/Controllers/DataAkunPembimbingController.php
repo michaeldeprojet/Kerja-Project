@@ -23,7 +23,7 @@ class DataAkunPembimbingController extends Controller
         $user = User::select('*')
         ->where('role', 'PEMBIMBING')
         ->get();
-        // $siswas = DataSiswa::all();
+        // $siswas = DataPembimbing::all();
         $jurusan = Jurusan::all();
         return view ('admin.dataakunpembimbing',compact('user','jurusan'));
 
@@ -63,7 +63,7 @@ class DataAkunPembimbingController extends Controller
             'password' => 'required',
             'username' => 'required',
         ]);
-        $siswa['role'] = 'PEMBIMBING';
+        $user['role'] = 'PEMBIMBING';
         $password = request('password'); // get the value of password field
         // $user = Hash::make($password);
         $user['password'] = Hash::make($password);
@@ -78,19 +78,19 @@ class DataAkunPembimbingController extends Controller
      * @param  \App\Models\DataSiswa  $DataSiswa
      * @return \Illuminate\Http\Response
      */
-    public function show(DataSiswa $DataSiswa,$id )
+    public function show(DataPembimbing $DataPembimbing,$id )
     {
-        $data = DataSiswa::find($id);
+        $data = DataPembimbing::find($id);
         return response()->json($data);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\DataSiswa  $DataSiswa
+     * @param  \App\Models\DataPembimbing  $DataPembimbing
      * @return \Illuminate\Http\Response
      */
-    public function edit(DataSiswa $DataSiswa)
+    public function edit(DataPembimbing $DataPembimbing)
     {
         //
     }
@@ -99,10 +99,10 @@ class DataAkunPembimbingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DataSiswa  $DataSiswa
+     * @param  \App\Models\DataPembimbing  $DataPembimbing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DataSiswa $DataSiswa)
+    public function update(Request $request, DataPembimbing $DataPembimbing)
     {
         //
     }
@@ -110,10 +110,10 @@ class DataAkunPembimbingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\DataSiswa  $DataSiswa
+     * @param  \App\Models\DataPembimbing  $DataPembimbing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DataSiswa $DataSiswa,$id)
+    public function destroy(DataPembimbing $DataPembimbing,$id)
     {
         User::destroy($id);
         return redirect('/dataakunpembimbing')->with('succses', 'Berhasil Dihapus');
@@ -121,7 +121,7 @@ class DataAkunPembimbingController extends Controller
 
     public function importsiswa(Request $request)
     {
-        Excel::import(new DataSiswaImport, $request->file('file'));
+        Excel::import(new DataPembimbingImport, $request->file('file'));
         return redirect()->back();
     }
 
