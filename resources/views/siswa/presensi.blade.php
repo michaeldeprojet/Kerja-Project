@@ -25,7 +25,7 @@
 
             <div class="form-group col-4">
                 <label for="nis" class="form-label">NIS</label>
-                <input type="" class="form-control" id="nis" readonly>
+                <input type="" class="form-control" id="nis" name="nis" readonly>
             </div>
         </div>
 
@@ -43,8 +43,8 @@
 
         <div class="row mx-5 mt-3">
           <div class="form-group col-12">
-              <label for="kelas" class="form-label">Kompetensi Keahlian</label>
-              <input type="text" class="form-control" id="jurusan" readonly>
+              <label for="jurusan" class="form-label">Kompetensi Keahlian</label>
+              <input type="text" class="form-control" id="jurusan" name="kompetensi"readonly>
           </div>
         </div>
 
