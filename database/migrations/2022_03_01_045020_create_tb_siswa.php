@@ -15,7 +15,8 @@ class CreateTbSiswa extends Migration
     {
         Schema::create('tb_siswa', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('jurusan_id');
+            $table->bigInteger('jurusan_id')->nullable();
+            $table->bigInteger('pembimbing_id')->nullable();
             $table->string('nama')->nullable();
             $table->integer('nis')->nullable();
             $table->integer('nisn')->nullable();
