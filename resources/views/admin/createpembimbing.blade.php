@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-sm-2"><label for="no_hp" class="float-left col-form-label">no_hp</label></div>
+                            <div class="col-sm-2"><label for="no_hp" class="float-left col-form-label">No Hp</label></div>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" name="no_hp" value="{{ old('no_hp') }}">
                                 @error('no_hp') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror

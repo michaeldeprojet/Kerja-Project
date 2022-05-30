@@ -10,8 +10,11 @@
                 <div class="image">
                     <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
-                <div class="info">
-                    <a href="/profilepembimbing" class="d-block" style="color: white">Pembimbing</a>
+                <div class="info ml-2 pt-1">
+                    <a href="/profilepembimbing" class="d-block" style="color: white">{{ Auth::user()->nama }}
+                    <br>
+                    {{ Auth::user()->role }}
+                </a>
                 </div>
             </div>
         </div>

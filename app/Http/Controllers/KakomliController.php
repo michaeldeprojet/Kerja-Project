@@ -9,6 +9,7 @@ use App\Models\DataPembimbing;
 use App\Models\DataSiswa;
 use App\Models\Penentuan;
 use App\Models\Sertifikat;
+use App\Models\User;
 
 class KakomliController extends Controller
 {
@@ -48,7 +49,10 @@ class KakomliController extends Controller
 
     public function tambahpenentuan()
     {
-        $penentuan1 = DataSiswa::all();
+        $penentuan1 = User::select('*')
+        ->where('role', 'SISWA')
+        ->get();
+        // $penentuan1 = DataSiswa::all();
         $penentuan2 = DataPembimbing::all();
         return view('kakomli.tambahpenentuan', compact('penentuan1', 'penentuan2'));
     }

@@ -56,7 +56,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="{{route('datasiswa.update', $item->id) }}" id="form-data-siswa">
+            <form id="form-data-siswa">
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nama Peserta</label>
                 <input type="hidden" class="form-control" id="id" name="id">

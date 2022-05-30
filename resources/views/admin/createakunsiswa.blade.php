@@ -80,7 +80,7 @@
                                 <textarea class="form-control" style="height:150px" name="Alamat" placeholder="Content"></textarea>
                             </div>
                         </div> -->
-                        <div class="form-group row justify-content-end">
+                        <div class="form-group row justify-content-center mt-3">
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-success btn-block">
                                     Simpan
