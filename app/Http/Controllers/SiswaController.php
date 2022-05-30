@@ -10,6 +10,7 @@ use App\Models\JurnalPkl;
 use App\Models\DataSiswa;
 use App\Models\Laporan;
 use App\Models\Penentuan;
+use App\Models\User;
 
 class SiswaController extends Controller
 {
@@ -30,9 +31,13 @@ class SiswaController extends Controller
         ]);
     }
 
-    public function profile()
+    public function profile($id)
     {
-        return view ('siswa.profile');
+        // $users = User::all();
+        // return view('home',compact('users','users'));
+
+        $users = User::where('id',$id)->first();
+        return view ('siswa.profile', compact('users','users'));
     }
 
     public function izin()
