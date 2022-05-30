@@ -37,25 +37,25 @@
                         <td>{{ $item->role}}</td>
                         <td>{{ $item->jurusans->jurusan }}</td>
                         <td>
-                          <form action="{{ url('dataakunpembimbing/'.$item->id)}}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
-                          </form>
-                          <button type="button" class="btn btn-warning" id="edit" data-id="{{$item->id}}">Edit</button>
-                        </td>
-                    </tr>
+                        <form action="{{ url('dataakunpembimbing/'.$item->id)}}" method="POST" class="d-inline">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+                        </form>
+                        <button type="button" class="btn btn-warning" id="edit" data-id="{{$item->id}}">Edit</button>
+                      </td>
+                  </tr>
                   @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="modal fade" id="exampleModal" id="edit-data" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal fade" id="edit-data" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit Akun Pembimbing</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Edit Data Pembimbing</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -64,21 +64,35 @@
             <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nama Pembimbing</label>
                 <input type="hidden" class="form-control" id="id" name="id">
-                <input type="text" class="form-control" id="nama" name="name">
+                <input type="text" class="form-control" id="nama" name="nama">
               </div>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">no_hp</label>
+                <label for="recipient-name" class="col-form-label">Username</label>
+                <input type="text" class="form-control" id="username"  name="username">
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Email</label>
+                <input type="text" class="form-control" id="email"  name="email">
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">No HP</label>
                 <input type="text" class="form-control" id="no_hp"  name="no_hp">
               </div>
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">email</label>
-                <input type="text" class="form-control" id="email"  name="email">
+                <label for="recipient-name" class="col-form-label">Tempat Lahir</label>
+                <input type="text" class="form-control" id="tempat_lahir"  name="tempat_lahir">
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tanggal_lahir"  name="tanggal_lahir">
               </div>
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Kompetensi Keahlian</label>
                 <select class="form-control" aria-label="Default select example" name="jurusan_id" id="jurusan_id">
                   <option disabled selected style="display: none">----Pilih Jurusan-----</option>
-
+                  @foreach($jurusan as $j)
+                    <option value="{{$j->id}}">{{$j->jurusan}}</option>
+                  @endforeach
                 </select>
               </div>
             </form>
@@ -101,12 +115,12 @@
         </div>
         <div class="modal-body">
           {{-- input --}}
-          <form action="{{ URL::to('/importsiswa') }}" method="post" enctype="multipart/form-data">
+          <form action="{{ URL::to('/importpembimbing') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <input type="file" name="file" required>
             </div>
-
+        
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Selesai</button>
@@ -120,28 +134,32 @@
 <script  type="text/javascript">
 $(document).on('click','#edit',function(){
     var id = $(this).data("id");
-    $.get("{{ route('datasiswa.index') }}" +'/' + id, function (data) {
+    $.get("{{ route('dataakunpembimbing.index') }}" +'/' + id, function (data) {
       $('#id').val(data.id);
       $('#nama').val(data.nama);
-      $('#no_hp').val(data.no_hp);
       $('#email').val(data.email);
+      $('#username').val(data.username);
+      $('#no_hp').val(data.no_hp);
+      $('#tempat_lahir').val(data.tempat_lahir);
+      $('#tanggal_lahir').val(data.tanggal_lahir);
       $('#jurusan_id').val(data.jurusan_id);
       $('#edit-data').modal('show');
     })
   });
 
   $("#saveBtn").click(function (e) {
-    $.ajaxSetup({
+    var id = $('#id').val();
+    $.ajaxSetup({ 
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
+      }   
     })
     e.preventDefault();
 
     $.ajax({
       data: $('#form-data-siswa').serialize(),
-      url: "{{ route('datasiswa.store') }}",
-      type: "POST",
+      url: "{{ url('dataakunpembimbing') }}" +'/' + id,
+      type: "PUT",
       dataType: 'json',
       success: function (data) {
         $('#form-data-siswa').trigger("reset");

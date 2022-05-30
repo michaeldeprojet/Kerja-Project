@@ -15,7 +15,7 @@
             <div class="info ml-2 pt-1">
                 <a href="/profilesiswa/{id}" class="d-block" style="color: white">{{ Auth::user()->nama }}
                     <br>
-                    {{ Auth::user()->jurusans->jurusan }}
+                    {{ Auth::user()->role }}
                 </a>
                 
             </div>

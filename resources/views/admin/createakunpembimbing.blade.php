@@ -47,6 +47,7 @@
                             <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
                             <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required>
                         </div>
+                        
                         <div class="col-12 mt-3">
                             <label for="tanggal_lahir" class="form-label">tanggal Lahir</label>
                             <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
@@ -75,13 +76,14 @@
                                 <textarea class="form-control" style="height:150px" name="Alamat" placeholder="Content"></textarea>
                             </div>
                         </div> -->
-                        <div class="form-group row justify-content-end">
+                        <div class="form-group row justify-content-center mt-3">
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-success btn-block">
                                     Simpan
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
