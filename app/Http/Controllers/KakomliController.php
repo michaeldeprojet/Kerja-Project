@@ -49,10 +49,10 @@ class KakomliController extends Controller
 
     public function tambahpenentuan()
     {
-        $penentuan1 = User::select('*')
-        ->where('role', 'SISWA')
-        ->get();
-        // $penentuan1 = DataSiswa::all();
+        // $penentuan1 = User::select('*')
+        // ->where('role', 'SISWA')
+        // ->get();
+        $penentuan1 = DataSiswa::all();
         $penentuan2 = DataPembimbing::all();
         return view('kakomli.tambahpenentuan', compact('penentuan1', 'penentuan2'));
     }
@@ -129,7 +129,7 @@ class KakomliController extends Controller
 
         return redirect ('/cetaksertifikatkakomli');
     }
-    
+
     public function getDataSertifikat($id){
         $datas = Sertifikat::where('id',$id)->first()->load('datasiswa');
         return response()->json($datas);
