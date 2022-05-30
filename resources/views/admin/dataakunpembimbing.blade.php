@@ -12,11 +12,11 @@
 
   <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
-            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Akun Pembimbing</a>
-            <a href="/download-file" class="btn btn-warning">Download Template Excel</a>
             <a href="{{ route('dataakunpembimbing.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
-            <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
-            <thead>
+
+
+            <table class="mt-5 table table-bordered table-md table-hover bg-white text-center">
+                <thead>
                     <tr style="background-color:#595CB4; color:white;">
                         <th>Nama Pembimbing</th>
                         <th>username</th>
@@ -60,8 +60,9 @@
           </div>
           <div class="modal-body">
             <form id="form-data-siswa">
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Nama Peserta</label>
+            @csrf
+            <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Nama Pembimbing</label>
                 <input type="hidden" class="form-control" id="id" name="id">
                 <input type="text" class="form-control" id="nama" name="nama">
               </div>

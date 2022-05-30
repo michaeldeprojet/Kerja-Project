@@ -12,11 +12,11 @@
 
   <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
-            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Input Akun Siswa</a>
-            <a href="/download-file" class="btn btn-warning">Download Template Excel</a>
             <a href="{{ route('dataakunsiswa.create') }}" class="btn btn-primary btn-sm float-right" title="Tambah User"><i class="fas fa-plus"></i></a>
-            <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
-            <thead>
+
+
+            <table class="mt-5 table table-bordered table-md table-hover bg-white text-center">
+                <thead>
                     <tr style="background-color:#595CB4; color:white;">
                         <th>Nama Peserta</th>
                         <th>username</th>
