@@ -4,8 +4,8 @@
         <img src="../img/s.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-block" style="color: white;">SIM PKL</span>
     </a>
-    
-   
+
+
 
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -17,9 +17,9 @@
                     <br>
                     {{ Auth::user()->role }}
                 </a>
-                
+
             </div>
-            
+
         </div>
     </div>
     <!-- dashboard -->
@@ -33,7 +33,7 @@
                     </p>
                 </a>
             </li>
-    
+
         <!-- Surat Izin orang Tua -->
         <li class="nav-item">
                 <a href="/izinsiswa" class="nav-link">
@@ -67,7 +67,7 @@
             {{-- {{ route('laporansiswa.index') }} --}}
             <!-- Laporan -->
             <li class="nav-item">
-                <a href="#" class="nav-link"> 
+                <a href="/laporansiswa" class="nav-link">
                     <i class="nav-icon fas"><img src="../img/report.png" style="width: 20px; height:20px"></i>
                     <p style="color: white">
                         Laporan

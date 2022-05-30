@@ -52,7 +52,7 @@ class AdminController extends Controller
 
     public function GetDataSurat(Request $request){
         $DataSurat = SuratPkl::where('no_surat',$request->surat)->get();
-        for ($i=0; $i < $DataSurat->count(); $i++) { 
+        for ($i=0; $i < $DataSurat->count(); $i++) {
             $data[$i] = [
                 $nama = $DataSurat[$i]->siswa->nama,
                 $nis = $DataSurat[$i]->siswa->nis,
@@ -94,6 +94,7 @@ class AdminController extends Controller
 
     public function simpanPermohonanPeserta(Request $request)
     {
+        dd($request);
         SuratPkl::create([
             'id_siswa' =>$request->id_peserta,
             'no_surat' =>$request->nosurat,
@@ -111,7 +112,7 @@ class AdminController extends Controller
     {
         $datas = SuratPkl::find($id);
         $datas->delete();
-        return redirect('/suratpermohonanadmin'); 
+        return redirect('/suratpermohonanadmin');
     }
 
     public function simpanpermohonankelompok(Request $request)
@@ -120,10 +121,10 @@ class AdminController extends Controller
         $datasiswa = DataSiswa::all();
         Excel::import( $import , $request->file('file'));
         $data = $import->data;
-        for ($i=0; $i < count($data); $i++) { 
+        for ($i=0; $i < count($data); $i++) {
             $peserta[$i] = $datasiswa->where('nama',$data[$i]['nama'])->where('nis',$data[$i]['nis'])->where('nisn',$data[$i]['nisn'])->where('jenis_kelamin',$data[$i]['jk'])->first();
         }
-        for ($i=0; $i < count($peserta); $i++) { 
+        for ($i=0; $i < count($peserta); $i++) {
             SuratPkl::create([
                 'id_siswa' =>$peserta[$i]->id,
                 'no_surat' =>$request->nosurat,

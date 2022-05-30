@@ -18,18 +18,13 @@
                 <thead>
                     <tr style="background-color:#595CB4; color:white;">
                         <th>Nama Peserta</th>
-                        <th>Pembimbing PKL</th>
+                        <th>Penjabat PKL</th>
                         <th>Tempat PKL</th>
                         <th colspan="5">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th> <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Learn More</a></th>
-                    <th>Pembimbing PKL</th>
-                    <th>Tempat PKL</th>
-                    <th>Aksi</th>
-                </tr>
+
                 @foreach ($no_surat as $nos)
                     <tr>
                         <td><button class=" btn btn-outline-secondary learn" data-surat="{{$datas->where('no_surat',$nos->no_surat)->first()->no_surat}}">Learn More</button></td>
@@ -81,17 +76,17 @@
 <script>
     $(".learn").click(function(){
         var surat = $(this).data("surat");
-        
+
         $.ajaxSetup({
             headers:
             { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
         });
 
-        $.ajax({   
+        $.ajax({
             type: "POST",
             data : {'surat' : surat},
-            cache: false,  
-            url: "suratpermohonanadmin",   
+            cache: false,
+            url: "suratpermohonanadmin",
             success: function(data){
                 var temple = `
                     ${data.map((data, i) => `
@@ -103,11 +98,11 @@
                         </tr>
                     `).join('')}
                     `
-                $(".isi").html(temple); 
-                $("#exampleModal").modal('show');                  
-            }   
-        });      
-        
+                $(".isi").html(temple);
+                $("#exampleModal").modal('show');
+            }
+        });
+
     });
 </script>
 @endsection
