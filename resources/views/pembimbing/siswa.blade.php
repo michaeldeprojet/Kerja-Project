@@ -26,7 +26,6 @@
 </div>
 
     
-
     <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
             <table class="mt-4 table table-bordered table-md table-hover bg-white text-center">
@@ -40,7 +39,21 @@
                         <th colspan="6">Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
+                    <tbody>
+                        @foreach($data as $datas)
+                        <tr style="background-color:white;">
+                        <td scope="row">{{ $datas->siswa->nama}}</td>
+                        <td>{{ $datas->periode }}</td>
+                        <td>{{ $datas->siswa->jurusans->jurusan}}</td>
+                        <td>{{ $datas->pembimbing->nama }}</td>
+                        <td>{{ $datas->tempat_pkl}}</td>
+                        <td>
+                            <a href="" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                            <a href="" class="btn btn-warning">Edit</a>
+                        </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
             </table>
         </div>
     </div>

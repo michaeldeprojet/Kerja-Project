@@ -34,7 +34,8 @@ class PembimbingController extends Controller
 
     public function siswa()
     {
-        return view ('pembimbing.siswa');
+        $data = Penentuan::all();
+        return view ('pembimbing.siswa', compact('data') );
     }
 
     public function presensi()

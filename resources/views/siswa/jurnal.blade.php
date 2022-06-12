@@ -15,7 +15,7 @@
         <div class="row mx-5 mt-3">
             <div class="form-group col-8">
               <label for="position-option">Nama Peserta Didik</label>
-              <select class="form-control" name="id_siswa">
+              <select class="form-control" name="id_siswa" id="id" onchange="cek_db()">
                 <option selected>Nama Peserta </option>
                   @foreach ($jurnal1 as $item)
                     <option value="{{ $item->id }}">{{ $item->nama }}</option>
@@ -25,7 +25,7 @@
 
             <div class="form-group col-4">
                 <label for="kelas" class="form-label">NIS</label>
-                <input type="number" class="form-control" id="nis" readonly>
+                <input type="number" class="form-control" name="nis" id="nis" readonly>
             </div>
         </div>
 
@@ -81,4 +81,25 @@
           <button type="submit" class="btn btn-success col-2 ml-2">Submit</button>
         </div>
   </form>
+
+  <script>
+    function cek_db(){
+      var id = $("#id").val();
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+      $.ajax({
+        type : "GET",
+        url : '/datasiswas/'+id,
+        success: function (newdata){
+          var data = newdata;
+          $('#nis').val(data.nis);
+          $('#jurusan').val(data.jurusans.jurusan);
+        }
+      });
+    }
+</script>
+
 @endsection 
