@@ -18,7 +18,7 @@
               <select class="form-control" aria-label="Default select example" name="id_siswa" id="id" onchange="cek_db()">
                 <option disabled selected>Nama Peserta</option>
                   @foreach ($penentuan1 as $item)
-                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    <option value="{{ $item->siswa->id }}">{{ $item->siswa->nama }}</option>
                   @endforeach
               </select>
             </div>
@@ -43,7 +43,7 @@
 
             <div class="col-12 mt-3">
               <label for="inputAddress" class="form-label">Tempat PKL</label>
-              <input type="text" class="form-control" id="tempat_pkl" name="tempat_pkl">
+              <input type="" class="form-control" id="tempat_pkl" name="tempat_pkl" readonly>
             </div>
 
 
@@ -81,7 +81,8 @@
           url : '/nama/'+id,
         success: function (newdata){
           var data = newdata;
-          $('#jurusan').val(data.jurusans.jurusan);
+          $('#jurusan').val(data.data.jurusans.jurusan);
+          $('#tempat_pkl').val(data.suratPkl.perusahaan);
         }
         });
     }

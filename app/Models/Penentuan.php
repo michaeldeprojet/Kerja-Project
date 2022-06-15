@@ -22,6 +22,11 @@ class Penentuan extends Model
         return $this->hasOne(DataSiswa::class, 'id' , 'id_siswa');
     }
 
+    public function tempatPKL()
+    {
+        return $this->hasOne(SuratPkl::class, 'tempat_pkl', 'tempat_pkl');
+    }
+
     public function pembimbing(){
         return $this->hasOne(DataPembimbing::class, 'id' , 'id_pembimbing');
     }

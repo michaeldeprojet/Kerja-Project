@@ -52,14 +52,20 @@ class KakomliController extends Controller
         // $penentuan1 = User::select('*')
         // ->where('role', 'SISWA')
         // ->get();
-        $penentuan1 = DataSiswa::all();
-        $penentuan2 = DataPembimbing::all();
+        $penentuan1 = SuratPKL::all();
+        $penentuan2 = User::where('role', 'PEMBIMBING')->get();
         return view('kakomli.tambahpenentuan', compact('penentuan1', 'penentuan2'));
     }
 
     public function getData($id){
-        $datas = DataSiswa::where('id',$id)->first()->load('jurusans');
-        return response()->json($datas);
+        $datas = DataSiswa::with('jurusans')->where('id',$id)->first();
+        $suratPkl = SuratPkl::where('id_siswa', $id)->first();
+
+        $response = [
+            'data' => $datas, 
+            'suratPkl' => $suratPkl
+        ];
+        return response()->json($response);
     }
     public function storepenentuan(Request $request)
     {
