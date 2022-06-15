@@ -7,6 +7,7 @@ use App\Http\Controllers;
 use App\Models\Presensi;
 use App\Models\DataSiswa;
 use App\Models\Penentuan;
+use Illuminate\Support\Facades\Auth;
 
 class PembimbingController extends Controller
 {
@@ -34,7 +35,10 @@ class PembimbingController extends Controller
 
     public function siswa()
     {
-        $data = Penentuan::all();
+        $userId = Auth::user()->id;
+        
+        // $data = Penentuan::where('id_pembimbing', $mid)->get();
+        $data = Penentuan::with('siswa')->where('id_pembimbing', $userId)->get();
         return view ('pembimbing.siswa', compact('data') );
     }
 

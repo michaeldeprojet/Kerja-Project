@@ -25,7 +25,6 @@
     </div>
 </div>
 
-    
 
     <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">

@@ -7,7 +7,7 @@
             <div class="card shadow h-100">
                 <div class="card-header">
                     <h5 class="m-0 pt-1 font-weight-bold float-left">Tambah Akun Siswa</h5>
-                    <a href="{{ route('dataakunpembimbing.index') }}" class="btn btn-sm btn-secondary float-right ">Kembali</a>
+                    <a href="{{ route('dataakunsiswa.index') }}" class="btn btn-sm btn-secondary float-right ">Kembali</a>
                 </div>
 
                 <div class="card-body">
@@ -66,14 +66,14 @@
                             </select>
                         </div>
 
-                       
+
                         <div class="col-12 mt-3">
                             <label for="password" class="form-label">Password</label>
                                 <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}">
                                 @error('password') <span class="invalid-feedback" role="alert">{{ $message }}</span> @enderror
                         </div>
 
-                       
+
                         <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Alamat:</strong>
@@ -95,7 +95,7 @@
     <script>
         function cek_db(){
         var id = $("#id").val();
-        
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -120,4 +120,3 @@
     }
     </script>
 @endsection
-    

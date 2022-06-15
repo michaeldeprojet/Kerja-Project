@@ -55,7 +55,10 @@ class DataPembimbingController extends Controller
 
     public function update(Request $request, DataPembimbing $DataPembimbing)
     {
-        //
+        DataPembimbing::updateOrCreate(['id' => $request->id],
+        ['nama' => $request->nama, 'no_hp' => $request->no_hp, 'alamat' => $request->alamat, 'email' => $request->email, 'tempat_lahir' => $request->tempat_lahir,
+        'tanggal_lahir' => $request->tanggal_lahir, 'jurusan_id' => $request->jurusan_id]);
+        return response()->json();
     }
 
     public function destroy(DataPembimbing $DataPembimbing,$id)

@@ -22,4 +22,9 @@ class DataSiswa extends Authenticatable
         return $this->hasOne(DataPembimbing::class, 'id', 'pembimbing_id');
     }
 
+    public function suratPkl()
+    {
+        return $this->hasOne(SuratPkl::class, 'id', 'id_siswa');
+    }
+
 }
