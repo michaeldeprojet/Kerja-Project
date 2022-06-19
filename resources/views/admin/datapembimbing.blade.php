@@ -32,7 +32,7 @@
                   @foreach ($pembimbing as $item)
                   <tr>
                       <td>{{ $item->nama }}</td>
-                      <td>{{ $item->no_hp }}</td>
+                      <td>0{{ $item->no_hp }}</td>
                       <td>{{ $item->alamat}}</td>
                       <td>{{ $item->email}}</td>
                       <td>{{ $item->tempat_lahir}}</td>
