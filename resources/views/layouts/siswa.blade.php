@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Halaman Siswa</title>
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @include('layouts.inc.ext-css')
 
 
@@ -33,9 +33,9 @@
             $('#Table').DataTable();
         } );
      </script>
-     
+
     </section>
-    
+
     @include('layouts.inc.ext-js')
     </body>
     </html>

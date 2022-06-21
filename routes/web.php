@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('generate-surat-pkl-kelompok', [PDFController::class, 'generatesuratkel']);
 
     // Pdf Penilaian //
-    Route::get('generate-nilai-pkl', [PDFController::class, 'generatenilaipkl']);
+    Route::get('generate-nilai-pkl/{id}', [PDFController::class, 'generatenilaipkl']);
 
 
     Route::group(['middleware' => ['role:KAKOMLI']], function(){
@@ -175,6 +175,12 @@ Route::group(['middleware' => ['auth']], function(){
 
         // Rekap Laporan PKL Pembimbing //
         Route::get('/rekaplaporanpem', 'App\Http\Controllers\PembimbingController@laporan');
+
+        //semua request kesini berawalan /api
+        Route::group(['prefix' => '/api'], function() {
+            Route::get('/student-detail/{id}', 'App\Http\Controllers\PembimbingController@studentDetail');
+            Route::post('/submit-score/{id}', 'App\Http\Controllers\PembimbingController@submitScore');
+        });
     });
 
     Route::group(['middleware' => ['role:SISWA']], function(){
