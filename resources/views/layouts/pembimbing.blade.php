@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Halaman Pembimbing</title>
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @include('layouts.inc.ext-css')
 
 </head>
@@ -29,5 +29,6 @@
 
 
     @include('layouts.inc.ext-js')
+    @yield('script')
     </body>
     </html>

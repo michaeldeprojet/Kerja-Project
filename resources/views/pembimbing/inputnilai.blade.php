@@ -24,7 +24,7 @@
     </div>
 </div>
 
-    
+
 
     <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
@@ -41,6 +41,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($scores as $score)
+                    <tr>
+                        <td><a target="_blank" href="{{asset('/uploads/pdf/nilai_pkl/'.$score->upload_file)}}">{{ $score->student->nama }}</a></td>
+                        <td>{{ 'kelas' }}</td>
+                        <td>{{ $score->student->jurusans->jurusan }}</td>
+                        <td>{{ $user->nama }}</td>
+                        <td>{{ $score->nama_industri }}</td>
+                        <td>{{ $score->nilai_akhir }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>
