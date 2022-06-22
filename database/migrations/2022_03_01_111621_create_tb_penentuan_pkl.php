@@ -20,7 +20,6 @@ class CreateTbPenentuanPkl extends Migration
             $table->bigInteger('id_pembimbing')->unsigned();
             $table->string('tempat_pkl');
             $table->string('upload_permohonan');
-            $table->foreign('id_pembimbing')->references('id')->on('tb_pembimbing');
             $table->foreign('id_siswa')->references('id')->on('tb_siswa');
             $table->timestamps();
         });
