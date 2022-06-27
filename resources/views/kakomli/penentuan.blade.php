@@ -25,7 +25,7 @@
     </div>
 </div>
 
-    
+    {{-- @dump($datas) --}}
 
     <div class="card mt-3 p-4 shadow-sm">
         <div class="table-responsive">
@@ -47,7 +47,7 @@
                             <td>{{ $data->siswa->nama }}</td>
                             <td>{{ $data->periode }}</td>
                             <td>{{ $data->siswa->jurusans->jurusan }}</td>
-                            <td>{{ $data->pembimbing->nama }}</td>
+                            <td>{{ $data->pembimbing->nama}}</td>
                             <td>{{ $data->tempat_pkl}}</td>
                             <td>
                                 <a class="btn btn-danger" onclick="return confirm ('Yakin Ingin Menghapus Data Ini?')" href = "{{ url('/penentuan/delete/'.$data->id) }} ">Delete</a>

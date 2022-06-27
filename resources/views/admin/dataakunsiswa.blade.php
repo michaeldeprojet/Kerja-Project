@@ -65,6 +65,12 @@
                 <input type="hidden" class="form-control" id="id" name="id">
                 <input type="text" class="form-control" id="nama" name="nama">
               </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Username</label>
+                <input type="text" class="form-control" id="username"  name="username">
+              </div>
+
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nis</label>
                 <input type="text" class="form-control" id="nis"  name="nis">
@@ -124,6 +130,7 @@ $(document).on('click','#edit',function(){
     $.get("{{ route('dataakunsiswa.index') }}" +'/' + id, function (data) {
       $('#id').val(data.id);
       $('#nama').val(data.nama);
+      $('#username').val(data.username);
       $('#nis').val(data.nis);
       $('#nisn').val(data.nisn);
       $('#jurusan_id').val(data.jurusan_id);

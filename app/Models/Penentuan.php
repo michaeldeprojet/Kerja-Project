@@ -28,7 +28,7 @@ class Penentuan extends Model
     }
 
     public function pembimbing(){
-        return $this->hasOne(DataPembimbing::class, 'id' , 'id_pembimbing');
+        return $this->hasOne(User::class, 'id' , 'id_pembimbing');
     }
     
     public function datasiswa()

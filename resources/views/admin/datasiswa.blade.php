@@ -40,6 +40,7 @@
                           <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
                         </form>
                         <button type="button" class="btn btn-warning" id="edit" data-id="{{$item->id}}">Edit</button>
+                        
                       </td>
                   </tr>
                   @endforeach
@@ -62,14 +63,37 @@
                 <input type="hidden" class="form-control" id="id" name="id">
                 <input type="text" class="form-control" id="nama" name="name">
               </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Email</label>
+                <input type="text" class="form-control" id="email"  name="email">
+              </div>
+              
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nis</label>
                 <input type="text" class="form-control" id="nis"  name="nis">
               </div>
+
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Nisn</label>
                 <input type="text" class="form-control" id="nisn"  name="nisn">
               </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Tempat Lahir</label>
+                <input type="text" class="form-control" id="tempat_lahir"  name="tempat_lahir">
+              </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Tanggal lahir</label>
+                <input type="date" class="form-control" id="tanggal_lahir"  name="tanggal_lahir">
+              </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Jenis Kelamin</label>
+                <input type="text" class="form-control" id="jenis_kelamin"  name="jenis_kelamin">
+              </div>
+
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Kompetensi Keahlian</label>
                 <select class="form-control" aria-label="Default select example" name="jurusan_id" id="jurusan_id">
@@ -121,8 +145,12 @@ $(document).on('click','#edit',function(){
     $.get("{{ route('datasiswa.index') }}" +'/' + id, function (data) {
       $('#id').val(data.id);
       $('#nama').val(data.nama);
+      $('#email').val(data.email);
       $('#nis').val(data.nis);
       $('#nisn').val(data.nisn);
+      $('#tempat_lahir').val(data.tempat_lahir);
+      $('#tanggal_lahir').val(data.tanggal_lahir);
+      $('#jenis_kelamin').val(data.jenis_kelamin);
       $('#jurusan_id').val(data.jurusan_id);
       $('#edit-data').modal('show');
     })

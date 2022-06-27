@@ -106,7 +106,7 @@ class DataAkunSiswaController extends Controller
     public function update(Request $request, User $User)
     {
         User::updateOrCreate(['id' => $request->id],
-        ['nama' => $request->nama, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
+        ['nama' => $request->nama, 'nis' => $request->nis, 'username' => $request->username, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
         return response()->json();
     }
 

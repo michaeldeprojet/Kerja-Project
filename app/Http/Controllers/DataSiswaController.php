@@ -95,7 +95,7 @@ class DataSiswaController extends Controller
     public function update(Request $request)
     {
         DataSiswa::updateOrCreate(['id' => $request->id],
-        ['nama' => $request->name, 'nis' => $request->nis, 'nisn' => $request->nisn, 'jurusan_id' => $request->jurusan_id]);
+        ['nama' => $request->name, 'email' => $request->email, 'nis' => $request->nis, 'nisn' => $request->nisn, 'tempat_lahir' => $request->tempat_lahir, 'tanggal_lahir' => $request->tanggal_lahir, 'jenis_kelamin' => $request->jenis_kelamin, 'jurusan_id' => $request->jurusan_id]);
         return response()->json();
     }
 

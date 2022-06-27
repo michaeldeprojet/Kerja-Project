@@ -43,7 +43,7 @@ class KakomliController extends Controller
 
     public function penentuan()
     {
-        $datas = Penentuan::all();
+        $datas = Penentuan::with('pembimbing')->get();
         return view ('kakomli.penentuan', compact('datas'));
     }
 
